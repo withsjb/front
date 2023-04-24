@@ -1,0 +1,271 @@
+.body {
+  background-color: #01073d;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  height: 600px;
+  width: 1000px;
+  background-color: black;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 30%;
+
+  position: relative;
+}
+
+.topglass {
+  height: auto;
+  width: auto;
+  background-color: black;
+  opacity: 0.3;
+  margin: auto;
+  border-radius: 30%;
+  z-index: 2;
+  position: relative;
+}
+
+.toptex {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  opacity: 1;
+  top: 180px;
+  right: 350px;
+  font-size: 80px;
+}
+
+.topp {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  opacity: 1;
+  top: 300px;
+  right: 150px;
+  font-size: 23px;
+}
+
+.top img {
+  top: 30px;
+  width: 1000px;
+  height: 600px;
+  border-radius: 30%;
+}
+
+.middle {
+  margin-top: 15%;
+  display: flex;
+  width: 100%;
+  height: 600px;
+}
+
+.middleleft {
+  background-color: blue;
+  margin: auto;
+  width: 1200px;
+  height: 100%;
+}
+
+.imgbox {
+  width: 550px;
+  height: 80%;
+  text-align: center;
+  margin: 0 auto;
+  display: table;
+  border: 1px solid #cecece;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgdiv {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sildeimg {
+  max-width: 500px;
+  max-height: 400px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.bottoma {
+  width: 1300px;
+  height: auto;
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+}
+
+.botaleft {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  background-color: #01073d;
+}
+
+.botaleft h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.botaleft p {
+  padding-top: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.botaright {
+  margin-top: 100px;
+  margin: auto;
+  width: 600px;
+  height: 300px;
+}
+
+.botaright h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.botaright p {
+  padding-top: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.botbleft {
+  width: 600px;
+  height: 500px;
+  margin-left: 5%;
+  margin-top: 150px;
+  background-color: #01073d;
+}
+
+.botbleft h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.botbleft p {
+  padding-top: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+/*cardroom*/
+.cardroom {
+  width: 100%;
+  height: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  position: relative;
+  z-index: 3;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #060c21;
+  margin: 40px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.card:nth-child(1)::before,
+.card:nth-child(1)::after {
+  background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+}
+
+.card:nth-child(2)::before,
+.card:nth-child(2)::after {
+  background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+}
+
+.card:nth-child(3)::before,
+.card:nth-child(3)::after {
+  background: linear-gradient(235deg, #772aff, #010615, #2196f3);
+}
+
+.card .glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.card .text {
+  padding: 20px;
+  color: #fff;
+}
+
+.btn {
+  text-align: center;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 50px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-position: 100% 0;
+
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}

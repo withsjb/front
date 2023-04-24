@@ -1,0 +1,48 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 236, 238);
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  background-color: white;
+  padding: 1rem 3rem;
+  padding-bottom: 2rem;
+  border-radius: 0.5rem;
+  border-top: rgb(80, 98, 255) 0.5rem solid;
+}
+
+button {
+  background-color: rgb(80, 98, 255);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+span a {
+  text-decoration: none;
+  color: rgb(80, 98, 255);
+}
+
+.formbox {
+  height: 300px;
+}
+
+.forma {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.forma div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}

@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+section .libook {
+  position: relative;
+  width: 250px;
+  height: 327px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0, 2);
+  transform-style: preserve-3d;
+  transition: 0.5;
+}
+
+.libook:hover {
+  transform: rotateY(45deg);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0, 2);
+}
+
+.libook:active {
+  transform: rotateY(180deg);
+}
+.libook:before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  transform-origin: left;
+  background-color: pink;
+
+  background-position: center;
+  transform: rotateY(90deg) translateZ(-125px);
+}
+
+.libook:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  background-color: pink;
+  content: "linux의 기초지식을 모와둔 곳입니다.";
+  color: white;
+  background-position: center;
+  transform: rotateY(180deg) translateZ(40px) translateX(128px);
+}
+
+.libook img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

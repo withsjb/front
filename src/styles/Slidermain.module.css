@@ -1,0 +1,101 @@
+.main {
+  background: #01073d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.textarea {
+  height: 300px;
+  width: 100%;
+
+  position: absolute;
+  text-align: center;
+}
+
+.text {
+  color: white;
+  position: relative;
+  bottom: 400px;
+
+  font-size: 50px;
+}
+
+.textb {
+  color: white;
+  position: relative;
+  bottom: 400px;
+  font-size: 50px;
+  left: 0px;
+}
+
+.slideshow {
+  width: 400px;
+  perspective: 1200px;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  float: right;
+  animation: rotation 14s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.slide figure {
+  width: 100%;
+  height: 205px;
+  position: absolute;
+}
+
+.slide figure:nth-child(1) {
+  transform: rotateY(60deg) translateZ(400px);
+}
+
+.slide figure:nth-child(2) {
+  transform: rotateY(120deg) translateZ(400px);
+}
+
+.slide figure:nth-child(3) {
+  transform: rotateY(180deg) translateZ(400px);
+}
+
+.slide figure:nth-child(4) {
+  transform: rotateY(240deg) translateZ(400px);
+}
+
+.slide figure:nth-child(5) {
+  transform: rotateY(300deg) translateZ(400px);
+}
+
+.slide figure:nth-child(6) {
+  transform: rotateY(360deg) translateZ(400px);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  -webkit-box-reflect: below 10px
+    linear-gradient(transparent, transparent, #0005);
+  box-shadow: 0 0 8px #fff;
+}
+
+.slide:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.slide img:hover {
+  transform: scale(1.2);
+  transition: all 300ms;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

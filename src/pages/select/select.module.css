@@ -1,0 +1,259 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(floor.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.book {
+  position: relative;
+  top: 0;
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  transform: rotate(-17.5deg) skewX(10deg);
+  box-shadow: -35px 35px 50px rgba(0, 0, 0, 1);
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.book:hover {
+  transform: rotate(-17.5deg) skewX(10deg) translate(20px, -20px);
+  box-shadow: -35px 50px 100px rgba(0, 0, 0, 1);
+}
+
+.book:before {
+  content: "";
+  width: 30px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewY(-45deg) translate(-30px, -15px);
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cover:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: url(../../../public/images/os/window.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.book:after {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background: #ccc;
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  transform: skewX(-45deg) translate(15px, 30px);
+}
+
+.book h2 {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  font-size: 5em;
+  line-height: 1em;
+  color: #fff;
+  z-index: 10000;
+}
+
+.book h2 span {
+  background: rgb(44, 143, 188);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.book .writer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #262626;
+  font-size: 0.6em;
+  padding-top: 5px;
+  font-weight: 500;
+  border-top-left-radius: 1px solid #262626;
+}
+
+.book .writer i {
+  font-weight: 700;
+}
+
+.maincover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  transform-origin: center left;
+  transition: transform 1s;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.maincover label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  transform-origin: center left;
+  transition: transform 1s;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.cover label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.book .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: url(../../../public/images/os/window.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.covera:before {
+  content: "";
+  width: 30px;
+  height: 100%;
+  background: url(../../../public/images/os/linux.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewY(-45deg) translate(-30px, -15px);
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.covera {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: url(../../../public/images/os/linux.png);
+  background-position: center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.coverbot {
+  background-color: #fff;
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.booka {
+  position: relative;
+  top: 0;
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  transform: rotate(-17.5deg) skewX(10deg);
+  box-shadow: -35px 35px 50px rgba(0, 0, 0, 1);
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.booka:hover {
+  transform: rotate(-17.5deg) skewX(10deg) translate(20px, -20px);
+  box-shadow: -35px 50px 100px rgba(0, 0, 0, 1);
+}
+
+.booka:before {
+  content: "";
+  width: 30px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewY(-45deg) translate(-30px, -15px);
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.booka:after {
+  content: "";
+  width: 100%;
+  height: 30px;
+  background: #ccc;
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  transform: skewX(-45deg) translate(15px, 30px);
+}
+
+.booka h2 {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  font-size: 5em;
+  line-height: 1em;
+  color: #fff;
+  z-index: 10000;
+}
+
+.booka h2 span {
+  background: rgb(188, 44, 126);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.booka .writer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #262626;
+  font-size: 0.6em;
+  padding-top: 5px;
+  font-weight: 500;
+  border-top-left-radius: 1px solid #262626;
+}
+
+.booka .writer i {
+  font-weight: 700;
+}

@@ -1,0 +1,136 @@
+.main {
+  background: linear-gradient(to right, #24c6dc, #514a9d);
+  height: 100%;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 3px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container h3 {
+  margin-top: 15px;
+}
+
+.hintarea {
+  background-color: lightgray;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fromarea input {
+  height: 10px;
+}
+
+.problem {
+  margin-top: 50px;
+  height: 200px;
+}
+
+.btn {
+  padding: 10px 20px;
+  display: block;
+  margin: auto 0;
+  font-size: 18px;
+  bottom: 10px;
+  position: absolute;
+  left: 270px;
+  color: white;
+}
+
+.btna {
+  padding: 10px 20px;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 70%;
+  font-size: 18px;
+
+  color: white;
+}
+
+.shortroom {
+  display: flex;
+}
+
+.shortroom div {
+  width: 75px;
+  height: 50px;
+  background-color: rgb(29, 144, 210);
+  color: white;
+  margin: 11px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.checkproblem {
+  width: 300px;
+  height: 450px;
+
+  background-color: white;
+  margin-left: 43%;
+  margin-top: 100px;
+  left: 700px;
+  position: fixed;
+}
+
+.checkproblem button {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  margin: 11px;
+}
+
+.short {
+  width: 1000px;
+  height: 500px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+.short img {
+  margin-left: 70px;
+}
+
+.short h2 {
+  text-align: center;
+}
+
+.short h3 {
+  margin-top: 15px;
+}
+
+.shortanswer {
+  width: 300px;
+  height: 50px;
+}
+
+.answerroom {
+  align-items: center;
+  margin-left: 350px;
+  margin-top: 100px;
+}
+
+.ab {
+  display: flex;
+  width: 1600px;
+  margin-left: 10%;
+  margin-right: auto;
+  background-color: #514a9d;
+}

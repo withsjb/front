@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navli {
+  list-style: none;
+  color: white;
+}
+
+.navbar {
+  height: 10vh;
+  box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+  line-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #01073d;
+  z-index: 10000;
+  position: sticky;
+  top: 0px;
+}
+
+.logo {
+  font-size: 20px;
+  margin-left: 40px;
+  color: white;
+  display: flex;
+}
+
+.logo img {
+  width: 270px;
+  height: 100px;
+}
+
+.logo:hover {
+  color: aqua;
+}
+
+.dropmenu {
+  background-color: #a9a9f5;
+  width: 180px;
+  position: absolute;
+  line-height: 45px;
+  top: 65px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropmenu li {
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+}
+
+.dropmenu li:hover {
+  background-color: #01073d;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+  margin-right: 10%;
+}
+
+.navlinks li {
+  color: white;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: auto;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.navlinks li:hover .dropmenu {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.mobilemenu {
+  border: none;
+  background: none;
+  font-size: 20px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  }
+  .navlinks {
+    display: none;
+  }
+  .navlinksmobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: #01073d;
+    z-index: 1000000;
+  }
+  ul li {
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+  .mobilemenu {
+    position: absolute;
+    display: block;
+    right: 20px;
+  }
+}
