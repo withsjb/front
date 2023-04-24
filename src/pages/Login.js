@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.jwt) {
-      navigate("/");
+      navigate("https://front-bay-pi.vercel.app/");
     }
   }, [cookies, navigate]);
 
