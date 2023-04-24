@@ -23,7 +23,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/register",
+        "https://port-0-back-17xqnr2llgv1tyhz.sel3.cloudtype.app/register",
         {
           ...values,
         },
