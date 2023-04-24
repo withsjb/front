@@ -35,7 +35,7 @@ function Register() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          navigate("/"); //err 가없어 else 로 빠지면 메인으로 가게
+          navigate("https://front-bay-pi.vercel.app/"); //err 가없어 else 로 빠지면 메인으로 가게
         }
       }
     } catch (ex) {
