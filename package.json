@@ -47,5 +47,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://port-0-back-17xqnr2llgv1tyhz.sel3.cloudtype.app/"
 }

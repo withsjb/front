@@ -23,7 +23,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "api/login",
+        "/api/login",
         {
           ...values,
         },
