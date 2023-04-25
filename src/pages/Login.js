@@ -23,7 +23,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://port-0-back-17xqnr2llgv1tyhz.sel3.cloudtype.app/login",
+        "/login",
         {
           ...values,
         },
