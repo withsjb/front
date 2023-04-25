@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://port-0-back-17xqnr2llgv1tyhz.sel3.cloudtype.app/:path*"
+    },
+    {
+      "source": "/api/:path*/",
+      "destination": "https://port-0-back-17xqnr2llgv1tyhz.sel3.cloudtype.app/:path*/"
+    }
+  ]
+}
