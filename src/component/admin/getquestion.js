@@ -109,13 +109,13 @@ const Quiz = () => {
     e.preventDefault();
     try {
       const result = await axios.put(
-        `http://localhost:4000/questions/${selectedQuestion.quizId}/${selectedQuestion.id}`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions/${selectedQuestion.quizId}/${selectedQuestion.id}`,
         { ...questionToEdit, quizId: selectedQuestion.quizId }
       );
       console.log(result.data); // 서버로부터 받은 응답 데이터 출력
       // 수정 요청에 성공하면 quizList를 다시 불러옵니다.
       const updatedQuizList = await axios.get(
-        "http://localhost:4000/questions"
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions`
       );
       setQuizList(updatedQuizList.data);
       closeModal();

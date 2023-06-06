@@ -32,7 +32,7 @@ const AddQuestion = () => {
       formData.append("photo", photo);
 
       const response = await axios.post(
-        "http://localhost:4000/quiz",
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/quiz`,
         formData,
         {
           headers: {
