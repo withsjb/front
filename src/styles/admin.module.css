@@ -1,0 +1,48 @@
+.adminbody {
+  background-color: aquamarine;
+}
+
+.admincontainer {
+  margin: auto;
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+}
+
+.admincon {
+  background-color: red;
+  width: 800px;
+  margin: auto;
+}
+
+.admindiv {
+  background-color: white;
+  height: 500px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.adminh4 {
+  background-color: aqua;
+  height: 100px;
+}
+
+.adminp {
+  background-color: pink;
+  height: 100px;
+  width: 80%;
+  margin: auto;
+}
+
+.adminan {
+  background-color: green;
+  height: 50px;
+}
+
+.adminli {
+  background-color: yellow;
+  height: 50px;
+  list-style-position: inside;
+}
