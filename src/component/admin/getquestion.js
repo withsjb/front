@@ -17,7 +17,9 @@ const Quiz = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:4000/questions");
+      const result = await axios.get(
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions`
+      );
       setQuizList(result.data);
     };
     fetchData();
@@ -35,12 +37,12 @@ const Quiz = () => {
   const deleteQuestion = async (quizId, questionId) => {
     try {
       const result = await axios.delete(
-        `http://localhost:4000/questions/${quizId}/${questionId}`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions/${quizId}/${questionId}`
       );
       console.log(result.data); // 서버로부터 받은 응답 데이터 출력
       // 삭제 요청에 성공하면 quizList를 다시 불러옵니다.
       const updatedQuizList = await axios.get(
-        "http://localhost:4000/questions"
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions`
       );
       setQuizList(updatedQuizList.data);
     } catch (error) {
