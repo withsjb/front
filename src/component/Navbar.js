@@ -110,6 +110,9 @@ const Navbar = () => {
               </ul>{" "}
             </li>
           </Link>
+          <Link to="/admin">
+            <li className={Styles.navli}>admin</li>
+          </Link>
           <Link to="/">
             <li className={Styles.navli}>login</li>
           </Link>
