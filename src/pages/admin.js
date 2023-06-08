@@ -62,9 +62,9 @@ const AddQuestion = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setPhoto([...photo, file.name]);
+      setPhoto(file);
     } else {
-      setPhoto([...photo, null]);
+      setPhoto(null);
     }
   };
 
