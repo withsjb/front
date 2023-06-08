@@ -3,6 +3,8 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { AiFillPlusCircle } from "react-icons/ai";
 import Getquestion from "../component/admin/getquestion";
+import styled from "styled-components";
+import Styles from "../styles/admin.module.css";
 
 const AddQuestion = () => {
   const [id, setId] = useState(uuidv4());
@@ -61,6 +63,7 @@ const AddQuestion = () => {
 
   return (
     <>
+      <div className={Styles.adminbody}></div>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="question">질문:</label>
