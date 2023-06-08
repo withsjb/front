@@ -15,9 +15,17 @@
   margin: auto;
 }
 
+.adminimg {
+  width: 500px;
+  height: 200px;
+  background-size: cover;
+  margin: auto;
+  background-color: rgb(201, 124, 22);
+}
+
 .admindiv {
   background-color: white;
-  height: 500px;
+  height: 800px;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +33,7 @@
 }
 
 .adminh4 {
-  background-color: aqua;
+  background-color: rgb(96, 75, 163);
   height: 100px;
 }
 
