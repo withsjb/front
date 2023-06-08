@@ -31,15 +31,11 @@ const AddQuestion = () => {
       formData.append("questions", JSON.stringify(questionData));
       formData.append("photo", photo);
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/quiz`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("/api/quiz", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       console.log(response.data);
       setQuestion("");

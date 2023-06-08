@@ -6,7 +6,7 @@ export default function ResultTable() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/result`, (res) => {
+    getServerData(`/api/result`, (res) => {
       setData(res);
     });
   });
