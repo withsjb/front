@@ -31,7 +31,9 @@ const AddQuestion = () => {
 
       const formData = new FormData();
       formData.append("questions", JSON.stringify(questionData));
-      formData.append("photo", photo);
+      if (photo !== null) {
+        formData.append("photo", photo);
+      }
 
       const response = await axios.post("/api/quiz", formData, {
         headers: {
@@ -58,7 +60,12 @@ const AddQuestion = () => {
   };
 
   const handleFileChange = (event) => {
-    setPhoto(event.target.files[0]);
+    const file = event.target.files[0];
+    if (file) {
+      setPhoto([...photo, file.name]);
+    } else {
+      setPhoto([...photo, null]);
+    }
   };
 
   return (
