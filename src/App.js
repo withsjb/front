@@ -32,6 +32,10 @@ import AddProblem from "./component/problem/AddProblem";
 import Changeproblem from "./component/problem/changeproblem";
 import { CheckUserExist } from "./helper/helper";
 import Test from "./pages/test";
+import Wiki from "./pages/wiki";
+import Termadd from "./pages/termadd";
+import Linux from "./pages/Linux";
+import FileDetail from "./component/Filedetail";
 
 export default function App() {
   return (
@@ -84,6 +88,10 @@ export default function App() {
         <Route path="/side" element={<Side />}></Route>
         <Route path="/page" element={<Page />}></Route>
         <Route path="/select" element={<Select />}></Route>
+        <Route path="/wiki" element={<Wiki />}></Route>
+        <Route path="/termadd" element={<Termadd />}></Route>
+        <Route path="/linux" element={<Linux />}></Route>
+        <Route path="/linux/:fileId" element={<FileDetail />} />
       </Routes>
     </BrowserRouter>
   );
