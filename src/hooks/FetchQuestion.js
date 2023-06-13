@@ -29,7 +29,7 @@ export const useFetchQestion = () => {
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           const shuffledQuestions = shuffleArray(questions);
-          const limitedQuestions = questions.slice(0, 3); // 문제 수를 3개로 제한
+          const limitedQuestions = questions.slice(0, 5); // 문제 수를 5개로 제한
           setGetData((prev) => ({ ...prev, apiData: questions }));
 
           /** dispatch an action */
