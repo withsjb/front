@@ -110,26 +110,26 @@ const Navbar = () => {
               </ul>{" "}
             </li>
           </Link>
-          <Link to="/admin">
-            <li className={Styles.navli}>
-              admin
-              <ul className={Styles.dropmenu}>
-                <Link to="/quizmain">
-                  {" "}
-                  <li>문제 수정</li>{" "}
-                </Link>
-                <Link to="/termadd">
-                  {" "}
-                  <li>단어 주입</li>{" "}
-                </Link>
-                <Link to="/Linux">
-                  {" "}
-                  <li>리눅스 개념추가</li>{" "}
-                </Link>
-              </ul>
-            </li>
-          </Link>
-          <Link to="/">
+
+          <li className={Styles.navli}>
+            admin
+            <ul className={Styles.dropmenu}>
+              <Link to="/admin">
+                {" "}
+                <li>문제 수정</li>{" "}
+              </Link>
+              <Link to="/termadd">
+                {" "}
+                <li>단어 주입</li>{" "}
+              </Link>
+              <Link to="/Linux">
+                {" "}
+                <li>리눅스 개념추가</li>{" "}
+              </Link>
+            </ul>
+          </li>
+
+          <Link to="/login">
             <li className={Styles.navli}>login</li>
           </Link>
           <button onClick={logOut}>Log out</button>
