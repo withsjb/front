@@ -55,15 +55,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Terms</h1>
-      <ul>
-        {terms.map((term) => (
-          <li key={term._id}>
-            {term.term}: {term.definition}
-          </li>
-        ))}
-      </ul>
-
       <h2>Add Term</h2>
       <div>
         <label>Term:</label>
@@ -107,15 +98,6 @@ const App = () => {
           </li>
         ))}
       </ul>
-
-      <h2>User Input</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter a sentence..."
-          onChange={(e) => handleUserInput(e.target.value)}
-        />
-      </div>
     </div>
   );
 };
