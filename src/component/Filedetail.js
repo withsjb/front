@@ -40,20 +40,9 @@ const FileDetail = () => {
       .then((response) => {
         const fetchedFile = response.data;
         if (fetchedFile.concept === null) {
-          fetchedFile.concept = [];
+          fetchedFile.concept = []; // concept가 null인 경우 빈 배열로 초기화
         }
         setFile(fetchedFile);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  const fetchTerms = () => {
-    axios
-      .get("/api/terms")
-      .then((response) => {
-        setTerms(response.data);
       })
       .catch((error) => {
         console.error(error);
