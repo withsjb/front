@@ -243,7 +243,7 @@ const FileDetail = () => {
                 className={Styles.fileconceptdiv}
                 id={`concept-${index + 1}`}
               >
-                {entry.concept}
+                {entry.concept !== "null" && entry.concept}
               </div>
             )}
             {entry.concept.trim() !== "" && index === updatedIndex && (
