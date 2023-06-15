@@ -85,7 +85,7 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", "");
+      formData.append("concept", ""); // 수정된 부분: 컨셉이 비어 있을 때도 빈 문자열을 추가합니다.
       if (concepts.length > 0) {
         setUpdatedIndex(concepts.length - 1);
       }
@@ -101,8 +101,8 @@ const FileDetail = () => {
     }
 
     addContentAndPhoto(formData);
-    if (concept.trim() !== "") {
-      setConcept(""); // 컨셉을 추가한 후에 컨셉 입력 필드를 초기화합니다.
+    if (concept.trim() === "" && content.trim() !== "") {
+      setConcept(""); // 컨셉이 비어 있고 컨텐츠가 추가되었을 때 컨셉 입력 필드를 초기화합니다.
     }
   };
 
