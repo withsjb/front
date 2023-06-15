@@ -120,7 +120,7 @@ const FileDetail = () => {
           setConcepts((prevConcepts) => [
             ...prevConcepts.slice(0, updatedIndex),
             concept,
-            ...prevConcepts.slice(updatedIndex + 1),
+            ...prevConcepts.slice(updatedIndex),
           ]);
         }
       })
