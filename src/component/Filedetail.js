@@ -49,6 +49,17 @@ const FileDetail = () => {
       });
   };
 
+  const fetchTerms = () => {
+    axios
+      .get("/api/terms")
+      .then((response) => {
+        setTerms(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const fetchPhotos = () => {
     axios
       .get(`/api/linux/files/${fileId}/addphoto`)
