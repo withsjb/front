@@ -86,9 +86,7 @@ const FileDetail = () => {
 
     if (concept.trim() === "") {
       formData.append("concept", ""); // 컨셉이 비어 있을 때도 빈 문자열을 추가합니다.
-      if (concepts.length > 0) {
-        setUpdatedIndex(concepts.length - 1);
-      }
+      setUpdatedIndex(-1);
     } else {
       formData.append("concept", concept);
       setUpdatedIndex(-1);
