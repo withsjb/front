@@ -101,6 +101,9 @@ const FileDetail = () => {
     }
 
     addContentAndPhoto(formData);
+    if (concept.trim() !== "") {
+      setConcept(""); // 컨셉을 추가한 후에 컨셉 입력 필드를 초기화합니다.
+    }
   };
 
   const addContentAndPhoto = (formData) => {
