@@ -84,8 +84,8 @@ const FileDetail = () => {
       formData.append("photo", photo);
     }
 
-    if (concept.trim() === "") {
-      formData.append("concept", ""); // 수정된 부분: 컨셉이 비어 있을 때도 빈 문자열을 추가합니다.
+    if (concept.trim() === "" && content.trim() !== "") {
+      formData.append("concept", ""); // 컨셉이 비어 있지 않을 때만 빈 문자열을 추가합니다.
       if (concepts.length > 0) {
         setUpdatedIndex(concepts.length - 1);
       }
