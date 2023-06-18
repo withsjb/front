@@ -64,7 +64,7 @@
 
 .photobox {
   max-width: 500px;
-  max-height: 400px;
+  max-height: auto;
   overflow: hidden;
   margin: 0 auto;
 }
