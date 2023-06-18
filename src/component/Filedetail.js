@@ -85,7 +85,7 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", "null"); // 새로운 컨셉 추가
+      formData.append("concept", ""); // 새로운 컨셉 추가
     } else {
       formData.append("concept", concept);
     }
@@ -98,7 +98,7 @@ const FileDetail = () => {
 
     addContentAndPhoto(formData);
     if (concept.trim() === "" && content.trim() !== "") {
-      setConcept("");
+      setConcept("null"); // 컨셉 값이 비어있을 때 "null"로 업데이트
     }
   };
 
@@ -113,11 +113,15 @@ const FileDetail = () => {
         setPhoto("");
         fetchPhotos();
         if (updatedIndex !== -1) {
-          setConcepts((prevConcepts) => [
-            ...prevConcepts.slice(0, updatedIndex),
-            concept,
-            ...prevConcepts.slice(updatedIndex + 1), // updatedIndex 이후의 요소를 가져오도록 수정
-          ]);
+          setConcepts((prevConcepts) => {
+            const updatedConcepts = [...prevConcepts];
+            if (concept.trim() === "") {
+              updatedConcepts.splice(updatedIndex, 0, "null");
+            } else {
+              updatedConcepts.splice(updatedIndex, 0, concept);
+            }
+            return updatedConcepts;
+          });
         }
       })
       .catch((error) => {
