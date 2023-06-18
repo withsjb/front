@@ -242,14 +242,16 @@ const FileDetail = () => {
       <div className={Styles.filecard}>
         {sortedEntries.map((entry, index) => (
           <div key={index} className={Styles.contentItem}>
-            {entry.concept.trim() !== "" && index !== updatedIndex && (
-              <div
-                className={Styles.fileconceptdiv}
-                id={`concept-${index + 1}`}
-              >
-                {entry.concept !== "null" && entry.concept}
-              </div>
-            )}
+            {entry.concept.trim() !== "" &&
+              index !== updatedIndex &&
+              entry.concept !== "." && (
+                <div
+                  className={Styles.fileconceptdiv}
+                  id={`concept-${index + 1}`}
+                >
+                  {entry.concept !== "null" && entry.concept}
+                </div>
+              )}
             {entry.concept.trim() !== "" && index === updatedIndex && (
               <div
                 className={Styles.fileconceptdiv}
