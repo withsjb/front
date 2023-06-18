@@ -84,6 +84,13 @@ const FileDetail = () => {
       formData.append("photo", photo);
     }
 
+    if (concept.trim() === "" && content.trim() === "") {
+      // 컨셉과 컨텐츠가 모두 비어 있는 경우
+      // 추가 기능을 수행하지 않고 함수 종료
+      setConcept("");
+      return;
+    }
+
     if (concept.trim() === "") {
       if (concepts[updatedIndex] === null) {
         // 이전 컨셉이 이미 null인 경우, 다음 컨셉에도 null을 추가
