@@ -85,7 +85,7 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", "."); // 컨셉 값이 비어있을 경우 "."(마침표)로 추가합니다.
+      formData.append("concept", ""); // 새로운 컨셉 추가
     } else {
       formData.append("concept", concept);
     }
@@ -99,8 +99,6 @@ const FileDetail = () => {
     addContentAndPhoto(formData);
     if (concept.trim() === "" && content.trim() !== "") {
       setConcept("null"); // 컨셉 값이 비어있을 때 "null"로 업데이트
-    } else if (concept.trim() === "" && content.trim() === "") {
-      setConcept(""); // 이전 컨셉 값이 없을 때 컨셉 값을 초기화
     }
   };
 
@@ -242,16 +240,14 @@ const FileDetail = () => {
       <div className={Styles.filecard}>
         {sortedEntries.map((entry, index) => (
           <div key={index} className={Styles.contentItem}>
-            {entry.concept.trim() !== "" &&
-              index !== updatedIndex &&
-              entry.concept !== "." && (
-                <div
-                  className={Styles.fileconceptdiv}
-                  id={`concept-${index + 1}`}
-                >
-                  {entry.concept !== "null" && entry.concept}
-                </div>
-              )}
+            {entry.concept.trim() !== "" && index !== updatedIndex && (
+              <div
+                className={Styles.fileconceptdiv}
+                id={`concept-${index + 1}`}
+              >
+                {entry.concept !== "null" && entry.concept}
+              </div>
+            )}
             {entry.concept.trim() !== "" && index === updatedIndex && (
               <div
                 className={Styles.fileconceptdiv}
