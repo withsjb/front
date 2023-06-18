@@ -85,7 +85,7 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", "null"); // 컨셉 값이 비어있을 때 "null"로 설정
+      formData.append("concept", "."); // 컨셉 값이 비어있을 경우 "."(마침표)로 추가합니다.
     } else {
       formData.append("concept", concept);
     }
