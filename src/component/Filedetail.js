@@ -85,7 +85,7 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", ""); // 새로운 컨셉 추가
+      formData.append("concept", "null"); // 컨셉 값이 비어있을 때 "null"로 설정
     } else {
       formData.append("concept", concept);
     }
