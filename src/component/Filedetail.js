@@ -85,11 +85,11 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", null); // 컨셉이 비어 있을 때도 빈 문자열을 추가합니다.
+      formData.append("concept", null);
       setUpdatedIndex(-1);
     } else {
       formData.append("concept", concept);
-      setUpdatedIndex(-1);
+      setUpdatedIndex(concepts.length); // 현재 concepts 배열의 길이를 업데이트
     }
 
     if (content.trim() === "") {
@@ -100,7 +100,7 @@ const FileDetail = () => {
 
     addContentAndPhoto(formData);
     if (concept.trim() === "" && content.trim() !== "") {
-      setConcept(""); // 컨셉이 비어 있고 컨텐츠가 추가되었을 때 컨셉 입력 필드를 초기화합니다.
+      setConcept("");
     }
   };
 
@@ -118,7 +118,7 @@ const FileDetail = () => {
           setConcepts((prevConcepts) => [
             ...prevConcepts.slice(0, updatedIndex),
             concept,
-            ...prevConcepts.slice(updatedIndex),
+            ...prevConcepts.slice(updatedIndex + 1), // updatedIndex 이후의 요소를 가져오도록 수정
           ]);
         }
       })
