@@ -85,8 +85,13 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      formData.append("concept", null);
-      setUpdatedIndex(-1);
+      if (concepts[updatedIndex] === null) {
+        // 이전 컨셉이 이미 null인 경우, 다음 컨셉에도 null을 추가
+        formData.append("concept", null);
+      } else {
+        formData.append("concept", "");
+      }
+      setUpdatedIndex(concepts.length); // 현재 concepts 배열의 길이를 업데이트
     } else {
       formData.append("concept", concept);
       setUpdatedIndex(concepts.length); // 현재 concepts 배열의 길이를 업데이트
