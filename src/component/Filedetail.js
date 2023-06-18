@@ -85,16 +85,9 @@ const FileDetail = () => {
     }
 
     if (concept.trim() === "") {
-      if (concepts[updatedIndex] === null || concepts[updatedIndex] === "") {
-        // 이전 컨셉이 null이나 빈 문자열("")인 경우, 다음 컨셉에도 null을 추가
-        formData.append("concept", "null");
-      } else {
-        formData.append("concept", ""); // 컨셉이 아무 값도 없는 경우, 빈 문자열("")을 추가
-      }
-      setUpdatedIndex(concepts.length); // 현재 concepts 배열의 길이를 업데이트
+      formData.append("concept", "null"); // 새로운 컨셉 추가
     } else {
       formData.append("concept", concept);
-      setUpdatedIndex(concepts.length); // 현재 concepts 배열의 길이를 업데이트
     }
 
     if (content.trim() === "") {
