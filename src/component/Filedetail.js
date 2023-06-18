@@ -99,6 +99,8 @@ const FileDetail = () => {
     addContentAndPhoto(formData);
     if (concept.trim() === "" && content.trim() !== "") {
       setConcept("null"); // 컨셉 값이 비어있을 때 "null"로 업데이트
+    } else if (concept.trim() === "" && content.trim() === "") {
+      setConcept(""); // 이전 컨셉 값이 없을 때 컨셉 값을 초기화
     }
   };
 
