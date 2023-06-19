@@ -36,7 +36,7 @@ export default function Questions({ onChecked }) {
   return (
     <div className={Styles.questions}>
       <h2 className={Styles.textlight}>{questions?.question}</h2>
-      <h2 className={Styles.textlight}>{questions?.test}</h2>
+      <h2 className={Styles.textlighta}>{questions?.text}</h2>
 
       <ul key={questions?.id}>
         {questions?.options.map((q, i) => (

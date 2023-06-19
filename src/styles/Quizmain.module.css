@@ -16,6 +16,12 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+.quizbody {
+  height: 100%;
+  width: 100%;
+  background-color: #222222;
+}
+
 .container {
   display: block;
   position: relative;
@@ -35,6 +41,11 @@ html {
 
 .textlight {
   color: var(--light-color);
+}
+
+.textlighta {
+  color: var(--light-color);
+  margin-top: 50px;
 }
 
 .container ul {
