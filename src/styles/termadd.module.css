@@ -1,0 +1,89 @@
+.tbody {
+  background-color: white;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  background-color: rgb(1, 76, 102);
+  color: white;
+  padding: 0 20px;
+  font-size: 28pt;
+}
+/* title 제목 구간 */
+
+.addExp {
+  background-color: #c1c1c1;
+  color: rgb(72, 72, 72);
+  width: auto;
+  padding: 5px 25px;
+  font-size: 10pt;
+  border-bottom: solid black 3px;
+  height: 3em;
+}
+/*title 밑의 부연설명*/
+
+.addForm {
+  background-color: white;
+  height: 10em;
+  border-left: solid black 3px;
+  border-right: solid black 3px;
+}
+/*폼 형식*/
+
+.formTitle {
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 18pt;
+  font-weight: bold;
+}
+/*폼 형식 제목*/
+
+.termAdd {
+  font-size: 13pt;
+  padding: 0 5px;
+}
+/*폼 형식 안의 term*/
+
+.defAdd {
+  font-size: 13pt;
+  padding: 0 5px;
+}
+/*폼 형식 안의 definition*/
+
+.t_Addbtn {
+  margin-top: 15px;
+  margin-left: 160px;
+  height: 2.2em;
+  text-align: center;
+  padding: 0 10px;
+}
+/*버튼*/
+
+.t_ul {
+  color: black;
+  font-weight: 700px;
+  border-top: solid black 3px;
+}
+/*li부분의 형식?*/
+
+.t_li {
+  background-color: rgb(198, 198, 198);
+  color: black;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 10px;
+  border-bottom: dashed black 2px;
+  height: auto;
+}
+/*단어 추가되는 부분*/
+
+.term_w {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.def_term {
+  font-size: 10pt;
+  margin-top: 5px;
+}

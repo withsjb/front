@@ -45,14 +45,16 @@ function Login() {
   return (
     <div className={Styles.body}>
       <div className={Styles.container}>
-        <h2>Login to your Account</h2>
+        <div className={Styles.title}>
+          <h2>Log in </h2>
+        </div>
         <form className={Styles.forma} onSubmit={(e) => handleSubmit(e)}>
           <div className={Styles.formbox}>
             <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder=" abcd@email.co.kr"
               onChange={(e) =>
                 setValues({ ...values, [e.target.name]: e.target.value })
               }
@@ -62,14 +64,16 @@ function Login() {
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              placeholder="Password"
+              placeholder=" Password"
               name="password"
               onChange={(e) =>
                 setValues({ ...values, [e.target.name]: e.target.value })
               }
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className={Styles.libtn} type="submit">
+            Log in
+          </button>
           <span>
             Don't have an account ?<Link to="/register"> Register </Link>
           </span>

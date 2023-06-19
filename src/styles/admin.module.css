@@ -1,17 +1,38 @@
+.inputform {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  font-size: 12pt;
+  padding: 10px 10px;
+}
+
+.num_input {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.adm_btn {
+  margin-left: 11em;
+  margin-top: 10px;
+  height: auto;
+  text-align: center;
+  padding: 5px 5px;
+}
+/*추가하기 버튼*/
 .adminbody {
   background-color: aquamarine;
 }
 
 .admincontainer {
   margin: auto;
-  background-color: aqua;
+  background-color: white;
+  display: inline-block;
   width: 100%;
   height: 100%;
 }
 
 .admincon {
-  background-color: red;
-  width: 800px;
+  background-color: rgb(4, 119, 186);
+  width: 1250px;
   margin: auto;
 }
 
@@ -23,34 +44,66 @@
   background-color: rgb(201, 124, 22);
 }
 
+.adminh4 {
+  background-color: #ffffff;
+  text-align: left;
+  padding: 40px;
+  height: auto;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 24pt;
+}
+/* 질문 입력칸 */
+
 .admindiv {
   background-color: white;
-  height: 800px;
-  width: 600px;
+  height: auto;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
+  border-radius: 20px;
 }
-
-.adminh4 {
-  background-color: rgb(96, 75, 163);
-  height: 100px;
-}
+/* 각 질문의 container */
 
 .adminp {
-  background-color: pink;
-  height: 100px;
-  width: 80%;
-  margin: auto;
+  background-color: #dcdcdc;
+  height: auto;
+  width: 94%;
+  margin: 0 30px 20px;
+  border-style: dashed;
+  border-width: 2px;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 13pt;
+  line-height: 1.6em;
 }
+/* 내용 입력칸 */
 
 .adminan {
-  background-color: green;
-  height: 50px;
+  background-color: black;
+  height: 40px;
+  width: 70px;
+  position: static;
+  border-radius: 10px;
+  padding: 7px 10px;
+  margin-top: 30px;
+  margin-left: 900px;
+  color: white;
 }
+/* '정답: ' 칸 */
 
 .adminli {
-  background-color: yellow;
-  height: 50px;
+  background-color: #ffffff;
+  height: auto;
+  width: 92%;
+  margin: 10px 40px;
   list-style-position: inside;
+  text-align: center;
+  border: solid 4px lightblue;
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 13pt;
 }
+/* 4지선다 입력칸 */

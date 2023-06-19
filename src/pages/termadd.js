@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Styles from "../styles/termadd.module.css";
 
 const App = () => {
   const [term, setTerm] = useState("");
@@ -54,47 +55,49 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>Add Term</h2>
-      <div>
-        <label>Term:</label>
-        <input
-          type="text"
-          value={term}
-          onChange={(e) => setTerm(e.target.value)}
-        />
+    <div className={Styles.tbody}>
+      <h1> Term add page </h1>
+      <div className={Styles.addExp}>
+        <h2> - This page is to add terms and definitions. </h2>
       </div>
-      <div>
-        <label>Definition:</label>
-        <input
-          type="text"
-          value={definition}
-          onChange={(e) => setDefinition(e.target.value)}
-        />
+
+      <div className={Styles.addForm}>
+        <h2 className={Styles.formTitle}>Add Term</h2>
+        <div>
+          <label className={Styles.termAdd}>Term:</label>
+          <input
+            type="text"
+            value={term}
+            placeholder=" Input a term"
+            onChange={(e) => setTerm(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className={Styles.defAdd}>Definition:</label>
+          <input
+            type="text"
+            value={definition}
+            placeholder=" Explain definition"
+            onChange={(e) => setDefinition(e.target.value)}
+          />
+        </div>
+        <button className={Styles.t_Addbtn} onClick={handleAddTerm}>
+          Add Term
+        </button>
       </div>
-      <button onClick={handleAddTerm}>Add Term</button>
 
       {modalVisible && highlightedTerm && (
         <div>
           <h2>Highlighted Term</h2>
-          <p>
-            {highlightedTerm.term}: {highlightedTerm.definition}
-          </p>
+          <p className={Styles.term_w}>{highlightedTerm.term} :</p>
+          <p className={Styles.def_term}>{highlightedTerm.definition}</p>
         </div>
       )}
 
-      <h2>Terms with Highlighted Word</h2>
-      <ul>
+      <ul className={Styles.t_ul}>
         {terms.map((term) => (
-          <li
-            key={term._id}
-            onMouseEnter={() => handleHighlightTerm(term)}
-            onMouseLeave={() => {
-              setHighlightedTerm(null);
-              setModalVisible(false);
-            }}
-          >
-            {term.term}: {term.definition}
+          <li className={Styles.t_li} key={term._id}>
+            <h2> {term.term}</h2>: {term.definition}
           </li>
         ))}
       </ul>

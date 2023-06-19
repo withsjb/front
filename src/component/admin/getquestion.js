@@ -146,8 +146,8 @@ const Quiz = () => {
           <h3>id: {quiz._id}</h3>
           {quiz.questions.map((question, index) => (
             <div className={Styles.admindiv} key={question.id}>
-              <h4 className={Styles.adminh4}>질문: {question.question}</h4>
-              <p className={Styles.adminp}>텍스트: {question.text}</p>
+              <h4 className={Styles.adminh4}> Q : {question.question}</h4>
+              <p className={Styles.adminp}> 내용 : {question.text}</p>
 
               <ol>
                 {question.options.map((option, index) => (
