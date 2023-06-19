@@ -265,7 +265,9 @@ const FileDetail = () => {
                   dangerouslySetInnerHTML={{
                     __html: line.replace(
                       new RegExp(
-                        `(${terms.map((term) => term.term).join("|")})`,
+                        `(${terms
+                          .map((term) => term.term.replace(/([()])/g, "\\$1"))
+                          .join("|")})`,
                         "gi"
                       ),
                       "<span style='color: blue'>$&</span>"
