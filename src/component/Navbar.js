@@ -48,39 +48,15 @@ const Navbar = () => {
                 {" "}
                 <li>roadmap</li>{" "}
               </Link>
-              <Link to="/roadmap">
-                {" "}
-                <li>batch file</li>{" "}
-              </Link>
-              <Link to="/linuxstudy">
-                {" "}
-                <li>linuxstudy</li>
-              </Link>
-              <Link to="/select">
-                <li>select</li>
-              </Link>
             </ul>{" "}
           </li>
 
           <li className={Styles.navli}>
             OS
             <ul className={Styles.dropmenu}>
-              <Link to="/roadmap">
+              <Link to="/test">
                 {" "}
-                <li>윈도우 기초개념</li>{" "}
-              </Link>
-              <Link to="/linuxstudy">
-                {" "}
-                <li>리눅스 기초개념</li>
-              </Link>
-              <Link to="/select">
-                <li>윈도우</li>
-              </Link>
-              <Link to="/select">
-                <li>리눅스</li>
-              </Link>
-              <Link to="/select">
-                <li>Testbed</li>
+                <li>개념 정리</li>{" "}
               </Link>
             </ul>{" "}
           </li>
@@ -90,26 +66,10 @@ const Navbar = () => {
             <ul className={Styles.dropmenu}>
               <Link to="/quizmain">
                 {" "}
-                <li>wargame1</li>{" "}
+                <li>문제 풀이</li>{" "}
               </Link>
-              <Link to="/page1">
-                {" "}
-                <li>wargame1</li>{" "}
-              </Link>
-              <li>wargame3</li>
             </ul>{" "}
           </li>
-
-          <Link to="/">
-            <li className={Styles.navli}>
-              community
-              <ul className={Styles.dropmenu}>
-                <li>community1</li>
-                <li>community2</li>
-                <li>community3</li>
-              </ul>{" "}
-            </li>
-          </Link>
 
           <li className={Styles.navli}>
             admin
