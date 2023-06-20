@@ -202,7 +202,6 @@ const FileDetail = () => {
 
   return (
     <div className={Styles.filebody}>
-      <h2>{file.name}</h2>
       <input
         type="text"
         placeholder="컨셉 입력"
@@ -238,6 +237,7 @@ const FileDetail = () => {
         </ul>
       </div>
       <div className={Styles.filecard}>
+        <h2>{file.name}</h2>
         {sortedEntries.map((entry, index) => (
           <div key={index} className={Styles.contentItem}>
             {entry.concept.trim() !== "" && index !== updatedIndex && (
