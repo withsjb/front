@@ -1,0 +1,49 @@
+.body {
+  background-color: white;
+}
+
+.title {
+  padding: 5px 20px;
+  background-color: rgb(1, 76, 102);
+  color: white;
+  border-bottom: solid white 1px;
+}
+/*Linux 컨텐츠 제목*/
+
+.input {
+  height: 30px;
+  width: 400px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  border: solid black 2px;
+  border-radius: 3px;
+}
+/*학습 내용 제목입력칸*/
+
+.inp_form {
+  border-bottom: solid black 4px;
+}
+/*입력, 추가하기 버튼 밑 검은 라인*/
+
+.btn {
+  height: 33px;
+  padding: 5px 10px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+/*추가하기 버튼*/
+
+.contents {
+  background-color: white;
+  border-bottom: dashed black 2px;
+}
+/*각 컨텐츠 div설정*/
+
+.con_btn {
+  width: 500px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+/*추가된 컨텐츠에서 이동하는 버튼*/

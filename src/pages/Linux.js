@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Styles from "../styles/Linux.module.css";
 
 const App = () => {
   const [linuxFiles, setLinuxFiles] = useState([]);
@@ -51,25 +52,38 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>Linux Files</h2>
-      <input
-        type="text"
-        placeholder="파일 이름"
-        value={newFileName}
-        onChange={(event) => setNewFileName(event.target.value)}
-      />
+    <div className={Styles.body}>
+      <div>
+        <h2 className={Styles.title}>Linux Contents</h2>
+        <div className={Styles.inp_form}>
+          <input
+            className={Styles.input}
+            type="text"
+            placeholder=" 학습할 내용 제목 입력"
+            value={newFileName}
+            onChange={(event) => setNewFileName(event.target.value)}
+          />
 
-      <button onClick={handleAddFile}>추가</button>
-      <ul>
-        {linuxFiles.map((file) => (
-          <li key={file._id}>
-            <button onClick={() => navigate(`/linux/${file._id}`)}>
-              {file.name}
-            </button>
-          </li>
-        ))}
-      </ul>
+          <button className={Styles.btn} onClick={handleAddFile}>
+            {" "}
+            추가하기{" "}
+          </button>
+        </div>
+        <div className={Styles.form_con}>
+          <ul>
+            {linuxFiles.map((file) => (
+              <li className={Styles.contents} key={file._id}>
+                <button
+                  className={Styles.con_btn}
+                  onClick={() => navigate(`/linux/${file._id}`)}
+                >
+                  {file.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,27 +1,254 @@
-.main {
-  margin: auto;
-  background: linear-gradient(to right, #24c6dc, #514a9d);
+@font-face {
+  font-family: "Audiowide";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Audiowide"), local("Audiowide-Regular"),
+    url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff)
+      format("woff");
 }
 
-.problem {
-  width: 100%;
-  height: 1000px;
-  margin: auto;
+.body,
+.html {
+  height: 100%;
 }
 
-.side {
-  width: 500px;
-  height: 800px;
+.icon {
+  color: white;
+  margin-left: 5px;
 }
 
-.container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  background-color: white;
-  margin: 50px;
-  box-shadow: 1px 1px 3px;
+.root {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
-.container p {
-  margin-top: 50px;
+
+.contentContainer {
+  display: flex;
+  flex: 1;
+}
+
+.content {
+  flex: 5;
+  padding: 1rem;
+  background: whitesmoke;
+}
+
+.filelist {
+  list-style: none;
+  border-top: 1px solid lightgrey;
+}
+
+.file {
+  border-bottom: 1px solid lightgrey;
+  padding: 0.5rem 2rem;
+  display: flex;
+}
+
+.file:hover {
+  background: #373d40;
+  color: white;
+}
+
+.file:hover .fileToolIcon {
+  color: white;
+}
+
+.filename {
+  flex: 1;
+  line-height: 2rem;
+  flex-basis: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileTools {
+  display: flex;
+  flex-basis: auto;
+  cursor: pointer;
+}
+
+.fileTool {
+  display: flex;
+  margin-right: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .fileTool {
+    padding: 0 0.5rem;
+  }
+}
+
+.fileTool:hover {
+  color: orange;
+}
+
+.fileTool:hover .fileToolIcon {
+  color: orange;
+}
+
+.fileToolText {
+  display: none;
+  margin-right: 0.3rem;
+  height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .fileToolText {
+    display: block;
+  }
+}
+
+.fileToolIcon {
+  background: #373d40;
+  color: white;
+  padding: 0 0.5rem;
+  border: 1px solid grey;
+}
+
+@media screen and (min-width: 768px) {
+  .fileToolIcon {
+    background: none;
+    color: black;
+    padding: 0;
+    border: 0 none transparent;
+  }
+}
+
+.folderTitle {
+  color: #373d40;
+  margin-bottom: 1rem;
+}
+
+.folderTitle a {
+  color: #373d40;
+  text-decoration: none;
+}
+
+.folderTitle a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  background: #373d40;
+  padding: 1rem;
+  flex: 1;
+  flex-basis: auto;
+}
+
+.sidebar li {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  border-bottom: 1px solid #24282c;
+  height: 100px;
+  margin-left: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  color: yellow;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  border-bottom: 1px solid #24282c;
+}
+
+.sidebar ul:hover {
+  background: grey;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  border-bottom: 1px solid #24282c;
+}
+
+.sidebar a:hover {
+  background: grey;
+}
+
+.sidebar .active {
+  border-left: 3px solid orange;
+}
+
+.sidebar .subMenu a {
+  padding-left: 1rem;
+}
+
+.sidebar .fa {
+  margin-left: 0.3rem;
+}
+
+.topbar {
+  background: #24282c;
+  display: flex;
+  color: white;
+  min-height: 3rem;
+  flex-wrap: wrap;
+}
+
+.siteTitle {
+  font-size: 2rem;
+  flex: 1;
+  line-height: 3rem;
+  flex-basis: auto;
+  font-family: "Audiowide";
+  padding-left: 1rem;
+}
+
+.siteTitle a {
+  text-decoration: none;
+  color: white;
+}
+
+.siteTitle a:hover {
+  color: orange;
+}
+
+.siteTitle .fa {
+  margin-left: 0.3rem;
+  color: orange;
+}
+
+.userActions {
+  display: flex;
+}
+
+.userName,
+.logout {
+  margin-right: 2rem;
+}
+
+.userName a,
+.logout a {
+  color: white;
+  text-decoration: none;
+  line-height: 3rem;
+  white-space: nowrap;
+}
+
+.userName a:hover,
+.logout a:hover {
+  color: orange;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+}
+
+.footer {
+  height: 2rem;
+  line-height: 2rem;
+  background: #24282c;
+  color: white;
+  padding: 0 2rem;
 }
