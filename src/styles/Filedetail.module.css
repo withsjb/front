@@ -47,6 +47,11 @@
   margin-right: auto;
 }
 
+.filecard h2 {
+  font-size: 30px;
+  margin: auto;
+}
+
 .modal {
   position: absolute;
   background-color: white;
