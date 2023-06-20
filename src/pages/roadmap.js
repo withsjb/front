@@ -115,7 +115,7 @@ export default function Roadmap() {
               <div className={Styles.roadimgbox}>
                 <img
                   className={Styles.roadimg}
-                  src="images/viinstall3.jpg"
+                  src="images/viinstall3.JPG"
                 ></img>
                 <img
                   className={Styles.roadimg}
