@@ -15,6 +15,7 @@ const FileDetail = () => {
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
   const [concepts, setConcepts] = useState([]);
   const [updatedIndex, setUpdatedIndex] = useState(-1);
+  const [timerId, setTimerId] = useState();
 
   const { fileId } = useParams();
   const navigate = useNavigate();
@@ -142,41 +143,31 @@ const FileDetail = () => {
   };
 
   const showDefinition = (term, e) => {
-    const definition = findMatchingTerm(term);
-    setModalContent(definition);
+    const matchingTerm = findMatchingTerm(term);
+    if (matchingTerm) {
+      setModalContent(matchingTerm);
 
-    const spanElement = document.createElement("span");
-    spanElement.style.color = "blue";
-    const highlightedText = document.createTextNode(term);
-    spanElement.appendChild(highlightedText);
+      const wordElement = e.currentTarget;
+      const wordParentElement = wordElement.parentElement;
+      const { right, top } = wordElement.getBoundingClientRect();
+      const modalLeft = right + 10;
+      const modalTop = top;
 
-    const wordElement = e.currentTarget; // 클릭된 단어가 있는 요소를 가져옴
-    const wordParentElement = wordElement.parentElement; // 단어를 감싸는 상위 요소를 가져옴
-    wordParentElement.appendChild(spanElement); // span 요소를 상위 요소에 추가하여 위치 정보를 얻음
-
-    const rect = spanElement.getBoundingClientRect(); // 상위 요소의 위치와 크기 정보를 가져옴
-    const { right, top } = rect;
-    const modalLeft = right + 10; // 상위 요소의 오른쪽에서 10px 오른쪽으로 이동
-    const modalTop = top; // 상위 요소의 상단을 그대로 유지
-
-    wordParentElement.removeChild(spanElement); // 위치 정보를 얻은 후에 span 요소를 제거함
-
-    const adjustedModalLeft = modalLeft - spanElement.offsetWidth; // 모달의 왼쪽 위치를 조정
-    setModalPosition({ left: adjustedModalLeft, top: modalTop });
-    setShowModal(true);
+      const adjustedModalLeft = modalLeft - wordElement.offsetWidth;
+      setModalPosition({ left: adjustedModalLeft, top: modalTop });
+      setShowModal(true);
+    } else {
+      hideDefinition(); // 추가된 부분: 일치하는 정의가 없는 경우 모달을 숨깁니다.
+    }
   };
 
-  const hideDefinition = () => {
-    setShowModal(false);
-  };
-
-  const handleNewEntrySubmit = (event) => {
-    event.preventDefault();
-    const contentWithHighlight = content.replace(
-      new RegExp(`(${terms.map((term) => term.term).join("|")})`, "gi"),
-      "<span style='color: blue'>$&</span>"
-    );
-    setContent(contentWithHighlight);
+  const hideDefinition = (event) => {
+    const modalElement = document.getElementById("modal");
+    const isMouseOverModal =
+      modalElement && modalElement.contains(event.target);
+    if (!isMouseOverModal) {
+      setShowModal(false);
+    }
   };
 
   const scrollToConcept = (conceptIndex) => {
@@ -202,6 +193,7 @@ const FileDetail = () => {
 
   return (
     <div className={Styles.filebody}>
+      <h2>{file.name}</h2>
       <input
         type="text"
         placeholder="컨셉 입력"
@@ -237,7 +229,6 @@ const FileDetail = () => {
         </ul>
       </div>
       <div className={Styles.filecard}>
-        <h2>{file.name}</h2>
         {sortedEntries.map((entry, index) => (
           <div key={index} className={Styles.contentItem}>
             {entry.concept.trim() !== "" && index !== updatedIndex && (
@@ -262,18 +253,25 @@ const FileDetail = () => {
                   key={lineIndex}
                   onMouseEnter={(e) => showDefinition(line, e)}
                   onMouseLeave={hideDefinition}
-                  dangerouslySetInnerHTML={{
-                    __html: line.replace(
-                      new RegExp(
-                        `(${terms
-                          .map((term) => term.term.replace(/([()])/g, "\\$1"))
-                          .join("|")})`,
-                        "gi"
-                      ),
-                      "<span style='color: blue'>$&</span>"
-                    ),
-                  }}
-                />
+                >
+                  {line.split(" ").map((word, wordIndex) => {
+                    const matchingTerm = findMatchingTerm(word);
+                    if (matchingTerm) {
+                      return (
+                        <span
+                          key={wordIndex}
+                          style={{ color: "blue" }}
+                          onMouseEnter={(e) => showDefinition(word, e)}
+                          onMouseLeave={hideDefinition}
+                        >
+                          {word}
+                        </span>
+                      );
+                    } else {
+                      return <span key={wordIndex}>{word}</span>;
+                    }
+                  })}
+                </div>
               ))}
             </div>
             <div className={Styles.photobox}>
