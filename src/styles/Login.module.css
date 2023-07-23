@@ -1,17 +1,21 @@
+/* login 페이지의 전체적인 틀 css*/
+
 .body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(137, 184, 254);
+  background-color: rgb(240, 245, 255);
   height: 100vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/*배경 설정*/
 
 .title {
   font-size: 24pt;
   color: black;
   text-align: center;
 }
+/* 제목 text설정*/
 
 .formbox {
   background-color: white;
@@ -22,61 +26,93 @@
   flex-direction: column;
   text-align: left;
   margin: 10px;
-  padding: 50px;
+  padding: 20px;
   padding-left: 10px;
   font-weight: 700;
 }
+/*login, password의 폼 형식*/
 
 .container {
   background-color: white;
   padding: 1rem 3rem;
   padding-bottom: 2rem;
   border-radius: 0.7rem;
-  border-style: dashed;
-  border-color: black;
+  border-style: solid 1px;
+  border-color: gray;
   border-width: 3px;
   font-size: 12pt;
+  box-shadow: 0px 3px 10px #444444;
+  width: 400px;
 }
+/* 내부 컨텐츠들*/
+
+.text_container {
+  margin-right: 200px;
+}
+/*로그인 화면 옆의 설명 란 컨테이너*/
+
+.text_img {
+  position: center;
+  width: 380px;
+  height: 120px;
+}
+/*로그인 화면 옆의 설명 란의 이미지*/
+
+.text_title {
+  font-size: 24pt;
+  padding-left: 5px;
+}
+/*로그인 화면 옆의 설명 제목*/
+
+.text_contents {
+  padding-left: 5px;
+  margin-top: 5px;
+  font-size: 12pt;
+  width: 650px;
+}
+/*로그인 화면 옆의 설명 란*/
 
 .libtn {
-  background-color: rgb(1, 76, 102);
+  background-color: #014c66;
   color: white;
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.7rem;
-  width: 300px;
+  width: 250px;
   margin: auto;
 }
 
 .rgbtn {
-  background-color: rgb(1, 76, 102);
+  background-color: #014c66;
   color: white;
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.7rem;
-  width: 300px;
+  width: 250px;
   margin: auto;
 }
 
 button {
-  background-color: rgb(1, 76, 102);
+  background-color: #014c66;
   color: white;
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.7rem;
-  width: auto;
+  width: 400px;
   margin: auto;
 }
+
 span a {
   text-decoration: none;
-  color: lightblue;
+  color: #014c66;
 }
+/*하단 register,login 하이퍼링크 버튼*/
 
 .forma {
   display: flex;
@@ -84,9 +120,10 @@ span a {
   font-size: 10pt;
   text-align: center;
 }
+/*login 과 password의 container*/
 
-.forma div {
+/*.forma div {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-}
+} */

@@ -23,7 +23,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "/api/register",
+        "http://localhost:4000/register",
         {
           ...values,
         },
@@ -45,14 +45,16 @@ function Register() {
   return (
     <div className={Styles.body}>
       <div className={Styles.container}>
-        <h2>Register Account</h2>
+        <div className={Styles.title}>
+          <h2>Register</h2>
+        </div>
         <form className={Styles.forma} onSubmit={(e) => handleSubmit(e)}>
           <div className={Styles.formbox}>
             <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder=" abcd@email.co.kr"
               onChange={(e) =>
                 setValues({ ...values, [e.target.name]: e.target.value })
               }
@@ -62,16 +64,19 @@ function Register() {
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              placeholder="Password"
               name="password"
+              placeholder=" 대,소문자 구분 6~12자리 입력"
               onChange={(e) =>
                 setValues({ ...values, [e.target.name]: e.target.value })
               }
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className={Styles.rgbtn} type="submit">
+            {" "}
+            가입하기{" "}
+          </button>
           <span>
-            Already have an account ?<Link to="/login"> Login</Link>
+            이미 계정이 있으신가요 ?<Link to="/login"> 로그인하기 </Link>
           </span>
         </form>
         <ToastContainer />

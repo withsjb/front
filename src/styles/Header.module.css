@@ -8,31 +8,57 @@
 .navli {
   list-style: none;
   color: white;
+  width: auto;
+  padding-left: 70px;
 }
 
+.navli::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 30px;
+  background: black;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+/*navli hover 애니메이션 효과*/
+
+.navli:hover::after {
+  transform: scaleX(1);
+}
+/*navli hover 애니메이션 기능*/
+
 .navbar {
-  height: 10vh;
-  box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+  background-color: white;
+  height: 14vh;
+  /*box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;*/
   line-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #01073d;
   z-index: 10000;
   position: sticky;
   top: 0px;
+  text-align: center;
+  padding: 10px;
+  line-height: 100px;
 }
+/*상단 메뉴*/
 
 .logo {
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 10px;
   color: white;
   display: flex;
 }
 
 .logo img {
   width: 270px;
-  height: 100px;
+  height: 80px;
 }
 
 .logo:hover {
@@ -40,14 +66,17 @@
 }
 
 .dropmenu {
-  background-color: #a9a9f5;
+  background-color: white;
+  /*color:black;*/
   width: 180px;
-  position: absolute;
   line-height: 45px;
   top: 65px;
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  margin-top: 36px;
+  margin-left: -30px;
+  box-shadow: 0 10px 8px rgb(40, 40, 40);
 }
 
 .dropmenu li {
@@ -55,28 +84,35 @@
   display: block;
   padding: 0 0 0 15px;
   font-weight: 400;
+  height: auto;
+  border: 1px white solid;
 }
 
 .dropmenu li:hover {
-  background-color: #01073d;
+  background-color: gray;
+  scale: 10px;
 }
+/*마우스 hover시*/
 
 .navlinks {
+  background-color: white;
+  color: gray;
   display: flex;
   justify-content: flex-end;
   width: 75%;
   margin-right: 10%;
+  font-weight: bold;
 }
 
 .navlinks li {
-  color: white;
-  font-size: 20px;
+  color: black;
   padding: 0 10px;
   margin: auto;
   cursor: pointer;
   text-transform: capitalize;
   text-decoration: none;
 }
+/*navbar 상단메뉴 속성*/
 
 .navlinks li:hover .dropmenu {
   opacity: 1;

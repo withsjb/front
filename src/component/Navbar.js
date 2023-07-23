@@ -34,7 +34,7 @@ const Navbar = () => {
       <nav className={Styles.navbar}>
         <Link to="/">
           <h3 className={Styles.logo}>
-            <img src="images/logo.png"></img>
+            <img src="images/logo1.png"></img>
           </h3>
         </Link>
         <ul
@@ -48,15 +48,35 @@ const Navbar = () => {
                 {" "}
                 <li>roadmap</li>{" "}
               </Link>
+              <Link to="/roadmap">
+                {" "}
+                <li>batch file</li>{" "}
+              </Link>
+              <Link to="/select">
+                <li>select</li>
+              </Link>
             </ul>{" "}
           </li>
 
           <li className={Styles.navli}>
             OS
             <ul className={Styles.dropmenu}>
-              <Link to="/test">
+              <Link to="/roadmap">
                 {" "}
-                <li>개념 정리</li>{" "}
+                <li>Windows 기초</li>{" "}
+              </Link>
+              <Link to="/linuxstudy">
+                {" "}
+                <li>Linux 기초</li>
+              </Link>
+              <Link to="/select">
+                <li>Windows</li>
+              </Link>
+              <Link to="/select">
+                <li>Linux</li>
+              </Link>
+              <Link to="/select">
+                <li>Testbed</li>
               </Link>
             </ul>{" "}
           </li>
@@ -66,8 +86,23 @@ const Navbar = () => {
             <ul className={Styles.dropmenu}>
               <Link to="/quizmain">
                 {" "}
-                <li>문제 풀이</li>{" "}
+                <li>wargame1</li>{" "}
               </Link>
+              <Link to="/page1">
+                {" "}
+                <li>wargame1</li>{" "}
+              </Link>
+            </ul>{" "}
+          </li>
+
+          <li className={Styles.navli}>
+            community
+            <ul className={Styles.dropmenu}>
+              <Link to="/">
+                <li>community1</li>
+              </Link>
+              <li>community2</li>
+              <li>community3</li>
             </ul>{" "}
           </li>
 
@@ -90,9 +125,11 @@ const Navbar = () => {
           </li>
 
           <Link to="/login">
-            <li className={Styles.navli}>login</li>
+            <li>Login</li>
           </Link>
-          <button onClick={logOut}>Log out</button>
+          <Link to="/login">
+            <li onClick={logOut}>Logout</li>
+          </Link>
         </ul>
         <button
           className={Styles.mobilemenu}
