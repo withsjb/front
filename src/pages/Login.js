@@ -23,7 +23,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        "/api/login",
         {
           ...values,
         },
