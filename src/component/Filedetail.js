@@ -116,7 +116,7 @@ const FileDetail = () => {
 
   const addContentAndPhoto = (formData) => {
     axios
-      .post(`/api/linux/files/${fileId}/content`, formData)
+      .post(`/api/linux/files/${fileId}/addcontent`, formData)
       .then((response) => {
         console.log(response.data);
         setFile(response.data);
