@@ -121,6 +121,10 @@ const Navbar = () => {
                 {" "}
                 <li>리눅스 개념추가</li>{" "}
               </Link>
+              <Link to="/testbed">
+                {" "}
+                <li>TestBed 추가</li>{" "}
+              </Link>
             </ul>
           </li>
 

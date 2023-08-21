@@ -23,7 +23,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/register",
+        "/api/register",
         {
           ...values,
         },

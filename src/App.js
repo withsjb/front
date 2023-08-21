@@ -32,71 +32,72 @@ import AddProblem from "./component/problem/AddProblem";
 import Changeproblem from "./component/problem/changeproblem";
 import { CheckUserExist } from "./helper/helper";
 import Test from "./pages/test";
-
+import Wiki from "./pages/wiki";
 import Termadd from "./pages/termadd";
 import Linux from "./pages/Linux";
 import FileDetail from "./component/Filedetail";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import Dashboard from "./pages/dashboard";
+import TestBed from "./pages/TestBed";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/test" element={<Test />}></Route>
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/" element={<Secret />} />
-          <Route path="/mainpage" element={<Mainpage />}></Route>
-          <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/getquestion" element={<Getquestion />}></Route>
-          <Route path="/quizmain" element={<Quizmain />}></Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/test" element={<Test />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<Secret />} />
+        <Route path="/mainpage" element={<Mainpage />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/getquestion" element={<Getquestion />}></Route>
+        <Route path="/quizmain" element={<Quizmain />}></Route>
 
-          <Route
-            path="/quiz"
-            element={
-              <CheckUserExist>
-                {" "}
-                <Quiz />{" "}
-              </CheckUserExist>
-            }
-          ></Route>
-          <Route
-            path="/result"
-            element={
-              <CheckUserExist>
-                {" "}
-                <Result />{" "}
-              </CheckUserExist>
-            }
-          ></Route>
-          <Route path="/problem" element={<Problem />}></Route>
-          <Route path="/addproblem" element={<AddProblem />}></Route>
-          <Route path="/changeproblem" element={<Changeproblem />}></Route>
-          <Route path="/page2" element={<Page2 />}></Route>
-          <Route path="/linuxstudy" element={<Linuxstudy />}></Route>
-          <Route path="/roadmap" element={<Roadmap />}></Route>
-          <Route path="/roadmapdetail" element={<Roadmapdetail />}></Route>
-          <Route path="/roaddetaila" element={<Roaddetaila />}></Route>
-          <Route path="/roaddetailb" element={<Roaddetailb />}></Route>
-          <Route path="/roaddetailc" element={<Roaddetailc />}></Route>
-          <Route path="/roaddetaild" element={<Roaddetaild />}></Route>
-          <Route path="/header" element={<Navbar />}></Route>
-          <Route path="/slidemain" element={<Slidemain />}></Route>
-          <Route path="/Modal" element={<Modal />}></Route>
-          <Route path="/book" element={<Book />}></Route>
-          <Route path="/libook" element={<Libook />}></Route>
-          <Route path="/modalknow" element={<Modalknow />}></Route>
-          <Route path="/side" element={<Side />}></Route>
-          <Route path="/page" element={<Page />}></Route>
-          <Route path="/select" element={<Select />}></Route>
-
-          <Route path="/termadd" element={<Termadd />}></Route>
-          <Route path="/linux" element={<Linux />}></Route>
-          <Route path="/linux/:fileId" element={<FileDetail />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+        <Route
+          path="/quiz"
+          element={
+            <CheckUserExist>
+              {" "}
+              <Quiz />{" "}
+            </CheckUserExist>
+          }
+        ></Route>
+        <Route
+          path="/result"
+          element={
+            <CheckUserExist>
+              {" "}
+              <Result />{" "}
+            </CheckUserExist>
+          }
+        ></Route>
+        <Route path="/problem" element={<Problem />}></Route>
+        <Route path="/addproblem" element={<AddProblem />}></Route>
+        <Route path="/changeproblem" element={<Changeproblem />}></Route>
+        <Route path="/page2" element={<Page2 />}></Route>
+        <Route path="/linuxstudy" element={<Linuxstudy />}></Route>
+        <Route path="/roadmap" element={<Roadmap />}></Route>
+        <Route path="/roadmapdetail" element={<Roadmapdetail />}></Route>
+        <Route path="/roaddetaila" element={<Roaddetaila />}></Route>
+        <Route path="/roaddetailb" element={<Roaddetailb />}></Route>
+        <Route path="/roaddetailc" element={<Roaddetailc />}></Route>
+        <Route path="/roaddetaild" element={<Roaddetaild />}></Route>
+        <Route path="/header" element={<Navbar />}></Route>
+        <Route path="/slidemain" element={<Slidemain />}></Route>
+        <Route path="/Modal" element={<Modal />}></Route>
+        <Route path="/book" element={<Book />}></Route>
+        <Route path="/libook" element={<Libook />}></Route>
+        <Route path="/modalknow" element={<Modalknow />}></Route>
+        <Route path="/side" element={<Side />}></Route>
+        <Route path="/page" element={<Page />}></Route>
+        <Route path="/select" element={<Select />}></Route>
+        <Route path="/wiki" element={<Wiki />}></Route>
+        <Route path="/termadd" element={<Termadd />}></Route>
+        <Route path="/linux" element={<Linux />}></Route>
+        <Route path="/linux/:fileId" element={<FileDetail />} />
+        <Route path="/testbed" element={<TestBed />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
