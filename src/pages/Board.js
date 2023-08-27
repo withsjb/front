@@ -21,11 +21,12 @@ function Board() {
       <div>
         {posts.map((post) => (
           <div key={post._id}>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
             <button onClick={() => navigate(`/postdetail/${post._id}`)}>
-              상세 보기
+              {post.title}
             </button>{" "}
+            <h2>{post.date}</h2>
+            <h2>{post.views}</h2>
+            <h2>{post.likes}</h2>
             {/* navigate 함수 사용 */}
           </div>
         ))}
