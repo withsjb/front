@@ -17,7 +17,7 @@ const Quiz = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:4000/winquiz");
+      const result = await axios.get("/api/winquiz");
       setQuizList(result.data);
     };
     fetchData();
@@ -38,12 +38,10 @@ const Quiz = () => {
 
   const deleteQuestion = async (quizId, questionId) => {
     try {
-      const result = await axios.delete(
-        `http://localhost:4000/winquiz/${quizId}/${questionId}`
-      );
+      const result = await axios.delete(`/api/winquiz/${quizId}/${questionId}`);
       console.log(result.data); // 서버로부터 받은 응답 데이터 출력
       // 삭제 요청에 성공하면 quizList를 다시 불러옵니다.
-      const updatedQuizList = await axios.get("http://localhost:4000/winquiz");
+      const updatedQuizList = await axios.get("/api/winquiz");
       setQuizList(updatedQuizList.data);
     } catch (error) {
       console.error(error.message);
@@ -120,7 +118,7 @@ const Quiz = () => {
       formData.append("photo", questionToEdit.photo);
 
       const result = await axios.put(
-        `http://localhost:4000/winquiz/${selectedQuestion.quizId}/${selectedQuestion.id}`,
+        `/api/winquiz/${selectedQuestion.quizId}/${selectedQuestion.id}`,
         formData,
         {
           headers: {
@@ -131,7 +129,7 @@ const Quiz = () => {
 
       console.log(result.data); // 서버로부터 받은 응답 데이터 출력
       // 수정 요청에 성공하면 quizList를 다시 불러옵니다.
-      const updatedQuizList = await axios.get("http://localhost:4000/winquiz");
+      const updatedQuizList = await axios.get("/api/winquiz");
       setQuizList(updatedQuizList.data);
       closeModal();
     } catch (error) {
@@ -159,7 +157,7 @@ const Quiz = () => {
               {quiz.photo.find((_, photoIndex) => photoIndex === index) && (
                 <img
                   className={Styles.adminimg}
-                  src={`http://localhost:4000/uploads/${quiz.photo.find(
+                  src={`/api/uploads/${quiz.photo.find(
                     (_, photoIndex) => photoIndex === index
                   )}`}
                   alt={`Question ${question.id} Photo`}
