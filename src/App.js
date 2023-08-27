@@ -36,6 +36,8 @@ import Test from "./pages/test";
 
 import Termadd from "./pages/termadd";
 import Linux from "./pages/Linux";
+import Window from "./pages/Window";
+import WinFileDetail from "./component/winfiledetail";
 import FileDetail from "./component/Filedetail";
 import Dashboard from "./pages/dashboard";
 import TestBed from "./pages/TestBed";
@@ -100,7 +102,9 @@ export default function App() {
 
         <Route path="/termadd" element={<Termadd />}></Route>
         <Route path="/linux" element={<Linux />}></Route>
+        <Route path="/window" element={<Window />}></Route>
         <Route path="/linux/:fileId" element={<FileDetail />} />
+        <Route path="/window/:fileId" element={<WinFileDetail />} />
         <Route path="/testbed" element={<TestBed />}></Route>
         <Route exact path="/board" element={<Board />} />
         <Route exact path="/boarddetail" element={<BoardDetail />} />
