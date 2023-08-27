@@ -17,7 +17,7 @@ const App = () => {
 
   const fetchWinFiles = () => {
     axios
-      .get("http://localhost:4000/win/files")
+      .get("/api/win/files")
       .then((response) => {
         setLinuxFiles(response.data);
       })
@@ -33,7 +33,7 @@ const App = () => {
   const addFile = () => {
     // 새로운 파일 추가 요청
     axios
-      .post("http://localhost:4000/win/files", {
+      .post("/api/win/files", {
         name: newFileName,
       })
       .then((response) => {
