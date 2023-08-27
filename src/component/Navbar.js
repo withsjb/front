@@ -121,6 +121,10 @@ const Navbar = () => {
                 {" "}
                 <li>단어 주입</li>{" "}
               </Link>
+              <Link to="/window">
+                {" "}
+                <li>윈도우 개념추가</li>{" "}
+              </Link>
               <Link to="/Linux">
                 {" "}
                 <li>리눅스 개념추가</li>{" "}
