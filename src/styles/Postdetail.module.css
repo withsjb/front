@@ -1,0 +1,145 @@
+.postbody {
+  background-color: white;
+  height: 60em;
+  box-sizing: content-box;
+}
+
+.posttitle {
+  background-color: white;
+  color: black;
+  font-size: 30pt;
+  padding: 10px 0 0 6em;
+}
+/*title*/
+
+.bar {
+  position: relative;
+  width: 1200px;
+  height: 3px;
+  margin-top: 10px;
+  margin-left: 11%;
+  background: linear-gradient(120deg, purple, skyblue);
+  margin-bottom: 20px;
+}
+/*title 아래의 바*/
+
+.ptitle {
+  font-size: 24pt;
+  margin-top: 2em;
+  margin-left: 7em;
+  color: purple;
+  width: auto;
+  height: 50px;
+  border: 2px solid purple;
+  padding: 5px 10px 5px 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  display: inline-block;
+}
+/*게시글 제목*/
+
+.pcontents {
+  position: relative;
+  font-size: 16pt;
+  color: black;
+  width: auto;
+  margin-top: 2em;
+  margin-left: 13em;
+}
+/*게시글 내용*/
+
+.postinfo {
+  width: 90%;
+  font-size: 9pt;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 11%;
+}
+/*작성자, 조회수, 좋아요 수 목록 출력 바*/
+
+.writer {
+  position: absolute;
+  left: 18%;
+}
+
+.views {
+  margin-left: 10%;
+}
+
+.dates {
+  position: absolute;
+  right: 3%;
+}
+/*------------postinfo 내용---------------*/
+
+.likebtn {
+  background: linear-gradient(120deg, skyblue, pink);
+  width: auto;
+  height: fit-content;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  left: 46.5%;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 70px;
+}
+/*좋아요 버튼*/
+
+.likebtn:hover {
+  transform: scale(1.1);
+  background-color: skyblue;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.posth4 {
+  margin-left: 19%;
+  margin-top: 10%;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.commentform {
+  width: 1000px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 16em;
+  padding: 5px 10px;
+  border: gray 1px solid;
+  border-radius: 5px;
+}
+/*댓글 작성란*/
+
+.commentsbtn {
+  width: 60px;
+  height: 48px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  right: 12%;
+  bottom: 29.5%;
+}
+/*댓글 다는 버튼*/
+
+.commentsbtn:hover {
+  background-color: black;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.commentli {
+  background-color: white;
+  color: black;
+  width: 1200px;
+  height: 60px;
+  font-size: 11pt;
+  padding: 20px 60px;
+  margin-left: 10%;
+  border-bottom: lightgray 1px solid;
+}
+/*댓글 목록*/

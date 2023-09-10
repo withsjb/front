@@ -44,6 +44,7 @@ import TestBed from "./pages/TestBed";
 import Board from "./pages/Board";
 import BoardDetail from "./component/Board/Boarddetail";
 import PostDetail from "./component/Board/Postdetail";
+import UserFileDetail from "./component/userstydyfile/UserFiledetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
@@ -104,6 +105,8 @@ export default function App() {
         <Route path="/linux" element={<Linux />}></Route>
         <Route path="/window" element={<Window />}></Route>
         <Route path="/linux/:fileId" element={<FileDetail />} />
+        <Route path="/linux/user/:fileId" element={<UserFileDetail />} />
+
         <Route path="/window/:fileId" element={<WinFileDetail />} />
         <Route path="/testbed" element={<TestBed />}></Route>
         <Route exact path="/board" element={<Board />} />

@@ -6,7 +6,7 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-import Styles from "../styles/Header.module.css";
+import Styles from "../styles/Navbar.module.css";
 import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { useCookies } from "react-cookie";
@@ -20,14 +20,29 @@ const Navbar = () => {
   };
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]); //usestate로 변수 2개 설정 가능한듯
+  const [userEmail, setUserEmail] = useState();
+
   useEffect(() => {
-    const verifyUser = async () => {
-      if (!cookies.jwt) {
-        navigate("/login");
+    const fetchUserEmail = async () => {
+      if (cookies.jwt) {
+        try {
+          const { data } = await axios.post(
+            "/api",
+            {},
+            {
+              withCredentials: true,
+            }
+          );
+          if (data.status) {
+            setUserEmail(data.user);
+          }
+        } catch (error) {
+          console.error(error);
+        }
       }
     };
-    verifyUser();
-  }, [cookies, navigate, removeCookie]);
+    fetchUserEmail();
+  }, [cookies]);
 
   return (
     <>
@@ -48,11 +63,8 @@ const Navbar = () => {
                 {" "}
                 <li>roadmap</li>{" "}
               </Link>
-              <Link to="/roadmap">
-                {" "}
-                <li>batch file</li>{" "}
-              </Link>
-              <Link to="/select">
+
+              <Link to="/test">
                 <li>select</li>
               </Link>
             </ul>{" "}
@@ -69,13 +81,8 @@ const Navbar = () => {
                 {" "}
                 <li>Linux 기초</li>
               </Link>
-              <Link to="/select">
-                <li>Windows</li>
-              </Link>
-              <Link to="/select">
-                <li>Linux</li>
-              </Link>
-              <Link to="/select">
+
+              <Link to="/testbed">
                 <li>Testbed</li>
               </Link>
             </ul>{" "}
@@ -135,9 +142,8 @@ const Navbar = () => {
               </Link>
             </ul>
           </li>
-
           <Link to="/login">
-            <li>Login</li>
+            <span>{userEmail || "로딩 중..."}</span>
           </Link>
           <Link to="/login">
             <li onClick={logOut}>Logout</li>
