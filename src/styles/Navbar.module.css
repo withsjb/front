@@ -10,6 +10,11 @@
   color: white;
   width: auto;
   padding-left: 70px;
+  border-bottom: white;
+}
+
+.navli_lg {
+  border-bottom: white;
 }
 
 .navli::after {
@@ -35,7 +40,6 @@
 .navbar {
   background-color: white;
   height: 14vh;
-  /*box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;*/
   line-height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -46,6 +50,7 @@
   text-align: center;
   padding: 10px;
   line-height: 100px;
+  border-bottom: lightgray solid 1px;
 }
 /*상단 메뉴*/
 
@@ -70,13 +75,12 @@
   /*color:black;*/
   width: 180px;
   line-height: 45px;
-  top: 65px;
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  margin-top: 36px;
+  visibility: collapse;
   margin-left: -30px;
-  box-shadow: 0 10px 8px rgb(40, 40, 40);
+  margin-top: 2px;
+  box-shadow: 3px 10px 10px -2px rgb(100, 100, 100);
+  left: -20px;
 }
 
 .dropmenu li {
@@ -85,7 +89,7 @@
   padding: 0 0 0 15px;
   font-weight: 400;
   height: auto;
-  border: 1px white solid;
+  border: none;
 }
 
 .dropmenu li:hover {
@@ -117,7 +121,7 @@
 .navlinks li:hover .dropmenu {
   opacity: 1;
   visibility: visible;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .mobilemenu {
@@ -125,6 +129,17 @@
   background: none;
   font-size: 20px;
   display: none;
+}
+
+.logOut {
+  border-bottom: none;
+}
+
+.logOut:hover {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

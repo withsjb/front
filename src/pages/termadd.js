@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <div className={Styles.tbody}>
-      <h1 className={Styles.page_name}> Term add page </h1>
+      <h1 className={Styles.termtitle}> Term add page </h1>
       <div className={Styles.addExp}>
         <h2> - This page is to add terms and definitions. </h2>
       </div>
@@ -97,7 +97,7 @@ const App = () => {
       <ul className={Styles.t_ul}>
         {terms.map((term) => (
           <li className={Styles.t_li} key={term._id}>
-            <h2>{term.term}</h2>: {term.definition}
+            <h2> {term.term}</h2>: {term.definition}
           </li>
         ))}
       </ul>

@@ -27,7 +27,7 @@ const Navbar = () => {
       if (cookies.jwt) {
         try {
           const { data } = await axios.post(
-            "/api",
+            "http://localhost:4000",
             {},
             {
               withCredentials: true,
@@ -93,11 +93,11 @@ const Navbar = () => {
             <ul className={Styles.dropmenu}>
               <Link to="/quizmain">
                 {" "}
-                <li>wargame1</li>{" "}
+                <li>Windows quiz</li>{" "}
               </Link>
               <Link to="/page1">
                 {" "}
-                <li>wargame1</li>{" "}
+                <li>Linux quiz</li>{" "}
               </Link>
             </ul>{" "}
           </li>
@@ -106,10 +106,9 @@ const Navbar = () => {
             community
             <ul className={Styles.dropmenu}>
               <Link to="/board">
-                <li>community1</li>
+                <li>자유게시판</li>
               </Link>
-              <li>community2</li>
-              <li>community3</li>
+              <li>Q&A</li>
             </ul>{" "}
           </li>
 
@@ -146,7 +145,9 @@ const Navbar = () => {
             <span>{userEmail || "로딩 중..."}</span>
           </Link>
           <Link to="/login">
-            <li onClick={logOut}>Logout</li>
+            <li className={Styles.logOut} onClick={logOut}>
+              Logout
+            </li>
           </Link>
         </ul>
         <button

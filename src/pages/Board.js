@@ -64,26 +64,30 @@ function Board() {
           </div>
         ))}
       </div>
-      <div>
+      <div className={Styles.pgbody}>
         <button
-          className={Styles.nevebut}
+          className={Styles.pgback}
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
         >
-          이전 페이지
+          이전
         </button>
         {/* 페이지 번호 목록 렌더링 */}
         {pageNumbers.map((pageNumber) => (
           <button
-            className={Styles.pagebutton}
+            className={Styles.pgselect}
             key={pageNumber}
             onClick={() => setPage(pageNumber)}
           >
             {pageNumber}
           </button>
         ))}
-        <button onClick={() => setPage(page + 1)} disabled={page >= totalPages}>
-          다음 페이지
+        <button
+          className={Styles.pgnext}
+          onClick={() => setPage(page + 1)}
+          disabled={page >= totalPages}
+        >
+          다음
         </button>
       </div>
     </div>
