@@ -8,6 +8,7 @@ const App = () => {
   const [newFileName, setNewFileName] = useState("");
   const [newFileContent, setNewFileContent] = useState("");
   const [newFileConcept, setNewFileConcept] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +29,16 @@ const App = () => {
 
   const handleAddFile = () => {
     addFile();
+  };
+
+  const deleteFile = async (fileId) => {
+    try {
+      const response = await axios.delete(`/api/win/files/${fileId} `);
+      console.log(response.data);
+      fetchWinFiles();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const addFile = () => {
@@ -51,6 +62,10 @@ const App = () => {
       });
   };
 
+  const filefilter = linuxFiles.filter((file) =>
+    file.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={Styles.body}>
       <div>
@@ -69,9 +84,20 @@ const App = () => {
             추가하기{" "}
           </button>
         </div>
+
+        <div className={Styles.search_form}>
+          <input
+            className={Styles.input}
+            type="text"
+            placeholder="검색할 내용 입력"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+        </div>
+
         <div className={Styles.form_con}>
           <ul>
-            {linuxFiles.map((file) => (
+            {filefilter.map((file) => (
               <li className={Styles.contents} key={file._id}>
                 <button
                   className={Styles.con_btn}
@@ -79,6 +105,7 @@ const App = () => {
                 >
                   {file.name}
                 </button>
+                <button onClick={() => deleteFile(file._id)}>삭제</button>
               </li>
             ))}
           </ul>
