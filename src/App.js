@@ -46,12 +46,12 @@ import BoardDetail from "./component/Board/Boarddetail";
 import PostDetail from "./component/Board/Postdetail";
 import UserFileDetail from "./component/userstydyfile/UserFiledetail";
 import { Provider } from "react-redux";
-import store from "./your-redux-store";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
-    <Provider store={store}>
+    <Provider>
       <BrowserRouter>
         <Routes>
           <Route path="/test" element={<Test />}></Route>
