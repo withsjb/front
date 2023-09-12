@@ -44,6 +44,9 @@ import TestBed from "./pages/TestBed";
 import Board from "./pages/Board";
 import BoardDetail from "./component/Board/Boarddetail";
 import PostDetail from "./component/Board/Postdetail";
+import QnABoard from "./pages/QnAboard";
+import QnABoardDetail from "./component/Board/QnABoarddetail";
+import QnAPostDetail from "./component/Board/QnAPostdetail";
 import UserFileDetail from "./component/userstydyfile/UserFiledetail";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -115,6 +118,9 @@ export default function App() {
           <Route exact path="/board" element={<Board />} />
           <Route exact path="/boarddetail" element={<BoardDetail />} />
           <Route exact path="/postdetail/:id" element={<PostDetail />} />
+          <Route exact path="/qnaboard" element={<QnABoard />} />
+          <Route exact path="/qnaBoarddetail" element={<QnABoardDetail />} />
+          <Route exact path="/qnaPostdetail/:id" element={<QnAPostDetail />} />
         </Routes>
       </BrowserRouter>
     </Provider>
