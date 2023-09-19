@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Styles from "../../styles/Filedetail.module.css";
-import Navbar from "../../component/Navbar";
+import Navbar from "../Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const FileDetail = () => {
   const [file, setFile] = useState({
@@ -79,7 +82,7 @@ const FileDetail = () => {
       .then((response) => {
         const photoURLs = response.data.photos.map((photo) => {
           if (photo) {
-            return `${photo}`;
+            return `/api/uploads/${photo}`;
           } else {
             return "";
           }
@@ -286,12 +289,28 @@ const FileDetail = () => {
     <>
       <Navbar />
       <div className={Styles.filebody}>
-        <h2>{file.name}</h2>
+        <h2 className={Styles.filetitle}>
+          {" "}
+          Linux{" "}
+          <i className={Styles.icon}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </i>
+        </h2>
+        <h3 className={Styles.filesub}>
+          <i className={Styles.icon}>
+            <FontAwesomeIcon icon={faBook} />
+          </i>{" "}
+          {file.name}
+        </h3>
 
         <div className={Styles.conceptList}>
           <ul>
             {concepts.map((concept, index) => (
-              <li key={index} onClick={() => scrollToConcept(index + 1)}>
+              <li
+                className={Styles.sideli}
+                key={index}
+                onClick={() => scrollToConcept(index + 1)}
+              >
                 {concept}
               </li>
             ))}
@@ -394,7 +413,7 @@ const FileDetail = () => {
                   {entry.concept}
                 </div>
               )}
-              <div className={Styles.filediv}>
+              <div className={Styles.filetext}>
                 {entry.content !== null &&
                   entry.content.split("<br/>").map((line, lineIndex) => (
                     <div

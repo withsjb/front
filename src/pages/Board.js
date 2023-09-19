@@ -57,8 +57,11 @@ function Board() {
               onClick={() => navigate(`/postdetail/${post._id}`)}
             >
               {post.title}
-              <span className={Styles.views}> {post.views} | </span>
-              <span className={Styles.likes}> {post.likes} </span>
+              <span className={Styles.views}>
+                {" "}
+                {post.views} |{" "}
+                <span className={Styles.likes}> {post.likes} </span>
+              </span>
             </button>{" "}
             {/* navigate 함수 사용 */}
           </div>

@@ -47,48 +47,53 @@ function BoardDetail() {
   };
 
   return (
-    <div className={Styles.bbody}>
-      <h2 className={Styles.btitle}>
-        게시글 작성
-        <span className={Styles.btitle2}>매너있는 글쓰기 부탁드려요!</span>
-      </h2>
-      <div className={Styles.bar}></div>
-      <form onSubmit={handlePostSubmit}>
-        <div className={Styles.titletxt1}>제목 : </div>
-        <input
-          className={Styles.titleform}
-          type="text"
-          placeholder="제목을 입력해주세요."
-          value={newPost.title}
-          onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
-        />
-        <br></br>
-        <div className={Styles.titletxt2}>내용 : </div>
-        <textarea
-          className={Styles.textform}
-          placeholder="내용을 입력해주세요."
-          value={newPost.content}
-          onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
-        />{" "}
-        <br></br>
-        <div className={Styles.titletxt3}>작성자 : </div>
-        <input
-          className={Styles.writerform}
-          type="text"
-          placeholder="작성자"
-          value={newPost.author}
-          onChange={(e) => setNewPost({ ...newPost, author: e.target.value })}
-          disabled
-        />{" "}
-        <br></br>
-        <button className={Styles.postuploadbtn} type="submit">
-          작성
-        </button>
-        <Link className={Styles.canclebtn} to="/Board">
-          취소
-        </Link>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className={Styles.bbody}>
+        <h2 className={Styles.btitle}>
+          게시글 작성
+          <span className={Styles.btitle2}>매너있는 글쓰기 부탁드려요!</span>
+        </h2>
+        <div className={Styles.bar}></div>
+        <form onSubmit={handlePostSubmit}>
+          <div className={Styles.titletxt1}>제목 : </div>
+          <input
+            className={Styles.titleform}
+            type="text"
+            placeholder="제목을 입력해주세요.*"
+            value={newPost.title}
+            onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+          />
+          <br></br>
+          <div className={Styles.titletxt2}>내용 : </div>
+          <textarea
+            className={Styles.textform}
+            placeholder="내용을 입력해주세요."
+            value={newPost.content}
+            onChange={(e) =>
+              setNewPost({ ...newPost, content: e.target.value })
+            }
+          />{" "}
+          <br></br>
+          <div className={Styles.titletxt3}>작성자 : </div>
+          <input
+            className={Styles.writerform}
+            type="text"
+            placeholder="작성자"
+            value={newPost.author}
+            onChange={(e) => setNewPost({ ...newPost, author: e.target.value })}
+            disabled
+          />{" "}
+          <br></br>
+          <button className={Styles.postuploadbtn} type="submit">
+            작성
+          </button>
+          <Link className={Styles.canclebtn} to="/Board">
+            취소
+          </Link>
+        </form>
+      </div>
+    </>
   );
 }
 

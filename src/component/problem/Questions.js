@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Styles from "../../styles/Quizmain.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQ } from "@fortawesome/free-solid-svg-icons";
 
 /** Custom Hook */
 import { useFetchQestion } from "../../hooks/FetchQuestion";
@@ -35,12 +37,18 @@ export default function Questions({ onChecked }) {
 
   return (
     <div className={Styles.questions}>
-      <h2 className={Styles.textlight}>{questions?.question}</h2>
+      <h2 className={Styles.textlight}>
+        {" "}
+        <i className={Styles.icon}>
+          <FontAwesomeIcon icon={faQ} /> .
+        </i>{" "}
+        {questions?.question}
+      </h2>
       <h2 className={Styles.textlighta}>{questions?.text}</h2>
 
       <ul key={questions?.id}>
         {questions?.options.map((q, i) => (
-          <li key={i}>
+          <li key={i} className={Styles.answerli}>
             <input
               type="radio"
               value={false}

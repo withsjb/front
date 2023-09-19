@@ -24,7 +24,7 @@ import Navbar from "./component/Navbar";
 import Slidemain from "./component/Slidemain";
 import Modal from "./component/Modal";
 import Book from "./component/Book";
-import Libook from "./component/Libook";
+
 import Modalknow from "./component/Modalknow";
 import Side from "./component/Side";
 import Page from "./component/Page";
@@ -32,8 +32,8 @@ import Select from "./pages/select/select";
 import AddProblem from "./component/problem/AddProblem";
 import Changeproblem from "./component/problem/changeproblem";
 import { CheckUserExist } from "./helper/helper";
-import Test from "./pages/test";
-
+import WinStudy from "./pages/WinStudy";
+import LinStudy from "./pages/LinStudy";
 import Termadd from "./pages/termadd";
 import Linux from "./pages/Linux";
 import Window from "./pages/Window";
@@ -57,7 +57,9 @@ export default function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/test" element={<Test />}></Route>
+          <Route path="/WinStudy" element={<WinStudy />}></Route>
+          <Route path="/LinStudy" element={<LinStudy />}></Route>
+
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
@@ -101,7 +103,7 @@ export default function App() {
           <Route path="/slidemain" element={<Slidemain />}></Route>
           <Route path="/Modal" element={<Modal />}></Route>
           <Route path="/book" element={<Book />}></Route>
-          <Route path="/libook" element={<Libook />}></Route>
+
           <Route path="/modalknow" element={<Modalknow />}></Route>
           <Route path="/side" element={<Side />}></Route>
           <Route path="/page" element={<Page />}></Route>

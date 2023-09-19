@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 :root {
-  --primary-color: #0dff92;
-  --dark-color: #222222;
-  --light-color: #f0f0f0;
+  background-color: white;
 }
-
 body,
 html {
-  height: 100%;
-  background: var(--dark-color);
+  height: 600px auto;
+  background: white;
+  box-sizing: content-box;
 }
 
 * > * {
@@ -21,21 +18,42 @@ html {
   position: relative;
   margin: 40px auto;
   height: auto;
-  width: 800px;
+  width: 1200px;
   padding: 20px;
+  background-color: white;
 }
 
 .container .title {
   font-size: 3em;
   text-align: center;
-  border: 5px solid var(--primary-color);
+  border-radius: 10px;
+  color: #555;
+  border: 5px solid #337ab7;
   padding: 0.3em 0.2em;
-  border-radius: 4px;
+  border-radius: 6px;
+  width: 600px;
+  margin-left: 25%;
 }
+/*title부분 */
 
 .textlight {
-  color: var(--light-color);
+  color: #333;
+  width: 930px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
 }
+/*문제 텍스트*/
+
+.textlighta {
+  width: 930px;
+  padding: auto;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 1.4em;
+  border-bottom: 1px #999 solid;
+  padding-left: 5%;
+}
+/*문제 텍스트의 부연설명*/
 
 .container ul {
   list-style: none;
@@ -45,8 +63,11 @@ html {
 }
 
 .container .questions {
-  padding: 3em;
+  padding: 1em;
+  width: 1000px;
+  margin-left: 10%;
 }
+/*정답란 body*/
 
 /* 
 .container .questions .qid{
@@ -56,44 +77,29 @@ html {
   border-radius: 50px;
 } */
 
-.container .grid {
-  margin-top: 3em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .container .btn {
-  padding: 0.2em 1.7em;
+  padding: 0.2em 0.8em;
   border: none;
   border-radius: 0.1em;
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
+/*정답란 체크 범위*/
 
-.container .btn:hover {
-  cursor: pointer;
-  background-color: #f0f0f0;
-  color: #202020;
-}
-
-.next {
-  background-color: var(--primary-color);
-  justify-self: flex-end;
-}
-
-.prev {
-  background-color: #faff5a;
-  justify-self: flex-start;
+.answerli {
+  margin-left: 30px;
 }
 
 ul li {
-  color: #aaaaaa;
+  color: #333;
   display: block;
   position: relative;
   float: left;
-  width: 100%;
+  width: 90%;
   height: 100px;
-  /*border-bottom: 1px solid #333;*/
+  padding-top: 7px;
+  padding-bottom: 100px;
 }
+/*정답란 텍스트*/
 
 ul li input[type="radio"] {
   position: absolute;
@@ -105,22 +111,24 @@ ul li label {
   position: relative;
   font-weight: 300;
   font-size: 1.35em;
-  padding: 25px 25px 25px 80px;
-  margin: 10px auto;
+  padding: 18px 25px 18px 80px;
+  margin-top: 10px auto;
   height: 30px;
   z-index: 9;
   cursor: pointer;
-  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
+/*정답란 텍스트*/
 
 ul li:hover label {
-  color: #ffffff;
+  color: #337ab7;
 }
+/*정답란 텍스트 hover시 색상*/
 
 ul li .check {
   display: block;
   position: absolute;
-  border: 5px solid #aaaaaa;
+  border: 3px solid #333;
   border-radius: 100%;
   height: 25px;
   width: 25px;
@@ -130,6 +138,7 @@ ul li .check {
   transition: border 0.25s linear;
   -webkit-transition: border 0.25s linear;
 }
+/*객관식 체크 버튼*/
 
 ul li:hover .checked {
   border: 5px solid #ffffff;
@@ -140,68 +149,119 @@ ul li .check::before {
   position: absolute;
   content: "";
   border-radius: 100%;
-  height: 15px;
-  width: 15px;
-  top: 5px;
-  left: 5px;
+  height: 12px;
+  width: 12px;
+  top: 3.6px;
+  left: 3.6px;
   margin: auto;
-  transition: background 0.25s linear;
-  -webkit-transition: background 0.25s linear;
+  transition: all 0.25s linear;
 }
+/*정답 체크 내부원*/
 
 input[type="radio"]:checked ~ .check {
-  border: 5px solid var(--primary-color);
+  border: 3px solid #337ab7;
 }
+/*정답란 체크 외부원*/
 
 input[type="radio"]:checked ~ .check::before {
-  background: var(--primary-color);
+  background: #337ab7;
 }
+/*정답란 체크 내부원*/
 
 input[type="radio"]:checked ~ .textprimary {
-  color: var(--primary-color);
+  color: #337ab7;
 }
+/*정답란 체크 텍스트*/
+
+.container .grid {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+/*정답란과 이전,다음 버튼사이*/
+
+.nextbtn {
+  background-color: purple;
+  justify-self: flex-end;
+  width: 150px;
+  border-radius: 5px;
+  margin-right: 30%;
+  box-sizing: content-box;
+}
+/*시험시작 후 다음으로가기 버튼*/
+
+.prevbtn {
+  background-color: skyblue;
+  justify-self: flex-start;
+  width: 150px;
+  border-radius: 5px;
+  margin-left: 30%;
+}
+/*시험시작 후 뒤로가기 버튼*/
 
 /* To get selected option we are using this checked class */
 .checked {
-  border: 5px solid var(--primary-color) !important;
+  border: 5px solid #337ab7 !important;
 }
 
 .checked::before {
-  background: var(--primary-color);
+  background: #337ab7;
 }
 
 /*main css */
+.container ol {
+  margin-top: 25px;
+  margin-left: 28%;
+  padding-bottom: 5px;
+}
+
 .container ol li {
   font-size: 1.4em;
-  color: #cecece;
+  color: #333;
+  padding-left: 10px;
 }
 
 .start {
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  padding-top: 1.5em;
 }
+/*startbtn div*/
 
-.start .btn {
+.startbtn {
   padding: 0.2em 1.7em;
   border: none;
   border-radius: 0.1em;
   font-size: 1.2em;
-  color: #202020;
+  color: white;
   text-decoration: none;
-  background-color: #faff5a;
+  background-color: #555;
+  border-radius: 5px;
 }
+/*mainpage의 시험시작 버튼*/
 
-.form {
+.container .startbtn:hover {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f0f0f0;
+  color: #202020;
+}
+/*시험시작 버튼 hover*/
+
+.userform {
   display: flex;
   justify-content: center;
   margin-top: 4em;
 }
+/*닉네임 입력 양식*/
 
-.form .userid {
+.userform .userid {
   padding: 0.7em 2em;
-  width: 50%;
+  width: 20%;
+  height: 30px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 1em;
+  border: #999 3px solid;
 }
+/*닉네임 입력 양식 div*/

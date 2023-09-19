@@ -3,6 +3,10 @@ import Questions from "./Questions";
 import Styles from "../../styles/Quizmain.module.css";
 import { MoveNextQuestion, MovePrevQuestion } from "../../hooks/FetchQuestion";
 import { PushAnswer } from "../../hooks/setResult";
+import Navbar from "../Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 /** redux store import */
 import { useSelector, useDispatch } from "react-redux";
@@ -50,24 +54,29 @@ export default function Quiz() {
   }
 
   return (
-    <div className={Styles.container}>
-      <h1 className={Styles.title}>Quiz Application</h1>
+    <>
+      <Navbar />
+      <div className={Styles.container}>
+        <h1 className={Styles.title}> Windows 시험</h1>
 
-      {/* display questions */}
-      <Questions onChecked={onChecked} />
-
-      <div className={Styles.grid}>
-        {trace > 0 ? (
-          <button className={Styles.prev} onClick={onPrev}>
-            Prev
+        {/* display questions */}
+        <Questions onChecked={onChecked} />
+        <div className={Styles.grid}>
+          {trace > 0 ? (
+            <button className={Styles.prevbtn} onClick={onPrev}>
+              <i className={Styles.icon}>
+                <FontAwesomeIcon icon={faCaretLeft} />
+              </i>{" "}
+              Prev
+            </button>
+          ) : (
+            <div></div>
+          )}
+          <button className={Styles.nextbtn} onClick={onNext}>
+            Next <FontAwesomeIcon icon={faCaretRight} />
           </button>
-        ) : (
-          <div></div>
-        )}
-        <button className={Styles.next} onClick={onNext}>
-          Next
-        </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

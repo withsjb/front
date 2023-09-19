@@ -1,6 +1,6 @@
 .bbody {
   background-color: white;
-  height: auto;
+  height: 700px;
 }
 
 .btitle {
@@ -55,18 +55,19 @@
   position: absolute;
   width: 20em;
   left: 21%;
+  margin-left: -10px;
   padding-left: 10px;
   margin-top: 10px;
-  bottom: 9.5%;
+  bottom: -1%;
 }
-/*내용 입력 양식 란*/
+/*작성자 내용 입력 양식 란*/
 
 .postuploadbtn {
   width: 150px;
   height: 30px;
   position: fixed;
   bottom: 5%;
-  right: 20%;
+  right: 9%;
   border-radius: 20px;
   background-color: #333333;
   color: white;
@@ -92,7 +93,7 @@
   height: 30px;
   position: fixed;
   bottom: 5%;
-  right: 30%;
+  right: 20%;
   border-radius: 20px;
   background-color: #fff;
   color: gray;
@@ -125,13 +126,15 @@
   font-weight: bold;
   position: absolute;
   left: 17%;
-  top: 17%;
+  top: 31%;
 }
+/*'내용 : ' 텍스트*/
 
 .titletxt3 {
   width: auto;
   font-weight: bold;
   position: absolute;
-  left: 17%;
-  bottom: 10%;
+  left: 15.5%;
+  bottom: -1%;
 }
+/*'작성자 : ' 텍스트*/

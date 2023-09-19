@@ -4,6 +4,7 @@
   font-size: 30pt;
   padding: 10px 0 0 6em;
   margin-top: 30px;
+  margin-left: 100px;
 }
 /*title*/
 
@@ -19,10 +20,10 @@
 
 .bar {
   position: relative;
-  width: 1200px;
+  width: 1150px;
   height: 3px;
   margin-top: 10px;
-  margin-left: 11%;
+  margin-left: 15%;
   background: linear-gradient(120deg, purple, skyblue);
   margin-bottom: 20px;
 }
@@ -33,11 +34,11 @@
   height: auto;
   text-align: left;
   margin-left: 20%;
-  padding-top: 10px;
   padding-left: 10px;
   font-size: 9pt;
   font-weight: bold;
   text-align: center;
+  background: linear-gradient(120deg, white, #f9f9f9, white);
   border-bottom: lightgray 1px solid;
   margin-top: 50px;
 }
@@ -71,7 +72,7 @@
   height: 30px;
   font-weight: bold;
   position: fixed;
-  bottom: 5%;
+  bottom: 2%;
   right: 5%;
   text-align: center;
   text-decoration: none;
@@ -86,25 +87,24 @@
   transition: all 0.3s ease;
 }
 /*게시물 추가 버튼 hover기능*/
-
 .postbtndiv {
   height: 30px;
   width: 967px;
   margin: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
-
+/*게시글 div*/
 .postbtn {
   border-bottom: lightgray 1px solid;
   color: black;
   background-color: white;
   width: 967px;
-  height: 30px;
+  height: 40px;
   font-size: 13pt;
   text-align: left;
-  margin-left: 32.5%;
+  margin-left: 31.3%;
+  margin-bottom: 10px;
   padding-left: 20px;
-  display: inline-block;
 }
 /*게시글*/
 
@@ -118,6 +118,7 @@
 .views {
   font-size: 8pt;
   right: 19%;
+  padding-top: 5px;
   position: absolute;
 }
 /*게시글 조회수*/
@@ -125,7 +126,7 @@
 .likes {
   color: purple;
   font-size: 8px;
-  right: 17.5%;
+  margin-left: 5px;
   position: absolute;
 }
 /*게시글 좋아요수*/
@@ -135,7 +136,7 @@
   left: 45%;
   box-sizing: content-box;
   margin-top: 20px;
-  width: 60%;
+  width: 30%;
 }
 /*페이지 이동 관리 div*/
 
@@ -151,12 +152,10 @@
 }
 /*이전페이지 버튼*/
 .pgback:hover {
-  box-sizing: content-box;
-  height: auto;
-  background-color: gray;
   opacity: 1;
   visibility: visible;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-decoration: underline;
 }
 
 .pgselect {
@@ -188,10 +187,8 @@
 /*다음페이지 버튼*/
 
 .pgnext:hover {
-  box-sizing: content-box;
-  height: auto;
-  background-color: gray;
   opacity: 1;
   visibility: visible;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-decoration: underline;
 }
