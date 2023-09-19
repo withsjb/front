@@ -13,31 +13,47 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-.container {
-  display: block;
-  position: relative;
-  margin: 40px auto;
-  height: auto;
-  width: 1200px;
-  padding: 20px;
-  background-color: white;
+.quizbody {
+  background-image: url("https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+  height: 1300px;
+  background-size: cover;
 }
 
-.container .title {
+.container {
+  background: linear-gradient(
+    62deg,
+    #15333f52 -53%,
+    rgb(9, 48, 53) 41%,
+    rgba(11, 38, 50, 1) 85%
+  );
+  display: block;
+  position: relative;
+  margin: 19vh auto;
+  height: auto;
+  width: 1100px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 1), 0 0 0 16px rgba(152, 236, 255, 0.1);
+  border-radius: 8%;
+}
+
+.title {
   font-size: 3em;
   text-align: center;
   border-radius: 10px;
-  color: #555;
-  border: 5px solid #337ab7;
+  color: #fff;
+
   padding: 0.3em 0.2em;
   border-radius: 6px;
   width: 600px;
-  margin-left: 25%;
+  margin: auto;
+  font-size: 42px;
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.35);
 }
 /*title부분 */
 
 .textlight {
-  color: #333;
+  color: #fff;
   width: 930px;
   border-bottom: 1px solid #999;
   padding-bottom: 10px;
@@ -50,6 +66,8 @@ html {
   padding-top: 10px;
   padding-bottom: 15px;
   font-size: 1.4em;
+  color: #fff;
+
   border-bottom: 1px #999 solid;
   padding-left: 5%;
 }
@@ -87,6 +105,7 @@ html {
 
 .answerli {
   margin-left: 30px;
+  color: #fff;
 }
 
 ul li {
@@ -217,8 +236,9 @@ input[type="radio"]:checked ~ .textprimary {
 
 .container ol li {
   font-size: 1.4em;
-  color: #333;
+  color: rgba(255, 255, 255, 0.698);
   padding-left: 10px;
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .start {
@@ -235,7 +255,7 @@ input[type="radio"]:checked ~ .textprimary {
   font-size: 1.2em;
   color: white;
   text-decoration: none;
-  background-color: #555;
+  background-color: rgb(52, 112, 146);
   border-radius: 5px;
 }
 /*mainpage의 시험시작 버튼*/

@@ -55,26 +55,28 @@ export default function Quiz() {
 
   return (
     <>
-      <Navbar />
-      <div className={Styles.container}>
-        <h1 className={Styles.title}> Windows 시험</h1>
+      <div className={Styles.quizbody}>
+        <Navbar />
+        <div className={Styles.container}>
+          <h1 className={Styles.title}> Windows 시험</h1>
 
-        {/* display questions */}
-        <Questions onChecked={onChecked} />
-        <div className={Styles.grid}>
-          {trace > 0 ? (
-            <button className={Styles.prevbtn} onClick={onPrev}>
-              <i className={Styles.icon}>
-                <FontAwesomeIcon icon={faCaretLeft} />
-              </i>{" "}
-              Prev
+          {/* display questions */}
+          <Questions onChecked={onChecked} />
+          <div className={Styles.grid}>
+            {trace > 0 ? (
+              <button className={Styles.prevbtn} onClick={onPrev}>
+                <i className={Styles.icon}>
+                  <FontAwesomeIcon icon={faCaretLeft} />
+                </i>{" "}
+                Prev
+              </button>
+            ) : (
+              <div></div>
+            )}
+            <button className={Styles.nextbtn} onClick={onNext}>
+              Next <FontAwesomeIcon icon={faCaretRight} />
             </button>
-          ) : (
-            <div></div>
-          )}
-          <button className={Styles.nextbtn} onClick={onNext}>
-            Next <FontAwesomeIcon icon={faCaretRight} />
-          </button>
+          </div>
         </div>
       </div>
     </>

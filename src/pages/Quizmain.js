@@ -25,7 +25,6 @@ export default function Main() {
           <li> 5 문항이 출제되며 문제당 10점씩 입니다.</li>
           <li>객관식의 경우 4지선다형 문제가 출제됩니다.</li>
           <li> 답안 제출시 점수와 합격, 불합격 여부가 출력됩니다.</li>
-          <li> 그럼 행운을 빕니다!</li>
         </ol>
 
         <form className={Styles.userform} id="form">
