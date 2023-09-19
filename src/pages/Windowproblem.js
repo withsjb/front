@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { AiFillPlusCircle } from "react-icons/ai";
 import WinGetquestion from "../component/admin/wingetquestion";
 import Styles from "../styles/admin.module.css";
+import Navbar from "../component/Navbar";
 
 const WinAddQuestion = () => {
   const [id, setId] = useState(uuidv4());
@@ -67,6 +68,7 @@ const WinAddQuestion = () => {
 
   return (
     <>
+      <Navbar />
       <form className={Styles.inputform} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="question"> 질문 입력 : </label>

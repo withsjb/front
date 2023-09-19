@@ -1,6 +1,6 @@
 .filebody {
   background: white;
-  justify-content: center;
+
   padding-top: 1px;
   align-items: center;
   display: flex;
@@ -9,21 +9,18 @@
 }
 
 .filetitle {
-  position: absolute;
   color: #999;
   font-size: 20pt;
-  top: 29%;
-  left: 7%;
-  width: 600px;
+  margin-left: 10%;
+  margin-top: 10%;
 }
 /*파일명 title경로*/
 
 .filesub {
-  position: absolute;
-  top: 28%;
-  left: 14%;
   font-size: 26pt;
   color: #555;
+  margin-left: 20px;
+  margin-top: 10%;
 }
 /*파일명 title*/
 

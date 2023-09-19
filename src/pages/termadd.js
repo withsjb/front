@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Styles from "../styles/termadd.module.css";
+import Navbar from "../component/Navbar";
 
 const App = () => {
   const [term, setTerm] = useState("");
@@ -56,6 +57,7 @@ const App = () => {
 
   return (
     <div className={Styles.tbody}>
+      <Navbar />
       <h1 className={Styles.termtitle}> Term add page </h1>
       <div className={Styles.addExp}>
         <h2> - This page is to add terms and definitions. </h2>
