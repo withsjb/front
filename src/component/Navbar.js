@@ -63,21 +63,17 @@ const Navbar = () => {
                 {" "}
                 <li>roadmap</li>{" "}
               </Link>
-
-              <Link to="/test">
-                <li>select</li>
-              </Link>
             </ul>{" "}
           </li>
 
           <li className={Styles.navli}>
-            OS
+            Studying
             <ul className={Styles.dropmenu}>
-              <Link to="/roadmap">
+              <Link to="/WinStudy">
                 {" "}
                 <li>Windows 기초</li>{" "}
               </Link>
-              <Link to="/linuxstudy">
+              <Link to="/LinStudy">
                 {" "}
                 <li>Linux 기초</li>
               </Link>
@@ -108,22 +104,20 @@ const Navbar = () => {
               <Link to="/board">
                 <li>자유게시판</li>
               </Link>
-              <Link to="/qnaboard">
-                <li>Q&A</li>
-              </Link>
+              <li>Q&A</li>
             </ul>{" "}
           </li>
 
           <li className={Styles.navli}>
             admin
             <ul className={Styles.dropmenu}>
-              <Link to="/linuxproblem">
-                {" "}
-                <li>리눅스 문제 수정</li>{" "}
-              </Link>
               <Link to="/windowproblem">
                 {" "}
                 <li>윈도우 문제 수정</li>{" "}
+              </Link>
+              <Link to="/linuxproblem">
+                {" "}
+                <li>리눅스 문제 수정</li>{" "}
               </Link>
               <Link to="/termadd">
                 {" "}
