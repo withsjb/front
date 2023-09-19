@@ -104,7 +104,9 @@ const Navbar = () => {
               <Link to="/board">
                 <li>자유게시판</li>
               </Link>
-              <li>Q&A</li>
+              <Link to="/qnaboard">
+                <li>Q&A</li>
+              </Link>
             </ul>{" "}
           </li>
 

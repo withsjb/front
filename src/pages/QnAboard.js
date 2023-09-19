@@ -37,8 +37,10 @@ function Board() {
       <div>
         <Navbar />
         <h1 className={Styles.bh1}>
-          자유게시판
-          <span className={Styles.bh2}>자유로운 소통을 위한 공간입니다.</span>
+          QnA게시판
+          <span className={Styles.bh2}>
+            운영진 혹은 다른 유저에게 질문하세요!
+          </span>
         </h1>
         <div className={Styles.bar}></div>
         <div className={Styles.exbar}>
