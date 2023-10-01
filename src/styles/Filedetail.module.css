@@ -88,10 +88,11 @@
 }
 
 .photobox {
-  max-width: auto;
+  max-width: 900px;
   max-height: auto;
   overflow: hidden;
   margin: 0 auto;
+  object-fit: cover;
 }
 
 .photos {
