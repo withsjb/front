@@ -67,7 +67,7 @@ const UserFileDetail = () => {
 
   const fetchTerms = () => {
     axios
-      .get("http://localhost:4000/terms")
+      .get("/api/terms")
       .then((response) => {
         setTerms(response.data);
       })
@@ -78,11 +78,11 @@ const UserFileDetail = () => {
 
   const fetchPhotos = () => {
     axios
-      .get(`http://localhost:4000/linux/files/${fileId}/addphoto`)
+      .get(`/api/linux/files/${fileId}/addphoto`)
       .then((response) => {
         const photoURLs = response.data.photos.map((photo) => {
           if (photo) {
-            return `http://localhost:4000/uploads/${photo}`;
+            return `/api/uploads/${photo}`;
           } else {
             return "";
           }
@@ -120,7 +120,7 @@ const UserFileDetail = () => {
 
   const addContentAndPhoto = (formData) => {
     axios
-      .post(`http://localhost:4000/linux/files/${fileId}/content`, formData)
+      .post(`/api/linux/files/${fileId}/content`, formData)
       .then((response) => {
         console.log(response.data);
         setFile(response.data);
@@ -175,7 +175,7 @@ const UserFileDetail = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:4000/linux/files/${fileId}/content/${index}`,
+        `/api/linux/files/${fileId}/content/${index}`,
         formData
       );
 
@@ -191,7 +191,7 @@ const UserFileDetail = () => {
   const handleDelete = async (index) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/linux/files/${fileId}/content/${index}`
+        `/api/linux/files/${fileId}/content/${index}`
       );
 
       if (response.status === 200) {
@@ -289,19 +289,21 @@ const UserFileDetail = () => {
     <>
       <Navbar />
       <div className={Styles.filebody}>
-        <h2 className={Styles.filetitle}>
-          {" "}
-          Linux{" "}
-          <i className={Styles.icon}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </i>
-        </h2>
-        <h3 className={Styles.filesub}>
-          <i className={Styles.icon}>
-            <FontAwesomeIcon icon={faBook} />
-          </i>{" "}
-          {file.name}
-        </h3>
+        <div className={Styles.logobook}>
+          <h2 className={Styles.filetitle}>
+            {" "}
+            Linux{" "}
+            <i className={Styles.icon}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </i>
+          </h2>
+          <h3 className={Styles.filesub}>
+            <i className={Styles.icon}>
+              <FontAwesomeIcon icon={faBook} />
+            </i>{" "}
+            {file.name}
+          </h3>
+        </div>
 
         <div className={Styles.conceptList}>
           <ul>

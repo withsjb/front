@@ -106,21 +106,21 @@ const FileLoader = () => {
                   className={selectedMenu === "id" ? Styles.active : ""}
                   onClick={() => handleMenuClick("id")}
                 >
-                  계정관리
+                  서비스 관리 1
                 </li>
                 <li
                   href="#"
                   className={selectedMenu === "id2" ? Styles.active : ""}
                   onClick={() => handleMenuClick("id2")}
                 >
-                  파일 및 디렉터리 관리
+                  서비스 관리 2
                 </li>
                 <li
                   href="#"
                   className={selectedMenu === "id3" ? Styles.active : ""}
                   onClick={() => handleMenuClick("id3")}
                 >
-                  서비스 관리
+                  서비스 관리 3
                 </li>
                 <li
                   href="#"
@@ -227,7 +227,7 @@ const HomeContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64903590d224bc4b21cdceb6"
+            to="/window/user/64903590d224bc4b21cdceb6"
           >
             개념
           </Link>
@@ -244,49 +244,57 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64903c71d224bc4b21cdcf26"
+            to="/window/user/6517e5ed4e8ce931808e5183"
           >
-            계정관리 1
+            서비스 관리 1
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64903fdcd224bc4b21cdcfbf"
+            to="/window/user/651989b04e8ce931808e5854"
           >
-            계정관리 2
+            서비스 관리 2
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/649046c0d224bc4b21cdd060"
+            to="/window/user/65198b754e8ce931808e586d"
           >
-            계정관리 3
+            서비스 관리 3
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/649046c0d224bc4b21cdd060"
+            to="/window/user/65198ef84e8ce931808e588b"
           >
-            계정관리 4
+            서비스 관리 4
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64904b65d224bc4b21cdd0e0"
+            to="/window/user/65198fed4e8ce931808e589d"
           >
-            계정관리 5
+            서비스 관리 5
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64904d11d224bc4b21cdd11b"
+            to="/window/user/6519913c4e8ce931808e58b6"
           >
-            계정관리 6
+            서비스 관리 6
+          </Link>
+        </li>
+        <li className={Styles.file}>
+          <Link
+            className={Styles.filelink}
+            to="/window/user/651992634e8ce931808e58ca"
+          >
+            서비스 관리 7
           </Link>
         </li>
       </ul>
@@ -301,57 +309,57 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/6490468ed224bc4b21cdd048"
+            to="/window/user/651993334e8ce931808e58e0"
           >
-            파일 및 디렉터리 관리 1
+            서비스 관리 8
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64904fa0d224bc4b21cdd159"
+            to="/window/user/6519947b4e8ce931808e58f4"
           >
-            파일 및 디렉터리 관리 2
+            서비스 관리 9
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/649051dad224bc4b21cdd19d"
+            to="/window/user/6519959e4e8ce931808e590c"
           >
-            파일 및 디렉터리 관리 3
+            서비스 관리 10
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64905393d224bc4b21cdd1d7"
+            to="/window/user/651998e94e8ce931808e5924"
           >
-            파일 및 디렉터리 관리 4
+            서비스 관리 11
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64905498d224bc4b21cdd20c"
+            to="/window/user/65199a7f4e8ce931808e593e"
           >
-            파일 및 디렉터리 관리 5
+            서비스 관리 12
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/649057fcd224bc4b21cdd260"
+            to="/window/user/65199c1b4e8ce931808e595a"
           >
-            파일 및 디렉터리 관리 6
+            서비스 관리 13
           </Link>
         </li>
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64905b4ad224bc4b21cdd2b7"
+            to="/window/user/65199d924e8ce931808e5972"
           >
-            파일 및 디렉터리 관리 7
+            서비스 관리 14
           </Link>
         </li>
       </ul>
@@ -366,7 +374,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64904b43d224bc4b21cdd0d8"
+            to="/window/user/64904b43d224bc4b21cdd0d8"
           >
             서비스 관리 1
           </Link>
@@ -374,7 +382,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64904fd7d224bc4b21cdd163"
+            to="/window/user/64904fd7d224bc4b21cdd163"
           >
             서비스 관리 2
           </Link>
@@ -382,7 +390,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64905262d224bc4b21cdd1ac"
+            to="/window/user/64905262d224bc4b21cdd1ac"
           >
             서비스 관리 3
           </Link>
@@ -390,7 +398,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/64905422d224bc4b21cdd1f9"
+            to="/window/user/64905422d224bc4b21cdd1f9"
           >
             서비스 관리 4
           </Link>
@@ -398,7 +406,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/linux/6490554ad224bc4b21cdd223"
+            to="/window/user/6490554ad224bc4b21cdd223"
           >
             서비스 관리 5
           </Link>

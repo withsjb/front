@@ -1,3 +1,9 @@
+.logobook {
+  height: 40px;
+  width: 350px;
+  margin-left: 5%;
+}
+
 .filebody {
   background: white;
   justify-content: center;
@@ -9,19 +15,18 @@
 }
 
 .filetitle {
-  position: absolute;
+  position: relative;
   color: #999;
   font-size: 20pt;
-  top: 29%;
-  left: 7%;
-  width: 600px;
+  right: 350px;
+  top: 100px;
 }
 /*파일명 title경로*/
 
 .filesub {
-  position: absolute;
-  top: 28%;
-  left: 14%;
+  position: relative;
+  top: 58px;
+  right: 200px;
   font-size: 26pt;
   color: #555;
 }
