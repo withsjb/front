@@ -227,7 +227,7 @@ const HomeContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/64903590d224bc4b21cdceb6"
+            to="/window/64903590d224bc4b21cdceb6"
           >
             개념
           </Link>
@@ -244,7 +244,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/6517e5ed4e8ce931808e5183"
+            to="/window/6517e5ed4e8ce931808e5183"
           >
             서비스 관리 1
           </Link>
@@ -252,7 +252,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/651989b04e8ce931808e5854"
+            to="/window/651989b04e8ce931808e5854"
           >
             서비스 관리 2
           </Link>
@@ -260,7 +260,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65198b754e8ce931808e586d"
+            to="/window/65198b754e8ce931808e586d"
           >
             서비스 관리 3
           </Link>
@@ -268,7 +268,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65198ef84e8ce931808e588b"
+            to="/window/65198ef84e8ce931808e588b"
           >
             서비스 관리 4
           </Link>
@@ -276,7 +276,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65198fed4e8ce931808e589d"
+            to="/window/65198fed4e8ce931808e589d"
           >
             서비스 관리 5
           </Link>
@@ -284,7 +284,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/6519913c4e8ce931808e58b6"
+            to="/window/6519913c4e8ce931808e58b6"
           >
             서비스 관리 6
           </Link>
@@ -292,7 +292,7 @@ const IdContent = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/651992634e8ce931808e58ca"
+            to="/window/651992634e8ce931808e58ca"
           >
             서비스 관리 7
           </Link>
@@ -309,7 +309,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/651993334e8ce931808e58e0"
+            to="/window/651993334e8ce931808e58e0"
           >
             서비스 관리 8
           </Link>
@@ -317,7 +317,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/6519947b4e8ce931808e58f4"
+            to="/window/6519947b4e8ce931808e58f4"
           >
             서비스 관리 9
           </Link>
@@ -325,7 +325,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/6519959e4e8ce931808e590c"
+            to="/window/6519959e4e8ce931808e590c"
           >
             서비스 관리 10
           </Link>
@@ -333,7 +333,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/651998e94e8ce931808e5924"
+            to="/window/651998e94e8ce931808e5924"
           >
             서비스 관리 11
           </Link>
@@ -341,7 +341,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65199a7f4e8ce931808e593e"
+            to="/window/65199a7f4e8ce931808e593e"
           >
             서비스 관리 12
           </Link>
@@ -349,7 +349,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65199c1b4e8ce931808e595a"
+            to="/window/65199c1b4e8ce931808e595a"
           >
             서비스 관리 13
           </Link>
@@ -357,7 +357,7 @@ const IdContenta = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/65199d924e8ce931808e5972"
+            to="/window/65199d924e8ce931808e5972"
           >
             서비스 관리 14
           </Link>
@@ -374,7 +374,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/64904b43d224bc4b21cdd0d8"
+            to="/window/64904b43d224bc4b21cdd0d8"
           >
             서비스 관리 1
           </Link>
@@ -382,7 +382,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/64904fd7d224bc4b21cdd163"
+            to="/window/64904fd7d224bc4b21cdd163"
           >
             서비스 관리 2
           </Link>
@@ -390,7 +390,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/64905262d224bc4b21cdd1ac"
+            to="/window/64905262d224bc4b21cdd1ac"
           >
             서비스 관리 3
           </Link>
@@ -398,7 +398,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/64905422d224bc4b21cdd1f9"
+            to="/window/64905422d224bc4b21cdd1f9"
           >
             서비스 관리 4
           </Link>
@@ -406,7 +406,7 @@ const IdContentb = () => {
         <li className={Styles.file}>
           <Link
             className={Styles.filelink}
-            to="/window/user/6490554ad224bc4b21cdd223"
+            to="/window/6490554ad224bc4b21cdd223"
           >
             서비스 관리 5
           </Link>
