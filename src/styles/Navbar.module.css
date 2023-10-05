@@ -74,10 +74,9 @@
   line-height: 45px;
   position: absolute;
   visibility: collapse;
-  margin-left: -30px;
-  margin-top: 7px;
+  margin-left: -40px;
+
   /*  box-shadow: 3px 10px 10px -2px rgb(100, 100, 100);*/
-  left: -20px;
 }
 
 .dropmenu li {

@@ -13,7 +13,7 @@ html {
 .Lbackground {
   background-image: url("../../public/images/LQuestion.png");
   background-size: cover;
-  height: 709px;
+  height: 100vh;
 }
 
 * > * {

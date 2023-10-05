@@ -13,7 +13,7 @@ html {
 .Qbackground {
   background-image: url("../../public/images/Qbackground.png");
   background-size: cover;
-  height: 709px;
+  height: 100vh;
 }
 
 * > * {
