@@ -15,7 +15,7 @@
   transform: translateX(-100%) translatey(-50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1095px) {
   .buttonleft {
     color: white;
     font-size: 5rem;
@@ -51,7 +51,7 @@
   transform: translateX(100%) translatey(-50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1095px) {
   .button {
     color: white;
     font-size: 5rem;
@@ -66,7 +66,7 @@
     background: unset;
     border: unset;
     right: 80px;
-    transform: translateX(-800%) translatey(-50%);
+    transform: translateX(-100%) translatey(-50%);
   }
 }
 
@@ -120,7 +120,7 @@
 }
 
 .admincon {
-  width: 1250px;
+  width: 100%;
   margin: auto;
   perspective: 500px;
   transform-style: preserve-3d;
@@ -160,7 +160,7 @@
 
 @media (max-width: 768px) {
   .admindiv {
-    width: 29rem;
+    width: 80%;
     margin-left: 10%;
   }
 }
