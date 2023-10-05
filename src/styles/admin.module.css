@@ -12,7 +12,7 @@
   background: unset;
   border: unset;
   left: 140px;
-  transform: translateX(-100%) translatey(-50%);
+  transform: translatey(-50%);
 }
 
 @media (max-width: 1095px) {
@@ -29,8 +29,8 @@
     user-select: none;
     background: unset;
     border: unset;
-    left: 0;
-    transform: translateX(200%) translatey(-50%);
+    left: 80px;
+    transform: translatey(-50%);
   }
 }
 
@@ -48,7 +48,7 @@
   background: unset;
   border: unset;
   right: 140px;
-  transform: translateX(100%) translatey(-50%);
+  transform: translatey(-50%);
 }
 
 @media (max-width: 1095px) {
@@ -66,7 +66,7 @@
     background: unset;
     border: unset;
     right: 80px;
-    transform: translateX(-100%) translatey(-50%);
+    transform: translatey(-50%);
   }
 }
 
