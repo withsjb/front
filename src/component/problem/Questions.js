@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Styles from "../../styles/Quizmain.module.css";
+import Styles from "../../styles/WindowsQuizmain.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQ } from "@fortawesome/free-solid-svg-icons";
 

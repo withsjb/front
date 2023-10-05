@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Styles from "../../styles/Filedetail.module.css";
+import Styles from "../../styles/UserFiledetail.module.css";
 import Navbar from "../Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const FileDetail = () => {
+const UserFileDetail = () => {
   const [file, setFile] = useState({
     concept: [],
     content: [],
@@ -67,7 +67,7 @@ const FileDetail = () => {
 
   const fetchTerms = () => {
     axios
-      .get("/api/terms")
+      .get("http://localhost:4000/terms")
       .then((response) => {
         setTerms(response.data);
       })
@@ -78,11 +78,11 @@ const FileDetail = () => {
 
   const fetchPhotos = () => {
     axios
-      .get(`/api/linux/files/${fileId}/addphoto`)
+      .get(`http://localhost:4000/linux/files/${fileId}/addphoto`)
       .then((response) => {
         const photoURLs = response.data.photos.map((photo) => {
           if (photo) {
-            return `/api/uploads/${photo}`;
+            return `http://localhost:4000/uploads/${photo}`;
           } else {
             return "";
           }
@@ -120,7 +120,7 @@ const FileDetail = () => {
 
   const addContentAndPhoto = (formData) => {
     axios
-      .post(`/api/linux/files/${fileId}/content`, formData)
+      .post(`http://localhost:4000/linux/files/${fileId}/content`, formData)
       .then((response) => {
         console.log(response.data);
         setFile(response.data);
@@ -175,7 +175,7 @@ const FileDetail = () => {
       }
 
       const response = await axios.put(
-        `/api/linux/files/${fileId}/content/${index}`,
+        `http://localhost:4000/linux/files/${fileId}/content/${index}`,
         formData
       );
 
@@ -191,7 +191,7 @@ const FileDetail = () => {
   const handleDelete = async (index) => {
     try {
       const response = await axios.delete(
-        `/api/linux/files/${fileId}/content/${index}`
+        `http://localhost:4000/linux/files/${fileId}/content/${index}`
       );
 
       if (response.status === 200) {
@@ -475,4 +475,4 @@ const FileDetail = () => {
   );
 };
 
-export default FileDetail;
+export default UserFileDetail;

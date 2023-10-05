@@ -65,7 +65,7 @@
 .content {
   flex: 5;
   padding: 1rem;
-  background: #fcfcfc;
+  background: #f9f9f9;
 }
 
 .filelist {
@@ -203,7 +203,7 @@
   margin-left: 3px;
 }
 .sidebar li:hover {
-  color: purple;
+  color: #337ab7;
   cursor: pointer;
 }
 
@@ -221,7 +221,7 @@
 }
 /*sidebar의 title*/
 .sidebar ul:hover {
-  color: purple;
+  color: #337ab7;
   cursor: pointer;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .sidebar .active {
-  border-left: 3px solid purple;
+  border-left: 3px solid #337ab7;
 }
 
 .sidebar .subMenu a {

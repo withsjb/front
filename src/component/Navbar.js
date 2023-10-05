@@ -27,7 +27,7 @@ const Navbar = () => {
       if (cookies.jwt) {
         try {
           const { data } = await axios.post(
-            "/api",
+            "http://localhost:4000",
             {},
             {
               withCredentials: true,
@@ -87,11 +87,11 @@ const Navbar = () => {
           <li className={Styles.navli}>
             Quiz
             <ul className={Styles.dropmenu}>
-              <Link to="/quizmain">
+              <Link to="/WindowsQuizmain">
                 {" "}
                 <li>Windows quiz</li>{" "}
               </Link>
-              <Link to="/page1">
+              <Link to="/LinuxQuizmain">
                 {" "}
                 <li>Linux quiz</li>{" "}
               </Link>
@@ -104,7 +104,7 @@ const Navbar = () => {
               <Link to="/board">
                 <li>자유게시판</li>
               </Link>
-              <Link to="/qnaboard">
+              <Link to="/QnAboard">
                 <li>Q&A</li>
               </Link>
             </ul>{" "}

@@ -36,7 +36,8 @@
 }
 
 .filecard {
-  margin-top: 20px;
+  margin-top: 150px;
+  position: relative;
   width: 1150px;
   height: auto;
   overflow-y: auto;
@@ -48,7 +49,6 @@
   align-items: center;
   margin-left: 10px;
   margin-right: auto;
-  margin-bottom: 300px;
 }
 /*파일 body*/
 
@@ -103,65 +103,17 @@
   object-fit: cover;
 }
 
-.conceptinputbody {
-  background-color: white;
-  position: fixed;
-  width: 1100px;
-  height: 260px;
-  bottom: 0;
-  left: 3%;
-  margin-left: 40px;
-  border-radius: 10px;
-  border: 2px solid #999;
-}
-/*file업로드 양식 div*/
-
-.concepttitlename {
-  padding-top: 10px;
-  padding-left: 30px;
-}
-/*concept 파일명*/
-
 .concepttitle {
-  width: 380px;
-  height: 33px;
   padding-left: 10px;
-  position: absolute;
-  top: 24%;
-  left: 2%;
 }
 /*컨텐츠 제목 입력란*/
 
 .contentbox {
-  position: absolute;
-  top: 35%;
-  left: 2%;
-  margin-top: 15px;
-  width: 1050px;
-  height: 140px;
-  padding-top: 5px;
+  width: 300px;
+  height: 200px;
   padding-left: 10px;
-  resize: none;
 }
 /*컨텐츠 내용 입력 란*/
-
-.imginput {
-  position: absolute;
-  top: 24%;
-  left: 40%;
-}
-/*사진 파일 업로드 input*/
-
-.fileuploadbtn {
-  position: absolute;
-  top: 5%;
-  right: 4%;
-  border-radius: 5px;
-  width: 180px;
-  margin-top: 5px;
-  margin-right: 3px;
-}
-/*파일업로드 버튼*/
 
 .conceptList {
   position: fixed;
@@ -201,34 +153,3 @@
   text-decoration: underline;
   transition: all 0.5s ease;
 }
-
-.eicon {
-  box-sizing: border-box;
-}
-
-.fileeditbtn {
-  margin-top: 10px;
-  margin-left: 70%;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  width: 100px;
-  background-color: #ccc;
-  color: black;
-}
-/*파일수정*/
-
-.filedeletetbtn {
-  margin-left: 5px;
-  width: 100px;
-  border-radius: 5px;
-}
-/*파일삭제*/
-
-.filesavebtn {
-  right: 5%;
-  bottom: 10px;
-  width: 100px;
-  background-color: green;
-  border-radius: 5px;
-}
-/*수정 시 파일저장*/

@@ -13,11 +13,6 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-.resultbody {
-  background-image: url("https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
-  height: 1300px;
-}
-
 .resultcontainer {
   display: block;
   position: relative;
@@ -31,20 +26,10 @@ html {
   font-size: 3em;
   text-align: center;
   border: 5px solid #337ab7;
+  border-left: none;
+  border-right: none;
   padding: 0.3em 0.2em;
   border-radius: 4px;
-  color: white;
-}
-
-.resultcontainera {
-  background: linear-gradient(
-    62deg,
-    #15333f52 -53%,
-    rgb(9, 48, 53) 41%,
-    rgba(11, 38, 50, 1) 85%
-  );
-  border: 2px solid #999;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 1), 0 0 0 16px rgba(152, 236, 255, 0.1);
 }
 
 .restart {
@@ -79,7 +64,7 @@ html {
   justify-content: center;
   flex-direction: column;
   border-radius: 5px;
-
+  border: 2px solid #999;
   padding: 3em 4em;
   gap: 1em;
 }
@@ -92,7 +77,7 @@ html {
 
 .resultcontainer .flex span {
   font-size: 1.4em;
-  color: #fff;
+  color: #555;
 }
 /*result 텍스트*/
 
@@ -131,7 +116,3 @@ table {
   border: 1px solid skyblue;
 }
 /*점수테이블 모서리*/
-
-.container {
-  margin-top: 10%;
-}

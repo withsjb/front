@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Styles from "../styles/testbed.module.css";
 import Navbar from "../component/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [links, setLinks] = useState([]);
@@ -109,7 +111,11 @@ function App() {
           />{" "}
           <br></br>
           <button className={Styles.linkaddbtn} onClick={handleAddLink}>
-            추가
+            {" "}
+            Add Link{" "}
+            <i className={Styles.icon}>
+              <FontAwesomeIcon icon={faUpload} />
+            </i>
           </button>
         </div>
         {/* 수정 중인 링크 입력 필드 */}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Questions from "./Questions";
-import Styles from "../../styles/Quizmain.module.css";
+import Styles from "../../styles/WindowsQuizmain.module.css";
 import { MoveNextQuestion, MovePrevQuestion } from "../../hooks/FetchQuestion";
 import { PushAnswer } from "../../hooks/setResult";
 import Navbar from "../Navbar";
@@ -55,28 +55,26 @@ export default function Quiz() {
 
   return (
     <>
-      <div className={Styles.quizbody}>
-        <Navbar />
-        <div className={Styles.container}>
-          <h1 className={Styles.title}> Windows 시험</h1>
+      <Navbar />
+      <div className={Styles.container}>
+        <h1 className={Styles.title}> Windows 시험</h1>
 
-          {/* display questions */}
-          <Questions onChecked={onChecked} />
-          <div className={Styles.grid}>
-            {trace > 0 ? (
-              <button className={Styles.prevbtn} onClick={onPrev}>
-                <i className={Styles.icon}>
-                  <FontAwesomeIcon icon={faCaretLeft} />
-                </i>{" "}
-                Prev
-              </button>
-            ) : (
-              <div></div>
-            )}
-            <button className={Styles.nextbtn} onClick={onNext}>
-              Next <FontAwesomeIcon icon={faCaretRight} />
+        {/* display questions */}
+        <Questions onChecked={onChecked} />
+        <div className={Styles.grid}>
+          {trace > 0 ? (
+            <button className={Styles.prevbtn} onClick={onPrev}>
+              <i className={Styles.icon}>
+                <FontAwesomeIcon icon={faCaretLeft} />
+              </i>{" "}
+              Prev
             </button>
-          </div>
+          ) : (
+            <div></div>
+          )}
+          <button className={Styles.nextbtn} onClick={onNext}>
+            Next <FontAwesomeIcon icon={faCaretRight} />
+          </button>
         </div>
       </div>
     </>

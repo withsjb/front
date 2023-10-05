@@ -33,11 +33,15 @@ const WinAddQuestion = () => {
       formData.append("questions", JSON.stringify(questionData));
       formData.append("photo", photo || null);
 
-      const response = await axios.post("/api/Winquiz", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        "http://localhost:4000/Winquiz",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       console.log(response.data);
       setQuestion("");
@@ -70,14 +74,9 @@ const WinAddQuestion = () => {
     <>
       <Navbar />
       <form className={Styles.inputform} onSubmit={handleSubmit}>
-        <div className={Styles.proform}>
-          <h2>문제를 작성해주세요</h2>
-          <label className={Styles.prolabel} htmlFor="question">
-            {" "}
-            질문 입력 :{" "}
-          </label>
+        <div>
+          <label htmlFor="question"> 질문 : </label>
           <input
-            className={Styles.blank}
             type="text"
             id="question"
             value={question}
@@ -86,13 +85,9 @@ const WinAddQuestion = () => {
           />
         </div>
 
-        <div className={Styles.proform}>
-          <label className={Styles.prolabel} htmlFor="text">
-            {" "}
-            내용 입력 :{" "}
-          </label>
+        <div>
+          <label htmlFor="text"> 내용 : </label>
           <input
-            className={Styles.blank}
             type="text"
             id="text"
             value={text}
@@ -100,66 +95,55 @@ const WinAddQuestion = () => {
             onChange={(event) => setText(event.target.value)}
           />
         </div>
-        <div>
-          <div className={Styles.proform}>
-            <label className={Styles.prolabel} htmlFor="option1">
-              선택지 1 :{" "}
-            </label>
+        <div className={Styles.num_input}>
+          <div>
+            <label htmlFor="option1"> 1번 : </label>
             <input
-              className={Styles.blank}
+              className={Styles.numtextbox}
               type="text"
               id="option1"
               value={options[0]}
-              placeholder=" 1번 정답"
+              placeholder=" 1번 정답 텍스트"
               onChange={(event) => handleOptionChange(event, 0)}
             />
           </div>
-          <div className={Styles.proform}>
-            <label className={Styles.prolabel} htmlFor="option2">
-              선택지 2 :{" "}
-            </label>
+          <div>
+            <label htmlFor="option2"> 2번 : </label>
             <input
-              className={Styles.blank}
+              className={Styles.numtextbox}
               type="text"
               id="option2"
               value={options[1]}
-              placeholder=" 2번 정답"
+              placeholder=" 2번 정답 텍스트"
               onChange={(event) => handleOptionChange(event, 1)}
             />
           </div>
-          <div className={Styles.proform}>
-            <label className={Styles.prolabel} htmlFor="option3">
-              선택지 3 :{" "}
-            </label>
+          <div>
+            <label htmlFor="option3"> 3번 : </label>
             <input
-              className={Styles.blank}
+              className={Styles.numtextbox}
               type="text"
               id="option3"
               value={options[2]}
-              placeholder=" 3번 정답"
+              placeholder=" 3번 정답 텍스트"
               onChange={(event) => handleOptionChange(event, 2)}
             />
           </div>
-          <div className={Styles.proform}>
-            <label className={Styles.prolabel} htmlFor="option4">
-              선택지 4 :{" "}
-            </label>
+          <div>
+            <label htmlFor="option4"> 4번 : </label>
             <input
-              className={Styles.blank}
+              className={Styles.numtextbox}
               type="text"
               id="option4"
               value={options[3]}
-              placeholder=" 4번 정답"
+              placeholder=" 4번 정답 텍스트"
               onChange={(event) => handleOptionChange(event, 3)}
             />
           </div>
         </div>
-        <div className={Styles.proform}>
-          <label className={Styles.prolabel} htmlFor="answer">
-            정답 :{" "}
-          </label>
+        <div>
+          <label htmlFor="answer">정답 : </label>
           <select
-            className={Styles.select}
             id="answer"
             value={answer}
             onChange={(event) => setAnswer(event.target.value)}
@@ -170,19 +154,12 @@ const WinAddQuestion = () => {
             <option value={3}>선택지 4</option>
           </select>
         </div>
-        {/*
-        <div className={Styles.proform}>
-          <label className={Styles.inputfile} htmlFor="photo">
-            사진 :{" "}
-          </label>
-          <input
-            className={Styles.filedisplay}
-            type="file"
-            id="photo"
-            onChange={handleFileChange}
-          />
+
+        <div>
+          <label htmlFor="photo">사진 : </label>
+          <input type="file" id="photo" onChange={handleFileChange} />
         </div>
-  */}
+
         <button className={Styles.adm_btn} type="submit">
           추가하기
         </button>

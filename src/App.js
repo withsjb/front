@@ -8,7 +8,8 @@ import Problem from "./pages/problem";
 import Linuxproblem from "./pages/Linuxproblem";
 import Windowproblem from "./pages/Windowproblem";
 import Getquestion from "./component/admin/getquestion";
-import Quizmain from "./pages/Quizmain";
+import WindowsQuizmain from "./pages/WindowsQuizmain";
+import LinuxQuizmain from "./pages/LinuxQuizmain";
 import Quiz from "./component/problem/Quiz";
 import Result from "./component/problem/Result";
 import Page2 from "./pages/page2";
@@ -68,7 +69,8 @@ export default function App() {
           <Route path="/linuxproblem" element={<Linuxproblem />}></Route>
           <Route path="/windowproblem" element={<Windowproblem />}></Route>
           <Route path="/getquestion" element={<Getquestion />}></Route>
-          <Route path="/quizmain" element={<Quizmain />}></Route>
+          <Route path="/WindowsQuizmain" element={<WindowsQuizmain />}></Route>
+          <Route path="/LinuxQuizmain" element={<LinuxQuizmain />}></Route>
 
           <Route
             path="/quiz"
