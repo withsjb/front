@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Styles from "../../styles/admin.module.css";
-import {
-  TiChevronLeftOutline,
-  TiChevronRightOutline,
-} from "https://cdn.skypack.dev/react-icons/ti";
+import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const Quiz = () => {
   const [quizList, setQuizList] = useState([]);
