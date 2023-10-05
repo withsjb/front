@@ -71,6 +71,7 @@ const WinAddQuestion = () => {
       <Navbar />
       <form className={Styles.inputform} onSubmit={handleSubmit}>
         <div className={Styles.proform}>
+          <h2>문제를 작성해주세요</h2>
           <label className={Styles.prolabel} htmlFor="question">
             {" "}
             질문 입력 :{" "}

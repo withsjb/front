@@ -193,15 +193,15 @@ const Quiz = () => {
               </p>
               <button
                 onClick={() => deleteQuestion(quiz._id, question.id)}
-                className={Styles.adminbtn}
+                className={Styles.adminbtndelete}
               >
-                삭제
+                Delete
               </button>
               <button
                 onClick={() => openModal(question)} // 수정 버튼 클릭 시 openModal 함수를 호출합니다.
-                className={Styles.adminbtn}
+                className={Styles.adminbtnedit}
               >
-                수정
+                Edit
               </button>
             </div>
           ))}
