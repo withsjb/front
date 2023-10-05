@@ -70,9 +70,14 @@ const AddQuestion = () => {
     <>
       <Navbar />
       <form className={Styles.inputform} onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="question"> 질문 입력 : </label>
+        <div className={Styles.proform}>
+          <h2>문제를 작성해주세요</h2>
+          <label className={Styles.prolabel} htmlFor="question">
+            {" "}
+            질문 입력 :{" "}
+          </label>
           <input
+            className={Styles.blank}
             type="text"
             id="question"
             value={question}
@@ -81,9 +86,13 @@ const AddQuestion = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="text"> 내용 입력 : </label>
+        <div className={Styles.proform}>
+          <label className={Styles.prolabel} htmlFor="text">
+            {" "}
+            내용 입력 :{" "}
+          </label>
           <input
+            className={Styles.blank}
             type="text"
             id="text"
             value={text}
@@ -91,10 +100,13 @@ const AddQuestion = () => {
             onChange={(event) => setText(event.target.value)}
           />
         </div>
-        <div className={Styles.num_input}>
-          <div>
-            <label htmlFor="option1">선택지 1 : </label>
+        <div>
+          <div className={Styles.proform}>
+            <label className={Styles.prolabel} htmlFor="option1">
+              선택지 1 :{" "}
+            </label>
             <input
+              className={Styles.blank}
               type="text"
               id="option1"
               value={options[0]}
@@ -102,9 +114,12 @@ const AddQuestion = () => {
               onChange={(event) => handleOptionChange(event, 0)}
             />
           </div>
-          <div>
-            <label htmlFor="option2">선택지 2 : </label>
+          <div className={Styles.proform}>
+            <label className={Styles.prolabel} htmlFor="option2">
+              선택지 2 :{" "}
+            </label>
             <input
+              className={Styles.blank}
               type="text"
               id="option2"
               value={options[1]}
@@ -112,9 +127,12 @@ const AddQuestion = () => {
               onChange={(event) => handleOptionChange(event, 1)}
             />
           </div>
-          <div>
-            <label htmlFor="option3">선택지 3 : </label>
+          <div className={Styles.proform}>
+            <label className={Styles.prolabel} htmlFor="option3">
+              선택지 3 :{" "}
+            </label>
             <input
+              className={Styles.blank}
               type="text"
               id="option3"
               value={options[2]}
@@ -122,9 +140,12 @@ const AddQuestion = () => {
               onChange={(event) => handleOptionChange(event, 2)}
             />
           </div>
-          <div>
-            <label htmlFor="option4">선택지 4 : </label>
+          <div className={Styles.proform}>
+            <label className={Styles.prolabel} htmlFor="option4">
+              선택지 4 :{" "}
+            </label>
             <input
+              className={Styles.blank}
               type="text"
               id="option4"
               value={options[3]}
@@ -133,9 +154,12 @@ const AddQuestion = () => {
             />
           </div>
         </div>
-        <div>
-          <label htmlFor="answer">정답 : </label>
+        <div className={Styles.proform}>
+          <label className={Styles.prolabel} htmlFor="answer">
+            정답 :{" "}
+          </label>
           <select
+            className={Styles.select}
             id="answer"
             value={answer}
             onChange={(event) => setAnswer(event.target.value)}
@@ -146,11 +170,19 @@ const AddQuestion = () => {
             <option value={3}>선택지 4</option>
           </select>
         </div>
-
-        <div>
-          <label htmlFor="photo">사진 : </label>
-          <input type="file" id="photo" onChange={handleFileChange} />
+        {/*
+        <div className={Styles.proform}>
+          <label className={Styles.inputfile} htmlFor="photo">
+            사진 :{" "}
+          </label>
+          <input
+            className={Styles.filedisplay}
+            type="file"
+            id="photo"
+            onChange={handleFileChange}
+          />
         </div>
+  */}
 
         <button className={Styles.adm_btn} type="submit">
           추가하기

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Styles from "../../styles/admin.module.css";
+import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const Quiz = () => {
   const [quizList, setQuizList] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [questionToEdit, setQuestionToEdit] = useState({
     quizId: null,
     id: null,
@@ -139,13 +141,43 @@ const Quiz = () => {
     }
   };
 
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => prevSlide + 1);
+    console.log(currentSlide);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? quizList.length - 1 : prevSlide - 1
+    );
+    console.log(currentSlide);
+  };
+
   return (
     <div className={Styles.admincontainer}>
       {quizList.map((quiz) => (
         <div className={Styles.admincon} key={quiz._id}>
-          <h3>id: {quiz._id}</h3>
+          <button className={Styles.buttonleft} onClick={prevSlide}>
+            <TiChevronLeftOutline />
+          </button>
+          {/* "다음" 버튼 */}
+          <button className={Styles.button} onClick={nextSlide}>
+            <TiChevronRightOutline />
+          </button>
           {quiz.questions.map((question, index) => (
-            <div className={Styles.admindiv} key={question.id}>
+            <div
+              className={`${Styles.admindiv} ${
+                index === currentSlide
+                  ? Styles.currentSlide
+                  : index === currentSlide - 1 || index === currentSlide - 2
+                  ? Styles.previousSlide
+                  : index === currentSlide + 1 || index === currentSlide + 2
+                  ? Styles.nextSlide
+                  : ""
+              }`}
+              key={question.id}
+              style={{ display: index === currentSlide ? "block" : "none" }}
+            >
               <h4 className={Styles.adminh4}> Q : {question.question}</h4>
               <p className={Styles.adminp}> 내용 : {question.text}</p>
 
@@ -156,29 +188,21 @@ const Quiz = () => {
                   </li>
                 ))}
               </ol>
-              {quiz.photo.find((_, photoIndex) => photoIndex === index) && (
-                <img
-                  className={Styles.adminimg}
-                  src={`/api/uploads/${quiz.photo.find(
-                    (_, photoIndex) => photoIndex === index
-                  )}`}
-                  alt={`Question ${question.id} Photo`}
-                />
-              )}
+
               <p className={Styles.adminan}>
                 정답: {getAnswer(question.id, quiz) + 1}
               </p>
               <button
                 onClick={() => deleteQuestion(quiz._id, question.id)}
-                className={Styles.adminbtn}
+                className={Styles.adminbtndelete}
               >
-                삭제
+                Delete
               </button>
               <button
                 onClick={() => openModal(question)} // 수정 버튼 클릭 시 openModal 함수를 호출합니다.
-                className={Styles.adminbtn}
+                className={Styles.adminbtnedit}
               >
-                수정
+                Edit
               </button>
             </div>
           ))}
