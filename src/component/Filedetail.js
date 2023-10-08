@@ -307,7 +307,7 @@ const FileDetail = () => {
             onChange={(event) => setConcept(event.target.value)}
           />
 
-          <pre
+          <textarea
             className={Styles.contentbox}
             placeholder="컨텐츠 입력"
             value={content}
