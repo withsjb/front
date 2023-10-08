@@ -85,7 +85,7 @@ const FileDetail = () => {
       .then((response) => {
         const photoURLs = response.data.photos.map((photo) => {
           if (photo) {
-            return `/api/uploads/${photo}`;
+            return `${photo}`;
           } else {
             return "";
           }
