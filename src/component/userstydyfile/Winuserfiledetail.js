@@ -52,7 +52,7 @@ const UserFileDetail = () => {
 
   const fetchFile = () => {
     axios
-      .get(`http://localhost:4000/win/files/${fileId}`)
+      .get(`/api/win/files/${fileId}`)
       .then((response) => {
         const fetchedFile = response.data;
         if (fetchedFile.concept === null) {
@@ -67,7 +67,7 @@ const UserFileDetail = () => {
 
   const fetchTerms = () => {
     axios
-      .get("http://localhost:4000/terms")
+      .get("/api/terms")
       .then((response) => {
         setTerms(response.data);
       })
@@ -78,7 +78,7 @@ const UserFileDetail = () => {
 
   const fetchPhotos = () => {
     axios
-      .get(`http://localhost:4000/win/files/${fileId}/addphoto`)
+      .get(`/api/win/files/${fileId}/addphoto`)
       .then((response) => {
         const photoURLs = response.data.photos.map((photo) => {
           if (photo) {
@@ -112,7 +112,7 @@ const UserFileDetail = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:4000/win/files/${fileId}/content/${index}`,
+        `/api/win/files/${fileId}/content/${index}`,
         formData
       );
 
@@ -128,7 +128,7 @@ const UserFileDetail = () => {
   const handleDelete = async (index) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/win/files/${fileId}/content/${index}`
+        `/api/win/files/${fileId}/content/${index}`
       );
 
       if (response.status === 200) {
