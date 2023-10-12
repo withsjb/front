@@ -185,6 +185,7 @@ const FileDetail = () => {
       if (response.status === 200) {
         setFile(response.data);
         setEditingIndex(-1);
+        fetchFile();
       }
     } catch (error) {
       console.error(error);
