@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Styles from "../../styles/admin.module.css";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Quiz = () => {
   const [quizList, setQuizList] = useState([]);
@@ -238,7 +240,7 @@ const Quiz = () => {
                 />
               </label>
             ))}
-            <label>
+            <label className={Styles.lab}>
               정답:
               <select
                 name="answer"
@@ -259,7 +261,8 @@ const Quiz = () => {
                 ))}
               </select>
             </label>
-            <label htmlFor="photo">사진 업로드</label>
+            {/* 
+             <label htmlFor="photo">사진 업로드</label>
             <input
               type="file"
               name="photo"
@@ -272,8 +275,14 @@ const Quiz = () => {
                 })
               }
             />
+            */}
 
-            <button type="submit">저장</button>
+            <button className={Styles.filesavebtn} type="submit">
+              <i className={Styles.icon}>
+                <FontAwesomeIcon icon={faCheck} />
+              </i>{" "}
+              Save
+            </button>
           </form>
         </div>
       )}

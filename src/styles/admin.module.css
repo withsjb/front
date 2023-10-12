@@ -15,7 +15,75 @@
   transform: translatey(-50%);
 }
 
+.modal {
+  margin: 0 auto;
+  padding-top: 60px;
+  margin-top: 50px;
+  width: 62rem;
+  height: 500px;
+  margin-left: auto;
+
+  border: solid 2px;
+  border-color: #555;
+  background-color: #fff;
+  position: relative;
+}
+
+.lab {
+  position: absolute;
+  left: 350px;
+  top: 350px;
+}
+
+.filesavebtn {
+  margin-top: 120px;
+  margin-left: 410px;
+  width: 100px;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.modal input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.modal textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 13px;
+  height: 200px;
+}
+
 @media (max-width: 1095px) {
+  .modal {
+    width: 70%;
+  }
+
+  .lab {
+    margin-top: 50px;
+    margin-left: -130px;
+  }
+
+  .filesavebtn {
+    margin-top: 30px;
+    margin-left: 280px;
+    width: 100px;
+    background-color: green;
+    border-radius: 5px;
+  }
+
   .buttonleft {
     color: white;
     font-size: 5rem;
