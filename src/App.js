@@ -10,7 +10,8 @@ import Windowproblem from "./pages/Windowproblem";
 import Getquestion from "./component/admin/getquestion";
 import WindowsQuizmain from "./pages/WindowsQuizmain";
 import LinuxQuizmain from "./pages/LinuxQuizmain";
-import Quiz from "./component/problem/Quiz";
+import WinQuiz from "./component/problem/WinQuiz";
+import LinQuiz from "./component/problem/LinQuiz";
 import Result from "./component/problem/Result";
 import Page2 from "./pages/page2";
 import Mainpage from "./pages/mainpage";
@@ -73,11 +74,21 @@ export default function App() {
           <Route path="/LinuxQuizmain" element={<LinuxQuizmain />}></Route>
 
           <Route
-            path="/quiz"
+            path="/WinQuiz"
             element={
               <CheckUserExist>
                 {" "}
-                <Quiz />{" "}
+                <WinQuiz />{" "}
+              </CheckUserExist>
+            }
+          ></Route>
+
+          <Route
+            path="/LinQuiz"
+            element={
+              <CheckUserExist>
+                {" "}
+                <LinQuiz />{" "}
               </CheckUserExist>
             }
           ></Route>

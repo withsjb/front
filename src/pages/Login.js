@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import Styles from "../styles/Login.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUnlock } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const [cookies] = useCookies([]);
@@ -45,7 +47,7 @@ function Login() {
   return (
     <div className={Styles.body}>
       <div className={Styles.text_container}>
-        <img className={Styles.text_img} src="images/logo1.png"></img>
+        <img className={Styles.text_img} src="../images/logo1.png"></img>
         <div className={Styles.text_title}>
           {" "}
           가상 공간의 수호자, Cyber Gaurdian
@@ -66,12 +68,16 @@ function Login() {
       </div>
       <div className={Styles.container}>
         <div className={Styles.title}>
-          <h2> Login </h2>
+          <h2 className={Styles.titleh2}> Cyber Guardian </h2>
+          <span className={Styles.lgsub}> Login </span>
         </div>
         <form className={Styles.forma} onSubmit={(e) => handleSubmit(e)}>
           <div className={Styles.formbox}>
-            <label htmlFor="email">Email</label>
+            <label className={Styles.lglabel} htmlFor="email">
+              Email
+            </label>
             <input
+              className={Styles.inputem}
               type="email"
               name="email"
               placeholder=" abcd@email.co.kr"
@@ -81,8 +87,11 @@ function Login() {
             />
           </div>
           <div className={Styles.formbox}>
-            <label htmlFor="password">Password</label>
+            <label className={Styles.lglabel} htmlFor="password">
+              Password
+            </label>
             <input
+              className={Styles.inputpa}
               type="password"
               name="password"
               placeholder=" *******"
@@ -94,9 +103,16 @@ function Login() {
           <button className={Styles.libtn} type="submit">
             {" "}
             로그인{" "}
+            <i className={Styles.icon}>
+              <FontAwesomeIcon icon={faUnlock} />
+            </i>
           </button>
           <span>
-            계정이 없으신가요 ?<Link to="/register"> 등록하기 </Link>
+            계정이 없으신가요 ?{" "}
+            <Link className={Styles.go_reg} to="/register">
+              {" "}
+              등록하기{" "}
+            </Link>
           </span>
         </form>
         <ToastContainer />

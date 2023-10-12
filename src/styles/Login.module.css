@@ -1,5 +1,17 @@
 /* login 페이지의 전체적인 틀 css*/
 
+button {
+  background-color: #014c66;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  width: 400px;
+  margin: auto;
+}
+
 .body {
   display: flex;
   justify-content: center;
@@ -10,12 +22,30 @@
 }
 /*배경 설정*/
 
-.title {
-  font-size: 24pt;
-  color: black;
+.titleh2 {
+  font-size: 12pt;
+  color: #bbb;
   text-align: center;
 }
 /* 제목 text설정*/
+
+.lgsub {
+  font-size: 24pt;
+  color: #333;
+  text-align: center;
+  padding-left: 38%;
+  font-weight: 600;
+}
+/*Login 타이틀*/
+
+.resub {
+  font-size: 24pt;
+  color: #333;
+  text-align: center;
+  padding-left: 30%;
+  font-weight: 600;
+}
+/*register 타이틀*/
 
 .formbox {
   background-color: white;
@@ -32,11 +62,25 @@
 }
 /*login, password의 폼 형식*/
 
+.inputem,
+.inputpa {
+  padding-left: 5px;
+  border-radius: 10px;
+  border: 1.6px #ddd solid;
+  font-size: 12pt;
+}
+/*이메일, 패스워드 입력란*/
+
+.lglabel {
+  padding-left: 7px;
+}
+/*이메일, 패스워드 상단 텍스트*/
+
 .container {
   background-color: white;
   padding: 1rem 3rem;
   padding-bottom: 2rem;
-  border-radius: 0.7rem;
+  border-radius: 20px;
   border-style: solid 1px;
   border-color: gray;
   border-width: 3px;
@@ -61,6 +105,8 @@
 .text_title {
   font-size: 24pt;
   padding-left: 5px;
+  color: #002e69;
+  font-weight: 540;
 }
 /*로그인 화면 옆의 설명 제목*/
 
@@ -73,30 +119,42 @@
 /*로그인 화면 옆의 설명 란*/
 
 .libtn {
-  background-color: #014c66;
+  background-color: #003f92;
   color: white;
   border: none;
-  padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 11pt;
   cursor: pointer;
-  border-radius: 0.7rem;
+  border-radius: 20px;
   width: 250px;
+  height: 30px;
   margin: auto;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.libtn:hover {
+  background-color: #003170;
 }
 
 .rgbtn {
-  background-color: #014c66;
+  background-color: #003f92;
   color: white;
   border: none;
-  padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 11pt;
   cursor: pointer;
-  border-radius: 0.7rem;
+  border-radius: 20px;
   width: 250px;
+  height: 30px;
   margin: auto;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-button {
+.rgbtn:hover {
+  background-color: #003170;
+}
+
+.button {
   background-color: #014c66;
   color: white;
   border: none;
@@ -127,3 +185,21 @@ span a {
   flex-direction: column;
   gap: 0.6rem;
 } */
+
+.go_reg {
+  color: #003170;
+  cursor: pointer;
+}
+/*등록하기로 가는 링크*/
+.go_reg:hover {
+  text-decoration: underline;
+}
+
+.go_lg {
+  color: #003170;
+  cursor: pointer;
+}
+/*로그인하기로 가는 링크*/
+.go_lg:hover {
+  text-decoration: underline;
+}

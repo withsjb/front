@@ -3,7 +3,15 @@ import axios from "axios";
 import Styles from "../styles/testbed.module.css";
 import Navbar from "../component/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSquareCaretRight,
+  faUpload,
+} from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [links, setLinks] = useState([]);
@@ -56,10 +64,18 @@ function App() {
     <>
       <Navbar />
       <div className={Styles.tbedbody}>
-        <h1 className={Styles.tbedtitle}> Testbed File List</h1>
+        <h1 className={Styles.tbedtitle}>
+          <i className={Styles.icon}>
+            <FontAwesomeIcon icon={faClipboardList} />
+          </i>{" "}
+          Testbed File List
+        </h1>
         <ul className={Styles.tbedul}>
           {links.map((link) => (
             <li className={Styles.tbedli} key={link._id}>
+              <i className={Styles.checkicon}>
+                <FontAwesomeIcon icon={faSquareCheck} />
+              </i>
               <a
                 className={Styles.tbedlink}
                 href={link.url}
@@ -79,20 +95,31 @@ function App() {
                   )
                 }
               >
-                수정
+                Edit{" "}
+                <i className={Styles.icon}>
+                  <FontAwesomeIcon icon={faGear} />
+                </i>
               </button>
               {/* 삭제 버튼 */}
               <button
                 className={Styles.tdeletebtn}
                 onClick={() => handleDeleteLink(link._id)}
               >
-                삭제
+                Delete{" "}
+                <i className={Styles.icon}>
+                  <FontAwesomeIcon icon={faTrashCan} />
+                </i>
               </button>
             </li>
           ))}
         </ul>
         <div className={Styles.tbedadd}>
-          <h3 className={Styles.tbedh3}>새 링크 추가</h3>
+          <h3 className={Styles.tbedh3}>
+            Add New Link{" "}
+            <i className={Styles.linkicon}>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </i>
+          </h3>
           {/* 새 링크 입력 필드 */}
           <input
             className={Styles.linkaddtilte}

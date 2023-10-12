@@ -41,32 +41,35 @@ function Board() {
           <span className={Styles.bh2}>자유로운 소통을 위한 공간입니다.</span>
         </h1>
         <div className={Styles.bar}></div>
-        <div className={Styles.exbar}>
-          {" "}
-          제목
-          <span className={Styles.exview}> | 조회수 |</span>
-          <span className={Styles.exlike}> 좋아요</span>
-        </div>
-        <Link className={Styles.linkbtn} to="/Boarddetail">
-          글쓰기
-        </Link>
-        {posts.map((post) => (
-          <div className={Styles.postbtndiv} key={post._id}>
-            <button
-              className={Styles.postbtn}
-              onClick={() => navigate(`/postdetail/${post._id}`)}
-            >
-              {post.title}
-              <span className={Styles.views}>
-                {" "}
-                {post.views} |{" "}
-                <span className={Styles.likes}> {post.likes} </span>
-              </span>
-            </button>{" "}
-            {/* navigate 함수 사용 */}
+        <div className={Styles.wrapbody}>
+          <div className={Styles.exbar}>
+            {" "}
+            제목
+            <span className={Styles.exview}> | 조회수 |</span>
+            <span className={Styles.exlike}> 좋아요</span>
           </div>
-        ))}
-      </div>
+          <Link className={Styles.linkbtn} to="/Boarddetail">
+            글쓰기
+          </Link>
+          {posts.map((post) => (
+            <div className={Styles.postbtndiv} key={post._id}>
+              <button
+                className={Styles.postbtn}
+                onClick={() => navigate(`/postdetail/${post._id}`)}
+              >
+                {post.title}
+                <span className={Styles.views}>
+                  {" "}
+                  {post.views} |{" "}
+                  <span className={Styles.likes}> {post.likes} </span>
+                </span>
+              </button>{" "}
+              {/* navigate 함수 사용 */}
+            </div>
+          ))}
+        </div>
+      </div>{" "}
+      {/*wrapbody div*/}
       <div className={Styles.pgbody}>
         <button
           className={Styles.pgback}

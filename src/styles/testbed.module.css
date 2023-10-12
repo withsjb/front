@@ -9,21 +9,22 @@
 
 .teditbtn {
   border-radius: 15px;
-  background-color: #333;
+  background-color: #26303d;
   color: white;
   box-sizing: content-box;
   width: 100px;
-  right: 8%;
+  height: 16px;
+  right: 12%;
+  bottom: 15%;
   position: absolute;
   font-weight: bold;
   font-size: 11pt;
+  padding-bottom: 1%;
 }
 /*수정 버튼*/
 
 .teditbtn:hover {
-  box-sizing: content-box;
-  height: auto;
-  background-color: black;
+  background-color: #4e617a;
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease;
@@ -34,9 +35,11 @@
   background-color: white;
   color: #333;
   position: absolute;
-  right: 1%;
+  right: 4.5%;
+  bottom: 15%;
   box-sizing: content-box;
-  width: 45px;
+  width: 60px;
+  height: 16px;
   border: #444 1.6px solid;
   font-weight: bold;
   font-size: 10pt;
@@ -44,22 +47,29 @@
 /*삭제 버튼*/
 
 .tdeletebtn:hover {
-  height: auto;
   opacity: 1;
   visibility: visible;
   transition: all 0.2s ease;
-  text-decoration: underline;
+  background-color: #333;
+  color: white;
+}
+
+.checkicon {
+  position: absolute;
+  top: 25%;
+  left: 5%;
 }
 
 .tbedlink {
-  padding-right: 800px;
+  padding-right: 700px;
   width: 900px;
-  font-size: 18pt;
+  height: auto;
+  font-size: 16pt;
   text-decoration: none;
   text-align: center;
   color: black;
-  height: 30px;
-  margin-left: 30px;
+  margin-top: 5px;
+  padding-left: 80px;
 }
 /*테스트베드 링크*/
 
@@ -72,8 +82,10 @@
 
 .tbedli {
   width: 1150px;
-  margin-top: 30px;
   border: none;
+  height: auto;
+  border-bottom: 1px solid #eeeeee;
+  margin-top: 5px;
 }
 /*tbedlink의 li*/
 
@@ -91,12 +103,13 @@
   width: 900px;
   margin-top: 30%;
   position: sticky;
-  bottom: 0;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
+  bottom: 0.1%;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
   padding-bottom: 15px;
   padding-left: 30px;
+  border: #4e617a solid 3px;
 }
 /*새로운 링크 추가 div*/
 
@@ -109,9 +122,12 @@
 /*링크추가 title*/
 
 .linkaddtilte {
-  width: 500px;
+  width: 400px;
   margin-left: 20px;
   padding-left: 10px;
+  border-radius: 8px;
+  border: 1px #bbb solid;
+  margin-bottom: 2px;
 }
 /*링크add 제목*/
 
@@ -119,8 +135,10 @@
   margin-top: 5px;
   margin-left: 20px;
   padding-left: 10px;
-  width: 640px;
+  width: 700px;
   margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px #bbb solid;
 }
 /*링크add 텍스트*/
 
@@ -129,11 +147,12 @@
   width: 120px;
   height: 35px;
   color: black;
-  border-radius: 10px;
+  border-radius: 15px;
   position: absolute;
-  top: 20%;
-  right: 5%;
+  top: 15%;
+  right: 3%;
   font-weight: bold;
+  border: black 1.6px solid;
 }
 /*링크추가 버튼*/
 
@@ -141,5 +160,10 @@
   opacity: 1;
   visibility: visible;
   transition: all 0.2s ease;
-  text-decoration: underline;
+  background-color: black;
+  color: white;
+}
+
+.linkicon {
+  font-size: 14pt;
 }

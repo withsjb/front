@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import Styles from "../styles/Login.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilePen } from "@fortawesome/free-solid-svg-icons";
 
 function Register() {
   const [cookies] = useCookies(["cookie-name"]);
@@ -46,12 +48,16 @@ function Register() {
     <div className={Styles.body}>
       <div className={Styles.container}>
         <div className={Styles.title}>
-          <h2>Register</h2>
+          <h2 className={Styles.titleh2}> Cyber Guardian </h2>
+          <span className={Styles.resub}> Register </span>
         </div>
         <form className={Styles.forma} onSubmit={(e) => handleSubmit(e)}>
           <div className={Styles.formbox}>
-            <label htmlFor="email">Email</label>
+            <label className={Styles.lglabel} htmlFor="email">
+              Email
+            </label>
             <input
+              className={Styles.inputem}
               type="email"
               name="email"
               placeholder=" abcd@email.co.kr"
@@ -61,8 +67,11 @@ function Register() {
             />
           </div>
           <div className={Styles.formbox}>
-            <label htmlFor="password">Password</label>
+            <label className={Styles.lglabel} htmlFor="password">
+              Password
+            </label>
             <input
+              className={Styles.inputpa}
               type="password"
               name="password"
               placeholder=" 대,소문자 구분 6~12자리 입력"
@@ -74,9 +83,15 @@ function Register() {
           <button className={Styles.rgbtn} type="submit">
             {" "}
             가입하기{" "}
+            <i className={Styles.icon}>
+              <FontAwesomeIcon icon={faFilePen} />
+            </i>
           </button>
           <span>
-            이미 계정이 있으신가요 ?<Link to="/login"> 로그인하기 </Link>
+            이미 계정이 있으신가요 ?
+            <Link className={Styles.go_lg} to="/login">
+              로그인하기{" "}
+            </Link>
           </span>
         </form>
         <ToastContainer />

@@ -40,7 +40,11 @@ export default function Main() {
           </form>
 
           <div className={Styles.start}>
-            <Link className={Styles.startbtn} to={"/quiz"} onClick={startQuiz}>
+            <Link
+              className={Styles.startbtn}
+              to={"/LinQuiz"}
+              onClick={startQuiz}
+            >
               Start !!
             </Link>
           </div>

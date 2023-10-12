@@ -33,39 +33,45 @@ function Board() {
   );
 
   return (
-    <div>
+    <div className={Styles.boardbody}>
       <div>
         <Navbar />
         <h1 className={Styles.bh1}>
           QnA게시판
           <span className={Styles.bh2}>
-            운영진 혹은 다른 유저에게 질문하세요!
+            운영진 혹은 다른 유저에게 질문하세요!.
           </span>
         </h1>
         <div className={Styles.bar}></div>
-        <div className={Styles.exbar}>
-          {" "}
-          제목
-          <span className={Styles.exview}> | 조회수 |</span>
-          <span className={Styles.exlike}> 좋아요</span>
-        </div>
-        <Link className={Styles.linkbtn} to="/qnaBoarddetail">
-          글쓰기
-        </Link>
-        {posts.map((post) => (
-          <div className={Styles.postbtndiv} key={post._id}>
-            <button
-              className={Styles.postbtn}
-              onClick={() => navigate(`/qnapostdetail/${post._id}`)}
-            >
-              {post.title}
-              <span className={Styles.views}> {post.views} | </span>
-              <span className={Styles.likes}> {post.likes} </span>
-            </button>{" "}
-            {/* navigate 함수 사용 */}
+        <div className={Styles.wrapbody}>
+          <div className={Styles.exbar}>
+            {" "}
+            제목
+            <span className={Styles.exview}> | 조회수 |</span>
+            <span className={Styles.exlike}> 좋아요</span>
           </div>
-        ))}
-      </div>
+          <Link className={Styles.linkbtn} to="/qnaBoarddetail">
+            글쓰기
+          </Link>
+          {posts.map((post) => (
+            <div className={Styles.postbtndiv} key={post._id}>
+              <button
+                className={Styles.postbtn}
+                onClick={() => navigate(`/qnapostdetail/${post._id}`)}
+              >
+                {post.title}
+                <span className={Styles.views}>
+                  {" "}
+                  {post.views} |{" "}
+                  <span className={Styles.likes}> {post.likes} </span>
+                </span>
+              </button>{" "}
+              {/* navigate 함수 사용 */}
+            </div>
+          ))}
+        </div>
+      </div>{" "}
+      {/*wrapbody div*/}
       <div className={Styles.pgbody}>
         <button
           className={Styles.pgback}

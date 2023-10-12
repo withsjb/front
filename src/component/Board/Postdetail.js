@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import Styles from "../../styles/Postdetail.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Navbar from "../Navbar";
 function PostDetail() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
@@ -48,36 +53,79 @@ function PostDetail() {
   };
 
   return (
-    <div>
-      <h2>게시글 상세 보기</h2>
-      {post ? (
-        <div>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
-          <p>작성자: {post.author}</p>
-          <p>조회수: {post.views}</p> {/* 조회수 표시 */}
-          <p>좋아요: {likes}</p> {/* 좋아요 수 표시 */}
-          <button onClick={handleLike}>좋아요</button>
-          <h4>댓글</h4>
-          <ul>
-            {comments.map((comment, index) => (
-              <li key={index}>{comment.text}</li>
-            ))}
-          </ul>
-          <form onSubmit={handleCommentSubmit}>
-            <input
-              type="text"
-              placeholder="댓글 작성"
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-            <button type="submit">댓글 작성</button>
-          </form>
-        </div>
-      ) : (
-        <p>게시글을 불러오는 중입니다...</p>
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div className={Styles.postbody}>
+        <h1 className={Styles.posttitle}>
+          {" "}
+          자유게시판
+          <span className={Styles.postsubtitle}>
+            {" "}
+            <i className={Styles.righticon}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </i>{" "}
+            게시글
+          </span>
+        </h1>
+        <div className={Styles.bar}></div>
+        {post ? (
+          <div>
+            <h2 className={Styles.ptitle}>Title : {post.title}</h2>
+            <p className={Styles.pcontents}>{post.content}</p>
+            <div className={Styles.postinfo}>
+              <span className={Styles.writer}>작성자 :{post.author}</span>
+              <span className={Styles.views}>조회수 : {post.views}</span>{" "}
+              {/* 조회수 표시 */}
+              <span className={Styles.dates}>업로드 : {post.date}</span>{" "}
+              {/* 날짜 표시*/}
+            </div>
+            <button
+              className={Styles.likebtn}
+              onClick={handleLike}
+              type="submit"
+            >
+              {" "}
+              따~봉 <br></br>
+              <i className={Styles.eicon}>
+                <FontAwesomeIcon icon={faThumbsUp} />
+              </i>{" "}
+              {likes}
+            </button>{" "}
+            {/* 좋아요 수 표시 */}
+            <div className={Styles.commentdiv}>
+              <h4 className={Styles.posth4}>
+                댓글{" "}
+                <i className={Styles.eicon}>
+                  <FontAwesomeIcon icon={faComment} />
+                </i>
+              </h4>
+              <form onSubmit={handleCommentSubmit}>
+                <input
+                  className={Styles.commentform}
+                  type="text"
+                  placeholder="댓글 작성"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                />
+                <button className={Styles.commentsbtn} type="submit">
+                  작성
+                </button>
+                <ul className={Styles.commentul}>
+                  {comments.map((comment, index) => (
+                    <li className={Styles.commentli} key={index}>
+                      {" "}
+                      {comment.text}{" "}
+                    </li>
+                  ))}
+                </ul>
+              </form>
+            </div>
+          </div>
+        ) : (
+          <p>게시글을 불러오는 중입니다...</p>
+        )}
+      </div>
+    </>
   );
 }
 
