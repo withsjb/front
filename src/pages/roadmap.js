@@ -8,55 +8,62 @@ import {
   faBook,
   faFilePen,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 
 const ArticleNavigator = () => {
   const articles = [
     {
       id: 1,
       concept: "서론",
-      content: "Article 1 content...",
+      content: "순서대로 따라가보세요!",
       isVisible: false,
     },
     {
       id: 2,
       concept: "리눅스 구조",
-      content: "Article 2 content...",
+      content: <Link to="/linux/user/649050c0d224bc4b21cdd17c">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 3,
       concept: "설치가이드 페이지",
-      content: "Article 3 content...",
+      content: <Link to="/testbed">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 4,
-      concept: " vi 편집기 사용법",
-      content: "Article 3 content...",
+      concept: " 로그 기본 설정",
+      content: <Link to="/linux/user/652618ebd55a4e8632033802">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 5,
       concept: "Shell script 기초",
-      content: "Article 3 content...",
+      content: <Link to="/window/user/651f7ab84e8ce931808e6211">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 6,
       concept: "hello",
-      content: "Articleb 21 content...",
+      content: "11",
       isVisible: false,
     },
     {
       id: 7,
       concept: "Windows 기초",
-      content: "Articleb 22 content...",
+      content: <Link to="/WinStudy">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 8,
       concept: "Linux 기초",
-      content: "Articleb 23 content...",
+      content: <Link to="/LinStudy">Go Page</Link>,
       isVisible: false,
     },
     {
@@ -74,25 +81,25 @@ const ArticleNavigator = () => {
     {
       id: 11,
       concept: "Testbed",
-      content: "Articleb 25 content...",
+      content: <Link to="/linux/user/64907713d224bc4b21cdd442">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 12,
       concept: "test bed",
-      content: "Articleb 25 content...",
+      content: <Link to="/linux/user/64907713d224bc4b21cdd442">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 13,
       concept: "Windows 문제",
-      content: "Articleb 25 content...",
+      content: <Link to="/WindowsQuizmain">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 14,
       concept: "Linux 문제",
-      content: "Articleb 25 content...",
+      content: <Link to="/LinuxQuizmain">Go Page</Link>,
       isVisible: false,
     },
     // ... 추가적인 article 데이터
@@ -147,10 +154,10 @@ const ArticleNavigator = () => {
   return (
     <div className={Styles.body}>
       <Navbar />
-      <div class="d-flex justify-content-center align-items-center flex-column mb-4">
+      <div className="d-flex justify-content-center align-items-center flex-column mb-4">
         <h1 className={Styles.h1}>추천 루트를 소개합니다!</h1>
 
-        <p class="w-75 text-white text-center">
+        <p className="w-75 text-white text-center">
           처음 오신 분들을 위해 저희가 준비한 가이드라인입니다. 입문하시는
           분들께서는 처음부터 진행하시면 도움이 되실 겁니다.{" "}
         </p>
@@ -204,7 +211,7 @@ const ArticleNavigator = () => {
               </h2>
 
               {article.isVisible && (
-                <p
+                <div
                   className={`${Styles.p} ${
                     article.isVisible ? Styles.visible : ""
                   }`}
@@ -228,7 +235,7 @@ const ArticleNavigator = () => {
                       Next
                     </button>
                   </nav>
-                </p>
+                </div>
               )}
             </article>
           ))}

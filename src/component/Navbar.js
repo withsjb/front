@@ -79,7 +79,9 @@ const Navbar = () => {
                 {" "}
                 <li>Linux 기초</li>
               </Link>
-
+              <Link to="/Usertermadd">
+                <li>취약점 단어장</li>
+              </Link>
               <Link to="/testbed">
                 <li>Testbed</li>
               </Link>

@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
+.tbody {
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  background-color: white;
+  height: auto;
+  color: black;
+  font-size: 20px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+}
+
+.tcontainer {
+  border: 1px #ddd solid;
+  border-radius: 15px;
+  height: 600px;
+}
+
+.termtitle {
+  background-color: #b19876;
+  color: white;
+  padding: 10px 0 10px 40px;
+  font-size: 20pt;
+  font-weight: 500;
+  border-radius: 15px;
+}
+/* title 제목 구간 */
+
+.tsubtitle {
+  font-size: 9pt;
+}
+
+.addExp {
+  background-color: #c1c1c1;
+  color: rgb(72, 72, 72);
+  width: auto;
+  padding: 5px 25px;
+  font-size: 10pt;
+  border-bottom: solid black 3px;
+  height: 3em;
+}
+/*title 밑의 부연설명*/
+
+.t_ul {
+  color: black;
+}
+/*li부분의 형식?*/
+
+.t_li {
+  color: rgb(218, 227, 45);
+  font-weight: bold;
+  padding: 10px 10px;
+  border-bottom: #ddd 1px solid;
+  height: auto;
+}
+/*단어 추가되는 부분*/
+
+.term_w {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.def_term {
+  font-size: 10pt;
+  margin-top: 5px;
+}
+
+.prevbtn {
+  background-color: #fefefe;
+  color: #b19876;
+  width: 160px;
+  height: 36px;
+  border-radius: 15px;
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+  border: 1.6px #d2b58c solid;
+  font-size: 12pt;
+  z-index: 1;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.prevbtn:hover {
+  background-color: #b19876;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.nextbtn {
+  background-color: #fefefe;
+  color: #b19876;
+  border-radius: 15px;
+  position: absolute;
+  left: 25%;
+  bottom: 5%;
+  width: 160px;
+  height: 36px;
+  border: 1.6px #d2b58c solid;
+  font-size: 11pt;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.nextbtn:hover {
+  background-color: #b19876;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.menu {
+  padding: 15px 20px 15px 40px;
+  margin-bottom: 10px;
+  color: #303f9f;
+  background: #fff;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);*/
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  font-weight: 700;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 400px;
+  word-break: keep-all;
+}
+
+.active .activelight {
+  background-color: #fbc02d;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  top: 0;
+  border-radius: 0;
+}
+
+.menuh2 {
+  width: 33.33333%;
+  font-size: 22pt;
+  color: black;
+}
+/*설명파트*/
+
+.termcont {
+  width: 400px;
+  background-color: white;
+}
+/*단어 div*/
+
+.active .menuh2 {
+  font-size: 2.1em;
+  color: #fbc02d;
+}
+
+.addForm {
+  background-color: white;
+  width: 600px;
+  height: 7.3em;
+  position: fixed;
+  right: 10.3%;
+  bottom: 0.1px;
+  border-radius: 20px;
+  border: #b19876 1.6px solid;
+  visibility: hidden;
+  /*폼 형식*/
+}
+
+.formTitle {
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: 18pt;
+  font-weight: bold;
+}
+/*폼 형식 제목*/
+
+.termAdd {
+  font-size: 13pt;
+  padding: 0 5px;
+  margin-left: 10px;
+}
+/*폼 형식 안의 term*/
+
+.inputterm {
+  color: #b19876;
+  font-weight: 300;
+  font-size: 12pt;
+  width: 200px;
+  height: auto;
+  padding-left: 7px;
+  border-radius: 7px;
+  border: 1px #ddd solid;
+}
+/*term 형식 입력칸*/
+
+.defAdd {
+  font-size: 13pt;
+  padding: 0 5px;
+  margin-left: 10px;
+}
+/*폼 형식 안의 definition*/
+
+.inputdef {
+  color: #b19876;
+  font-weight: 300;
+  font-size: 12pt;
+  width: 400px;
+  height: auto;
+  padding-left: 7px;
+  border-radius: 7px;
+  border: 1px #ddd solid;
+}
+
+.t_Addbtn {
+  background-color: #b19876ab;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 480px;
+  height: 30px;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 13pt;
+}
+/*단어 추가버튼*/
+
+.t_Addbtn:hover {
+  background-color: #b19876;
+  transition: all 0.2s ease;
+}
+
+.definitionroom {
+  width: 63.66666%;
+  position: relative;
+  bottom: 150px;
+}
+
+.nacc {
+  position: relative;
+  height: 0px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.behindli {
+  opacity: 0;
+  transform: translateX(50px);
+  position: absolute;
+  list-style: none;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15pt;
+  margin-left: 85%;
+  color: white;
+}
+
+.activeli {
+  box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782,
+    0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(
+      circle at left 30%,
+      rgba(34, 34, 34, 0.3),
+      rgba(34, 34, 34, 0.3) 80px,
+      rgba(34, 34, 34, 0.5) 100px,
+      rgba(51, 51, 51, 0.5) 160px,
+      rgba(51, 51, 51, 0.5)
+    ),
+    linear-gradient(
+      215deg,
+      transparent,
+      transparent 100px,
+      #222 260px,
+      #222 320px,
+      transparent
+    ),
+    radial-gradient(circle at right, #111, rgba(51, 51, 51, 1));
+  background-color: #333;
+  transition-delay: 0.3s;
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0px);
+  height: auto;
+  border: tan solid 12px;
+  border-top: #bda27e solid 12px;
+  border-left: #b19876 solid 12px;
+  border-bottom: #c9ad86 solid 12px;
+}
+
+.active {
+  color: #fbc02d;
+}
+
+.blackboard {
+  position: relative;
+  width: 640px;
+  margin: 7% auto;
+  border: tan solid 12px;
+  border-top: #bda27e solid 12px;
+  border-left: #b19876 solid 12px;
+  border-bottom: #c9ad86 solid 12px;
+  box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782,
+    0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(
+      circle at left 30%,
+      rgba(34, 34, 34, 0.3),
+      rgba(34, 34, 34, 0.3) 80px,
+      rgba(34, 34, 34, 0.5) 100px,
+      rgba(51, 51, 51, 0.5) 160px,
+      rgba(51, 51, 51, 0.5)
+    ),
+    linear-gradient(
+      215deg,
+      transparent,
+      transparent 100px,
+      #222 260px,
+      #222 320px,
+      transparent
+    ),
+    radial-gradient(circle at right, #111, rgba(51, 51, 51, 1));
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .prevbtn,
+  .nextbtn {
+    width: 80px;
+  }
+  .menuh2,
+  .menu {
+    font-size: 12pt;
+  }
+  .behindli {
+    font-size: 7pt;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .prevbtn,
+  .nextbtn {
+    width: 120px;
+  }
+  .menuh2,
+  .menu {
+    font-size: 14pt;
+  }
+  .behindli {
+    font-size: 11pt;
+  }
+}
