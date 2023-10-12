@@ -13,49 +13,49 @@ const ArticleNavigator = () => {
   const articles = [
     {
       id: 1,
-      concept: "Hello",
+      concept: "서론",
       content: "Article 1 content...",
       isVisible: false,
     },
     {
       id: 2,
-      concept: "Hello",
+      concept: "리눅스 구조",
       content: "Article 2 content...",
       isVisible: false,
     },
     {
       id: 3,
-      concept: "Hello",
+      concept: "설치가이드 페이지",
       content: "Article 3 content...",
       isVisible: false,
     },
     {
       id: 4,
-      concept: "Hello",
+      concept: " vi 편집기 사용법",
       content: "Article 3 content...",
       isVisible: false,
     },
     {
       id: 5,
-      concept: "Hello",
+      concept: "Shell script 기초",
       content: "Article 3 content...",
       isVisible: false,
     },
     {
       id: 6,
-      concept: "Hello",
+      concept: "hello",
       content: "Articleb 21 content...",
       isVisible: false,
     },
     {
       id: 7,
-      concept: "Hello",
+      concept: "Windows 기초",
       content: "Articleb 22 content...",
       isVisible: false,
     },
     {
       id: 8,
-      concept: "Hello",
+      concept: "Linux 기초",
       content: "Articleb 23 content...",
       isVisible: false,
     },
@@ -73,19 +73,25 @@ const ArticleNavigator = () => {
     },
     {
       id: 11,
-      concept: "Hellok",
+      concept: "Testbed",
       content: "Articleb 25 content...",
       isVisible: false,
     },
     {
       id: 12,
-      concept: "Hellok",
+      concept: "test bed",
       content: "Articleb 25 content...",
       isVisible: false,
     },
     {
       id: 13,
-      concept: "Hellok",
+      concept: "Windows 문제",
+      content: "Articleb 25 content...",
+      isVisible: false,
+    },
+    {
+      id: 14,
+      concept: "Linux 문제",
       content: "Articleb 25 content...",
       isVisible: false,
     },
@@ -145,8 +151,8 @@ const ArticleNavigator = () => {
         <h1 className={Styles.h1}>추천 루트를 소개합니다!</h1>
 
         <p class="w-75 text-white text-center">
-          처음 오신 분들을 위해 저희가 준비한 가이드 라인입니다. 입문하시는
-          분들계서는 처음 부터 진행하시면 도움이 되실겁니다.{" "}
+          처음 오신 분들을 위해 저희가 준비한 가이드라인입니다. 입문하시는
+          분들께서는 처음부터 진행하시면 도움이 되실 겁니다.{" "}
         </p>
       </div>
       <div className={Styles.one}>
@@ -173,7 +179,7 @@ const ArticleNavigator = () => {
           }`}
         >
           <FontAwesomeIcon className={Styles.circleicon} icon={faFilePen} />
-          <h4>STEP 2</h4>Ready for this?
+          <h4>STEP 3</h4>Ready for this?
         </div>
 
         <div className={Styles.oneroadmap}>

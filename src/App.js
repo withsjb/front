@@ -50,6 +50,8 @@ import QnABoard from "./pages/QnAboard";
 import QnABoardDetail from "./component/Board/QnABoarddetail";
 import QnAPostDetail from "./component/Board/QnAPostdetail";
 import UserFileDetail from "./component/userstydyfile/UserFiledetail";
+import Winuserfiledetail from "./component/userstydyfile/Winuserfiledetail";
+
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -127,6 +129,7 @@ export default function App() {
           <Route path="/window" element={<Window />}></Route>
           <Route path="/linux/:fileId" element={<FileDetail />} />
           <Route path="/linux/user/:fileId" element={<UserFileDetail />} />
+          <Route path="/window/user/:fileId" element={<Winuserfiledetail />} />
 
           <Route path="/window/:fileId" element={<WinFileDetail />} />
           <Route path="/testbed" element={<TestBed />}></Route>
