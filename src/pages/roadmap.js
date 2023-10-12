@@ -77,10 +77,24 @@ const ArticleNavigator = () => {
       content: "Articleb 25 content...",
       isVisible: false,
     },
+    {
+      id: 12,
+      concept: "Hellok",
+      content: "Articleb 25 content...",
+      isVisible: false,
+    },
+    {
+      id: 13,
+      concept: "Hellok",
+      content: "Articleb 25 content...",
+      isVisible: false,
+    },
     // ... 추가적인 article 데이터
   ];
 
   const [articleStates, setArticleStates] = useState(articles);
+  const [isId1To5Visible, setIsId1To5Visible] = useState(false);
+  const [isId1To10Visible, setIsId1To10Visible] = useState(false);
 
   /*넘기는 버튼 */
   const handleToggleContent = (index) => {
@@ -88,7 +102,20 @@ const ArticleNavigator = () => {
       ...article,
       isVisible: idx === index ? !article.isVisible : false,
     }));
+
+    // 확인: ID 1-5 중 하나라도 isVisible이 true인지?
+    const isAnyId1To5Visible = newArticleStates.some(
+      (article) => article.isVisible && article.id >= 1 && article.id <= 5
+    );
+
+    const isAnyId1To10Visible = newArticleStates.some(
+      (article) => article.isVisible && article.id >= 1 && article.id <= 10
+    );
+
+    // 상태 업데이트
     setArticleStates(newArticleStates);
+    setIsId1To5Visible(isAnyId1To5Visible);
+    setIsId1To10Visible(isAnyId1To10Visible);
   };
 
   const handleNext = () => {
@@ -115,15 +142,11 @@ const ArticleNavigator = () => {
     <div className={Styles.body}>
       <Navbar />
       <div class="d-flex justify-content-center align-items-center flex-column mb-4">
-        <h1 class="mb-2 text-white text-center">Infographic Roadmap</h1>
+        <h1 className={Styles.h1}>추천 루트를 소개합니다!</h1>
+
         <p class="w-75 text-white text-center">
-          ES6 — Bootstrap 5.3 — FontAwesome 6.4
-        </p>
-        <p class="w-75 text-white text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.{" "}
+          처음 오신 분들을 위해 저희가 준비한 가이드 라인입니다. 입문하시는
+          분들계서는 처음 부터 진행하시면 도움이 되실겁니다.{" "}
         </p>
       </div>
       <div className={Styles.one}>
@@ -135,12 +158,20 @@ const ArticleNavigator = () => {
           <h4>STEP 1</h4>Ready for this?
         </div>
 
-        <div className={Styles.circlea}>
+        <div
+          className={`${Styles.circlea} ${
+            isId1To5Visible ? Styles.circleaWithMargin : ""
+          }`}
+        >
           <FontAwesomeIcon className={Styles.circleicon} icon={faBook} />
           <h4>STEP 2</h4>Ready for this?
         </div>
 
-        <div className={Styles.circleb}>
+        <div
+          className={`${Styles.circleb} ${
+            isId1To10Visible ? Styles.circlebWithMargin : ""
+          }`}
+        >
           <FontAwesomeIcon className={Styles.circleicon} icon={faFilePen} />
           <h4>STEP 2</h4>Ready for this?
         </div>
@@ -150,11 +181,13 @@ const ArticleNavigator = () => {
             <article className={Styles.article1} key={article.id}>
               <div className={Styles.icon}>
                 <i>
-                  {6 <= article.id && article.id < 11 ? (
+                  {article.id < 6 ? (
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  ) : article.id < 11 ? (
                     <FontAwesomeIcon icon={faBook} />
                   ) : (
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                  )}{" "}
+                    <FontAwesomeIcon icon={faFilePen} />
+                  )}
                 </i>
               </div>
               <h2

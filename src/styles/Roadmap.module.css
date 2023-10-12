@@ -5,6 +5,12 @@
   justify-content: center;
 }
 
+.h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 10%;
+}
+
 .circleicon {
   font-size: 50px;
 }
@@ -72,6 +78,10 @@
   color: yellow;
 }
 
+.circleaWithMargin {
+  margin-top: 510px;
+}
+
 .circleb {
   width: 300px;
   height: 300px;
@@ -89,6 +99,10 @@
   text-align: center;
   border-color: rgb(24, 196, 144);
   color: rgb(24, 196, 144);
+}
+
+.circlebWithMargin {
+  margin-top: 910px;
 }
 
 .title {
@@ -117,7 +131,7 @@
 
 .icon {
   display: flex;
-  font-size: 2em;
+  font-size: 1.5em;
   border-radius: 50%;
   background-color: rgb(203, 62, 62);
   background-clip: padding-box;
@@ -135,6 +149,12 @@
   top: 5px;
   right: 220px;
   z-index: 2;
+}
+
+.icon i {
+  position: relative;
+  top: 2px;
+  right: 8px;
 }
 
 .icon:hover {
@@ -280,6 +300,59 @@
   margin-left: 11px;
 }
 
+.article1:nth-child(11) .icon {
+  background-color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(11) .title {
+  background-color: rgba(24, 196, 144, 0.398);
+  border-color: rgba(24, 196, 144, 0.398);
+  color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(11) .p {
+  border-color: rgb(24, 196, 144);
+  color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(12) {
+  margin-left: 57px;
+}
+
+.article1:nth-child(12) .icon {
+  background-color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(12) .title {
+  background-color: rgba(24, 196, 144, 0.398);
+  border-color: rgba(24, 196, 144, 0.398);
+  color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(12) .p {
+  border-color: rgb(24, 196, 144);
+  color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(13) {
+  margin-left: 73px;
+}
+
+.article1:nth-child(13) .icon {
+  background-color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(13) .title {
+  background-color: rgba(24, 196, 144, 0.398);
+  border-color: rgba(24, 196, 144, 0.398);
+  color: rgb(24, 196, 144);
+}
+
+.article1:nth-child(13) .p {
+  border-color: rgb(24, 196, 144);
+  color: rgb(24, 196, 144);
+}
+
 .p {
   background: var(--bgColor);
 
@@ -301,7 +374,8 @@
   border-color: rgb(226, 51, 51);
   color: rgb(226, 51, 51);
   opacity: 1;
-  max-height: 1000px; /* 내용이 보여질 때 max-height 값을 크게 설정하여 내용을 보여줍니다. */
+  max-height: 1000px;
+  margin-left: -200px; /* 내용이 보여질 때 max-height 값을 크게 설정하여 내용을 보여줍니다. */
   /* 이 값은 가능한 큰 값으로 설정해야하며, 실제 콘텐츠의 최대 높이보다는 커야합니다. */
 }
 
@@ -309,4 +383,5 @@
   width: 100px;
   padding: 3px 10px;
   text-transform: uppercase;
+  background: var(--bgColor);
 }
