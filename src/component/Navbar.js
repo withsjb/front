@@ -21,13 +21,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies([]); //usestate로 변수 2개 설정 가능한듯
   const [userEmail, setUserEmail] = useState();
+  const [role, setRole] = useState(null);
 
   useEffect(() => {
     const fetchUserEmail = async () => {
       if (cookies.jwt) {
         try {
           const { data } = await axios.post(
-            "/api",
+            "http://localhost:4000",
             {},
             {
               withCredentials: true,
@@ -35,6 +36,7 @@ const Navbar = () => {
           );
           if (data.status) {
             setUserEmail(data.user);
+            setRole(data.role);
           }
         } catch (error) {
           console.error(error);
@@ -49,7 +51,7 @@ const Navbar = () => {
       <nav className={Styles.navbar}>
         <Link to="/">
           <h3 className={Styles.logo}>
-            <img src="images/logo1.png"></img>
+            <img src="../../images/logo1.png"></img>
           </h3>
         </Link>
         <ul
@@ -109,36 +111,37 @@ const Navbar = () => {
               </Link>
             </ul>{" "}
           </li>
-
-          <li className={Styles.navli}>
-            admin
-            <ul className={Styles.dropmenu}>
-              <Link to="/windowproblem">
-                {" "}
-                <li>윈도우 문제 수정</li>{" "}
-              </Link>
-              <Link to="/linuxproblem">
-                {" "}
-                <li>리눅스 문제 수정</li>{" "}
-              </Link>
-              <Link to="/termadd">
-                {" "}
-                <li>단어 주입</li>{" "}
-              </Link>
-              <Link to="/window">
-                {" "}
-                <li>윈도우 개념추가</li>{" "}
-              </Link>
-              <Link to="/Linux">
-                {" "}
-                <li>리눅스 개념추가</li>{" "}
-              </Link>
-              <Link to="/testbed">
-                {" "}
-                <li>TestBed 추가</li>{" "}
-              </Link>
-            </ul>
-          </li>
+          {role === "admin" && (
+            <li className={Styles.navli}>
+              admin
+              <ul className={Styles.dropmenu}>
+                <Link to="/windowproblem">
+                  {" "}
+                  <li>윈도우 문제 수정</li>{" "}
+                </Link>
+                <Link to="/linuxproblem">
+                  {" "}
+                  <li>리눅스 문제 수정</li>{" "}
+                </Link>
+                <Link to="/termadd">
+                  {" "}
+                  <li>단어 주입</li>{" "}
+                </Link>
+                <Link to="/window">
+                  {" "}
+                  <li>윈도우 개념추가</li>{" "}
+                </Link>
+                <Link to="/Linux">
+                  {" "}
+                  <li>리눅스 개념추가</li>{" "}
+                </Link>
+                <Link to="/testbed">
+                  {" "}
+                  <li>TestBed 추가</li>{" "}
+                </Link>
+              </ul>
+            </li>
+          )}
           <Link to="/login">
             <span>{userEmail || "로딩 중..."}</span>
           </Link>
