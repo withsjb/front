@@ -12,8 +12,12 @@ import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { useCookies } from "react-cookie";
 
 function App() {
+  const [cookies, setCookie, removeCookie] = useCookies([]); //usestate로 변수 2개 설정 가능한듯
+  const [userEmail, setUserEmail] = useState();
+  const [role, setRole] = useState(null);
   const [links, setLinks] = useState([]);
   const [newLink, setNewLink] = useState({ title: "", url: "" });
   const [editLink, setEditLink] = useState({ id: "", title: "", url: "" });
@@ -21,6 +25,29 @@ function App() {
   useEffect(() => {
     fetchLinks();
   }, []);
+
+  useEffect(() => {
+    const fetchUserEmail = async () => {
+      if (cookies.jwt) {
+        try {
+          const { data } = await axios.post(
+            "/api",
+            {},
+            {
+              withCredentials: true,
+            }
+          );
+          if (data.status) {
+            setUserEmail(data.user);
+            setRole(data.role);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    fetchUserEmail();
+  }, [cookies]);
 
   const fetchLinks = async () => {
     try {
@@ -85,6 +112,7 @@ function App() {
                 {link.title}
               </a>
               {/* 수정 버튼 */}
+              {/* 
               <button
                 className={Styles.teditbtn}
                 onClick={() =>
@@ -95,56 +123,66 @@ function App() {
                   )
                 }
               >
+              
                 Edit{" "}
+                
                 <i className={Styles.icon}>
                   <FontAwesomeIcon icon={faGear} />
                 </i>
               </button>
+              */}
               {/* 삭제 버튼 */}
-              <button
-                className={Styles.tdeletebtn}
-                onClick={() => handleDeleteLink(link._id)}
-              >
-                Delete{" "}
-                <i className={Styles.icon}>
-                  <FontAwesomeIcon icon={faTrashCan} />
-                </i>
-              </button>
+              {role === "admin" && (
+                <button
+                  className={Styles.tdeletebtn}
+                  onClick={() => handleDeleteLink(link._id)}
+                >
+                  Delete{" "}
+                  <i className={Styles.icon}>
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </i>
+                </button>
+              )}
             </li>
           ))}
         </ul>
-        <div className={Styles.tbedadd}>
-          <h3 className={Styles.tbedh3}>
-            Add New Link{" "}
-            <i className={Styles.linkicon}>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </i>
-          </h3>
-          {/* 새 링크 입력 필드 */}
-          <input
-            className={Styles.linkaddtilte}
-            type="text"
-            placeholder="제목"
-            value={newLink.title}
-            onChange={(e) => setNewLink({ ...newLink, title: e.target.value })}
-          />
-          <br></br>
-          <input
-            className={Styles.linkaddtext}
-            type="text"
-            placeholder="URL"
-            value={newLink.url}
-            onChange={(e) => setNewLink({ ...newLink, url: e.target.value })}
-          />{" "}
-          <br></br>
-          <button className={Styles.linkaddbtn} onClick={handleAddLink}>
-            {" "}
-            Add Link{" "}
-            <i className={Styles.icon}>
-              <FontAwesomeIcon icon={faUpload} />
-            </i>
-          </button>
-        </div>
+
+        {role === "admin" && (
+          <div className={Styles.tbedadd}>
+            <h3 className={Styles.tbedh3}>
+              Add New Link{" "}
+              <i className={Styles.linkicon}>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </i>
+            </h3>
+            {/* 새 링크 입력 필드 */}
+            <input
+              className={Styles.linkaddtilte}
+              type="text"
+              placeholder="제목"
+              value={newLink.title}
+              onChange={(e) =>
+                setNewLink({ ...newLink, title: e.target.value })
+              }
+            />
+            <br></br>
+            <input
+              className={Styles.linkaddtext}
+              type="text"
+              placeholder="URL"
+              value={newLink.url}
+              onChange={(e) => setNewLink({ ...newLink, url: e.target.value })}
+            />{" "}
+            <br></br>
+            <button className={Styles.linkaddbtn} onClick={handleAddLink}>
+              {" "}
+              Add Link{" "}
+              <i className={Styles.icon}>
+                <FontAwesomeIcon icon={faUpload} />
+              </i>
+            </button>
+          </div>
+        )}
         {/* 수정 중인 링크 입력 필드 */}
         {editLink.id && (
           <>
