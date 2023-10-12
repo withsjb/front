@@ -224,11 +224,11 @@
 .editContainer {
   margin: 0 auto;
   padding-top: 60px;
-  position: absolute;
+  position: fixed;
   width: 520px;
   height: 500px;
   left: 250px;
-  top: 90px;
+  top: 250px;
   border: solid 2px;
   border-color: #555;
   background-color: #fff;
