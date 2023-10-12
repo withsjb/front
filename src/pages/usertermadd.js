@@ -23,7 +23,7 @@ const App = () => {
 
   const fetchTerms = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/terms");
+      const response = await axios.get("/api/terms");
       setTerms(response.data);
     } catch (error) {
       console.error("Error fetching terms:", error);
@@ -32,7 +32,7 @@ const App = () => {
 
   const handleAddTerm = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/terms", {
+      const response = await axios.post("/api/terms", {
         term,
         definition,
       });
