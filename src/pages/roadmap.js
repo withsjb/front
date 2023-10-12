@@ -33,7 +33,7 @@ const ArticleNavigator = () => {
     {
       id: 3,
       concept: "설치가이드 페이지",
-      content: <Link to="/testbed">Go Page</Link>,
+      content: <Link to="/linux/user/65286499a03da16836bc5b3a">Go Page</Link>,
       isVisible: false,
     },
     {
