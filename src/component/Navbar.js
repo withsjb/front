@@ -28,7 +28,7 @@ const Navbar = () => {
       if (cookies.jwt) {
         try {
           const { data } = await axios.post(
-            "/api",
+            "http://localhost:4000",
             {},
             {
               withCredentials: true,
@@ -45,6 +45,19 @@ const Navbar = () => {
     };
     fetchUserEmail();
   }, [cookies]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -82,6 +95,7 @@ const Navbar = () => {
               <Link to="/Usertermadd">
                 <li>취약점 단어장</li>
               </Link>
+
               <Link to="/testbed">
                 <li>Testbed</li>
               </Link>

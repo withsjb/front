@@ -134,6 +134,7 @@
 
 .logOut {
   border-bottom: none;
+  margin-left: 50px;
 }
 
 .logOut:hover {
@@ -175,5 +176,6 @@
     position: absolute;
     display: block;
     right: 20px;
+    color: black;
   }
 }
