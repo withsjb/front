@@ -9,9 +9,12 @@ import { faFileLines, faFile } from "@fortawesome/free-solid-svg-icons";
 const FileLoader = () => {
   const [visibleSection, setVisibleSection] = useState(null);
   const [windowFiles, setLinuxFiles] = useState([]);
+  const [groupedDatapatch, setGroupedDatapatch] = useState([]);
   const [groupedDataAccount, setGroupedDataAccount] = useState([]);
   const [groupedDataService, setGroupedDataService] = useState([]);
   const [groupedDatafiledele, setGroupedDatafiledele] = useState([]);
+  const [groupedDatasecurity, setGroupedDatasecurity] = useState([]);
+  const [groupedDatadb, setGroupedDatadb] = useState([]);
   const [activeGroup, setActiveGroup] = useState({
     section: null,
     index: null,
@@ -64,9 +67,12 @@ const FileLoader = () => {
   };
 
   useEffect(() => {
-    setGroupedDataAccount(filterAndGroupFiles("보안관리"));
+    setGroupedDataAccount(filterAndGroupFiles("계정관리"));
     setGroupedDataService(filterAndGroupFiles("서비스관리"));
     setGroupedDatafiledele(filterAndGroupFiles("로그관리"));
+    setGroupedDatapatch(filterAndGroupFiles("패치관리"));
+    setGroupedDatasecurity(filterAndGroupFiles("보안관리"));
+    setGroupedDatadb(filterAndGroupFiles("DB관리"));
   }, [windowFiles]);
 
   return (
@@ -78,20 +84,20 @@ const FileLoader = () => {
             <div className={Styles.sidebardiv}>
               <h2
                 className={Styles.intro}
-                onClick={() => handleSectionClick("보안관리")}
+                onClick={() => handleSectionClick("계정관리")}
               >
                 <i className={Styles.ulicon}>
                   <FontAwesomeIcon icon={faFile} />
                 </i>{" "}
-                보안관리
+                계정관리
               </h2>
-              {visibleSection === "보안관리" &&
+              {visibleSection === "계정관리" &&
                 groupedDataAccount.map((group, groupIndex) => (
                   <h3
                     key={groupIndex}
-                    onClick={() => handlePartClick("보안관리", groupIndex)}
+                    onClick={() => handlePartClick("계정관리", groupIndex)}
                   >
-                    보안관리 Part {groupIndex + 1}
+                    계정관리 Part {groupIndex + 1}
                   </h3>
                 ))}
 
@@ -116,12 +122,31 @@ const FileLoader = () => {
 
               <h2
                 className={Styles.intro}
+                onClick={() => handleSectionClick("패치관리")}
+              >
+                <i className={Styles.ulicon}>
+                  <FontAwesomeIcon icon={faFile} />
+                </i>{" "}
+                패치 관리
+              </h2>
+              {visibleSection === "패치관리" &&
+                groupedDatafiledele.map((group, groupIndex) => (
+                  <h3
+                    key={groupIndex}
+                    onClick={() => handlePartClick("패치관리", groupIndex)}
+                  >
+                    패치 관리 Part {groupIndex + 1}
+                  </h3>
+                ))}
+
+              <h2
+                className={Styles.intro}
                 onClick={() => handleSectionClick("로그관리")}
               >
                 <i className={Styles.ulicon}>
                   <FontAwesomeIcon icon={faFile} />
                 </i>{" "}
-                파일 및 디렉터리 관리
+                로그 관리
               </h2>
               {visibleSection === "로그관리" &&
                 groupedDatafiledele.map((group, groupIndex) => (
@@ -129,7 +154,45 @@ const FileLoader = () => {
                     key={groupIndex}
                     onClick={() => handlePartClick("로그관리", groupIndex)}
                   >
-                    파일 및 디렉터리 관리 Part {groupIndex + 1}
+                    로그 관리 Part {groupIndex + 1}
+                  </h3>
+                ))}
+
+              <h2
+                className={Styles.intro}
+                onClick={() => handleSectionClick("보안관리")}
+              >
+                <i className={Styles.ulicon}>
+                  <FontAwesomeIcon icon={faFile} />
+                </i>{" "}
+                보안 관리
+              </h2>
+              {visibleSection === "보안관리" &&
+                groupedDatasecurity.map((group, groupIndex) => (
+                  <h3
+                    key={groupIndex}
+                    onClick={() => handlePartClick("보안관리", groupIndex)}
+                  >
+                    보안 관리 Part {groupIndex + 1}
+                  </h3>
+                ))}
+
+              <h2
+                className={Styles.intro}
+                onClick={() => handleSectionClick("DB관리")}
+              >
+                <i className={Styles.ulicon}>
+                  <FontAwesomeIcon icon={faFile} />
+                </i>{" "}
+                DB 관리
+              </h2>
+              {visibleSection === "DB관리" &&
+                groupedDatadb.map((group, groupIndex) => (
+                  <h3
+                    key={groupIndex}
+                    onClick={() => handlePartClick("DB관리", groupIndex)}
+                  >
+                    DB 관리 Part {groupIndex + 1}
                   </h3>
                 ))}
             </div>
@@ -145,7 +208,7 @@ const FileLoader = () => {
                 className={Styles.filelist}
                 style={{
                   display:
-                    activeGroup.section === "보안관리" &&
+                    activeGroup.section === "계정관리" &&
                     activeGroup.index === groupIndex
                       ? "block"
                       : "none",
@@ -197,6 +260,81 @@ const FileLoader = () => {
                 style={{
                   display:
                     activeGroup.section === "로그관리" &&
+                    activeGroup.index === groupIndex
+                      ? "block"
+                      : "none",
+                }}
+              >
+                {group.map((item) => (
+                  <li className={Styles.file} key={item._id}>
+                    <Link
+                      className={Styles.filelink}
+                      to={`/window/user/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {groupedDatapatch.map((group, groupIndex) => (
+            <div className={Styles.listdiv} key={groupIndex}>
+              <ul
+                className={Styles.filelist}
+                style={{
+                  display:
+                    activeGroup.section === "패치관리" &&
+                    activeGroup.index === groupIndex
+                      ? "block"
+                      : "none",
+                }}
+              >
+                {group.map((item) => (
+                  <li className={Styles.file} key={item._id}>
+                    <Link
+                      className={Styles.filelink}
+                      to={`/window/user/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {groupedDatasecurity.map((group, groupIndex) => (
+            <div className={Styles.listdiv} key={groupIndex}>
+              <ul
+                className={Styles.filelist}
+                style={{
+                  display:
+                    activeGroup.section === "보안관리" &&
+                    activeGroup.index === groupIndex
+                      ? "block"
+                      : "none",
+                }}
+              >
+                {group.map((item) => (
+                  <li className={Styles.file} key={item._id}>
+                    <Link
+                      className={Styles.filelink}
+                      to={`/window/user/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {groupedDatadb.map((group, groupIndex) => (
+            <div className={Styles.listdiv} key={groupIndex}>
+              <ul
+                className={Styles.filelist}
+                style={{
+                  display:
+                    activeGroup.section === "DB관리" &&
                     activeGroup.index === groupIndex
                       ? "block"
                       : "none",

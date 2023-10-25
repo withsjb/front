@@ -12,6 +12,8 @@ const FileLoader = () => {
   const [groupedDataAccount, setGroupedDataAccount] = useState([]);
   const [groupedDataService, setGroupedDataService] = useState([]);
   const [groupedDatafiledele, setGroupedDatafiledele] = useState([]);
+  const [groupedDatapatch, setGroupedDatapatch] = useState([]);
+  const [groupedDatalog, setGroupedDatalog] = useState([]);
   const [activeGroup, setActiveGroup] = useState({
     section: null,
     index: null,
@@ -67,6 +69,8 @@ const FileLoader = () => {
     setGroupedDataAccount(filterAndGroupFiles("계정관리"));
     setGroupedDataService(filterAndGroupFiles("서비스관리"));
     setGroupedDatafiledele(filterAndGroupFiles("파일및디렉터리관리"));
+    setGroupedDatapatch(filterAndGroupFiles("패치관리"));
+    setGroupedDatalog(filterAndGroupFiles("로그관리"));
   }, [linuxFiles]);
 
   return (
@@ -134,6 +138,44 @@ const FileLoader = () => {
                     파일 및 디렉터리 관리 Part {groupIndex + 1}
                   </h3>
                 ))}
+
+              <h2
+                className={Styles.intro}
+                onClick={() => handleSectionClick("패치관리")}
+              >
+                <i className={Styles.ulicon}>
+                  <FontAwesomeIcon icon={faFile} />
+                </i>{" "}
+                패치 관리
+              </h2>
+              {visibleSection === "패치관리" &&
+                groupedDatapatch.map((group, groupIndex) => (
+                  <h3
+                    key={groupIndex}
+                    onClick={() => handlePartClick("패치관리", groupIndex)}
+                  >
+                    패치 관리 Part {groupIndex + 1}
+                  </h3>
+                ))}
+
+              <h2
+                className={Styles.intro}
+                onClick={() => handleSectionClick("로그관리")}
+              >
+                <i className={Styles.ulicon}>
+                  <FontAwesomeIcon icon={faFile} />
+                </i>{" "}
+                로그 관리
+              </h2>
+              {visibleSection === "로그관리" &&
+                groupedDatalog.map((group, groupIndex) => (
+                  <h3
+                    key={groupIndex}
+                    onClick={() => handlePartClick("로그관리", groupIndex)}
+                  >
+                    로그 관리 Part {groupIndex + 1}
+                  </h3>
+                ))}
             </div>
           </div>
           <i className={Styles.hicon}>
@@ -199,6 +241,56 @@ const FileLoader = () => {
                 style={{
                   display:
                     activeGroup.section === "파일및디렉터리관리" &&
+                    activeGroup.index === groupIndex
+                      ? "block"
+                      : "none",
+                }}
+              >
+                {group.map((item) => (
+                  <li className={Styles.file} key={item._id}>
+                    <Link
+                      className={Styles.filelink}
+                      to={`/linux/user/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {groupedDatapatch.map((group, groupIndex) => (
+            <div className={Styles.listdiv} key={groupIndex}>
+              <ul
+                className={Styles.filelist}
+                style={{
+                  display:
+                    activeGroup.section === "패치관리" &&
+                    activeGroup.index === groupIndex
+                      ? "block"
+                      : "none",
+                }}
+              >
+                {group.map((item) => (
+                  <li className={Styles.file} key={item._id}>
+                    <Link
+                      className={Styles.filelink}
+                      to={`/linux/user/${item._id}`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {groupedDatalog.map((group, groupIndex) => (
+            <div className={Styles.listdiv} key={groupIndex}>
+              <ul
+                className={Styles.filelist}
+                style={{
+                  display:
+                    activeGroup.section === "로그관리" &&
                     activeGroup.index === groupIndex
                       ? "block"
                       : "none",
