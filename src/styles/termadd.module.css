@@ -67,6 +67,30 @@
   margin-top: 5px;
 }
 
+.searchInput {
+  width: 400px;
+  text-align: center;
+}
+
+.searchInput {
+  margin-left: 35%;
+  border-radius: 15px;
+}
+
+.searchbut {
+  background-color: #fefefe;
+  color: #b19876;
+  width: 160px;
+  height: 36px;
+  border-radius: 15px;
+
+  border: 1.6px #d2b58c solid;
+  font-size: 12pt;
+  z-index: 1;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
 .prevbtn {
   background-color: #fefefe;
   color: #b19876;
