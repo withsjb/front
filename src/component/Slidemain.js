@@ -8,39 +8,39 @@ export default function Home() {
         <section className={Styles.slideshow}>
           <div className={Styles.slide}>
             <figure>
-              <Link to="/">
+              <Link to="/WinStudy">
                 <img src="images/os/window.jpg"></img>
               </Link>
               <p className={Styles.textb}>Window</p>
             </figure>
             <figure>
-              <Link to="/">
+              <Link to="/LinStudy">
                 <img src="images/os/linux.png"></img>
               </Link>
               <p className={Styles.textb}>linux</p>
             </figure>
             <figure>
               <Link to="/">
-                <img src="images/os/unix.jpg"></img>
-                <p className={Styles.textb}>unix</p>
+                <img src="images/term.JPG"></img>
+                <p className={Styles.textb}>Word Search</p>
               </Link>
             </figure>
             <figure>
-              <Link to="/">
-                <img src="images/road.png"></img>
-                <p className={Styles.textb}>문제1</p>
+              <Link to="/WindowsQuizmain">
+                <img src="images/windowquiz.JPG"></img>
+                <p className={Styles.textb}>Window Quiz</p>
               </Link>
             </figure>
             <figure>
-              <Link to="/">
-                <img src="images/road.png"></img>
-                <p className={Styles.textb}>문제2</p>
+              <Link to="/LinuxQuizmain">
+                <img src="images/linuxquiz.JPG"></img>
+                <p className={Styles.textb}>linux Quiz</p>
               </Link>
             </figure>
             <figure>
-              <Link to="/">
-                <img src="images/road.png"></img>
-                <p className={Styles.textb}>NextShop</p>
+              <Link to="/roadmap">
+                <img src="images/roadmapcap.JPG"></img>
+                <p className={Styles.textb}>RoadMap</p>
               </Link>
             </figure>
           </div>

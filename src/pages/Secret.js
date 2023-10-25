@@ -11,6 +11,7 @@ import Styles from "../styles/Main.module.css";
 export default function Secret() {
   //스크롤이벤트
   const [position, setPosition] = useState(0);
+  const [user, setUser] = useState(null);
   function onScroll() {
     setPosition(window.scrollY);
     console.log(window.scrollY);
@@ -31,7 +32,7 @@ export default function Secret() {
         navigate("/login");
       } else {
         const { data } = await axios.post(
-          "/api/",
+          "/api",
           {},
           {
             withCredentials: true,
@@ -40,15 +41,31 @@ export default function Secret() {
         if (!data.status) {
           removeCookie("jwt");
           navigate("/login");
-        } else
-          toast(`반갑습니다! ${data.user} 🦄`, {
-            theme: "dark",
-            position: "bottom-right",
-          });
+        } else console.log(data.status);
+        toast(`반갑습니다! ${data.user} 🦄`, {
+          theme: "dark",
+          position: "bottom-right",
+        });
       }
     };
     verifyUser();
   }, [cookies, navigate, removeCookie]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api");
+        const userData = response.data; // 서버로부터 받은 사용자 정보
+        setUser(userData);
+
+        // 이제 userData를 상태로 설정하거나 다른 곳에 전달할 수 있습니다.
+      } catch (error) {
+        // 오류 처리
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -59,7 +76,7 @@ export default function Secret() {
             <div className={Styles.topglass}>
               <img src="images/hackera.jpg"></img>
             </div>
-            <h1 className={Styles.toptex}>welcome</h1>
+            <h1 className={Styles.toptex}>welcome </h1>
             <p className={Styles.topp}>
               If you want useful tutorials and fun problems to solve please go
               down
@@ -80,7 +97,9 @@ export default function Secret() {
                 여러분들이 어떻게 공부를 해야 할지 당황스럽지 않게 로드맵을
                 따라가보세요!
               </p>
-              <button className={Styles.btn}>로드맵으로</button>
+              <Link to="/roadmap">
+                <button className={Styles.btn}>로드맵으로</button>
+              </Link>
             </div>
           </div>
           <div
@@ -95,7 +114,12 @@ export default function Secret() {
                 여러분들이 지금까지 배워온 지식을 시험해볼 차례입니다.
                 기출문제를 풀어보세요!
               </p>
-              <button className={Styles.btn}>워게임으로</button>
+              <Link to="/WindowsQuizmain">
+                <button className={Styles.btn}>Window 문제</button>
+              </Link>
+              <Link to="/LinuxQuizmain">
+                <button className={Styles.btn}>Linux 문제</button>
+              </Link>
             </div>
             <div className={Styles.botaright}>
               <img src="images/wargame.png"></img>
@@ -113,10 +137,9 @@ export default function Secret() {
             <div className={Styles.botaright}>
               <h1>자유로운 소통으로 문제를 공유해요!</h1>
               <p>여러분들이 배운 지식을 다른 사람들과 자유롭게 공유해봐요!</p>
-              <button className={Styles.btn}>
-                <Link to="/"></Link>
-                게시판으로
-              </button>
+              <Link to="/board">
+                <button className={Styles.btn}>게시판으로</button>
+              </Link>
             </div>
           </div>
           <div className={Styles.middle}>

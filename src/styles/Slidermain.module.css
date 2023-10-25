@@ -25,9 +25,9 @@
 .textb {
   color: white;
   position: relative;
-  bottom: 400px;
+  bottom: 350px;
   font-size: 50px;
-  left: 0px;
+  text-align: center;
 }
 
 .slideshow {

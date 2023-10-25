@@ -97,7 +97,7 @@ const Navbar = () => {
               </Link>
 
               <Link to="/testbed">
-                <li>Testbed</li>
+                <li>자료실</li>
               </Link>
             </ul>{" "}
           </li>
@@ -153,7 +153,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/testbed">
                   {" "}
-                  <li>TestBed 추가</li>{" "}
+                  <li>자료실 내용 추가</li>{" "}
                 </Link>
               </ul>
             </li>

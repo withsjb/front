@@ -95,7 +95,7 @@ function App() {
           <i className={Styles.icon}>
             <FontAwesomeIcon icon={faClipboardList} />
           </i>{" "}
-          Testbed File List
+          자료실
         </h1>
         <ul className={Styles.tbedul}>
           {links.map((link) => (
