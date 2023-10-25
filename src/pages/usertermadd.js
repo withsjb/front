@@ -49,12 +49,19 @@ const App = () => {
   };
 
   const handleUserInput = (input) => {
-    const userInput = input.toLowerCase();
-    const matchingTerm = terms.find((term) =>
-      userInput.includes(term.term.toLowerCase())
+    const userInput = input.toLowerCase(); // 검색어를 소문자로 변환
+
+    const matchingTerms = terms.filter((term) =>
+      term.term.toLowerCase().includes(userInput)
     );
-    if (matchingTerm) {
-      setHighlightedTerm(matchingTerm);
+
+    if (matchingTerms.length > 0) {
+      setHighlightedTerm(matchingTerms[0]); // 첫 번째 부분 일치 항목을 선택
+      // 검색 결과로 인덱스 설정
+      const matchingIndex = terms.findIndex(
+        (term) => term === matchingTerms[0]
+      );
+      setActiveIndex(matchingIndex);
       setModalVisible(true);
     } else {
       setHighlightedTerm(null);
@@ -67,6 +74,22 @@ const App = () => {
   };
 
   const itemsPerPage = 3;
+
+  const handleSearch = () => {
+    handleUserInput(term); // 검색어 입력 처리 함수 호출
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      if (term.trim() === "") {
+        // 검색어가 비어있을 때, 이전 상태로 돌아가기
+        setActiveIndex(1);
+      } else {
+        // 검색어가 입력되었을 때, 검색 실행
+        handleSearch();
+      }
+    }
+  };
 
   return (
     <>
@@ -83,13 +106,17 @@ const App = () => {
               Vulnerability Vocabulary Note.
             </span>
           </h1>
-          {modalVisible && highlightedTerm && (
-            <div>
-              <h2>Highlighted Term</h2>
-              <p className={Styles.term_w}>{highlightedTerm.term} :</p>
-              <p className={Styles.def_term}>{highlightedTerm.definition}</p>
-            </div>
-          )}
+
+          <div className={Styles.searchContainer}>
+            <input
+              className={Styles.searchInput}
+              type="text"
+              value={term}
+              placeholder="검색어를 입력한 후 엔터키를 눌러주세요"
+              onChange={(e) => setTerm(e.target.value)}
+              onKeyDown={handleKeyPress} // 엔터 키 처리
+            />
+          </div>
 
           <ul className={Styles.t_ul}>
             <button
