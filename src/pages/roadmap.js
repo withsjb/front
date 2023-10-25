@@ -21,7 +21,7 @@ const ArticleNavigator = () => {
     {
       id: 1,
       concept: "서론",
-      content: "순서대로 따라가보세요!",
+      content: <Link to="/linux/user/6534f1a759d5faa07ee21f93">Go Page</Link>,
       isVisible: false,
     },
     {
@@ -38,14 +38,14 @@ const ArticleNavigator = () => {
     },
     {
       id: 4,
-      concept: " 로그 기본 설정",
-      content: <Link to="/linux/user/652618ebd55a4e8632033802">Go Page</Link>,
+      concept: " VI 편집기 사용법",
+      content: <Link to="/linux/user/6534f3aa59d5faa07ee22027">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 5,
-      concept: "Shell script 기초",
-      content: <Link to="/window/user/651f7ab84e8ce931808e6211">Go Page</Link>,
+      concept: "Shell script 기초 명령어",
+      content: <Link to="/window/user/652ba57759d5faa07ee1ffb3">Go Page</Link>,
       isVisible: false,
     },
     {
