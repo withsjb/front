@@ -46,19 +46,6 @@ const Navbar = () => {
     fetchUserEmail();
   }, [cookies]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setMobile(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <>
       <nav className={Styles.navbar}>
@@ -73,7 +60,7 @@ const Navbar = () => {
         >
           <li className={Styles.navli}>
             roadmap
-            <ul className={Styles.dropmenu}>
+            <ul className={Styles.roaddropmenu}>
               <Link to="/roadmap">
                 {" "}
                 <li>roadmap</li>{" "}
@@ -83,7 +70,7 @@ const Navbar = () => {
 
           <li className={Styles.navli}>
             Studying
-            <ul className={Styles.dropmenu}>
+            <ul className={Styles.studydropmenu}>
               <Link to="/WinStudy">
                 {" "}
                 <li>Windows 기초</li>{" "}
@@ -95,16 +82,15 @@ const Navbar = () => {
               <Link to="/Usertermadd">
                 <li>취약점 단어장</li>
               </Link>
-
               <Link to="/testbed">
-                <li>자료실</li>
+                <li>Testbed</li>
               </Link>
             </ul>{" "}
           </li>
 
           <li className={Styles.navli}>
             Quiz
-            <ul className={Styles.dropmenu}>
+            <ul className={Styles.quizdropmenu}>
               <Link to="/WindowsQuizmain">
                 {" "}
                 <li>Windows quiz</li>{" "}
@@ -130,7 +116,7 @@ const Navbar = () => {
           {role === "admin" && (
             <li className={Styles.navli}>
               admin
-              <ul className={Styles.dropmenu}>
+              <ul className={Styles.admindropmenu}>
                 <Link to="/windowproblem">
                   {" "}
                   <li>윈도우 문제 수정</li>{" "}
@@ -153,7 +139,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/testbed">
                   {" "}
-                  <li>자료실 내용 추가</li>{" "}
+                  <li>TestBed 추가</li>{" "}
                 </Link>
               </ul>
             </li>

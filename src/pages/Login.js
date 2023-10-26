@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Styles from "../styles/Login.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const [cookies] = useCookies([]);
@@ -65,7 +66,22 @@ function Login() {
           공부하고 실습해보며 커뮤니티에 지식을 나누고 실력을 향상할 수 있는
           공간입니다.
         </div>
+        <div className={Styles.event}>
+          <i className={Styles.eventicon1}>
+            <FontAwesomeIcon icon={faLightbulb} />
+          </i>
+          <span className={Styles.eventtext}>체험 부스 Event!!</span>
+          <i className={Styles.eventicon2}>
+            <FontAwesomeIcon icon={faLightbulb} />
+          </i>{" "}
+          <br></br>
+          <span className={Styles.eventexp}>
+            {" "}
+            Roadmap을 따라 학습을 체험하시면 하리보 젤리 1개를 드립니다!!
+          </span>
+        </div>
       </div>
+
       <div className={Styles.container}>
         <div className={Styles.title}>
           <h2 className={Styles.titleh2}> Cyber Guardian </h2>

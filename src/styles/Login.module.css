@@ -203,3 +203,38 @@ span a {
 .go_lg:hover {
   text-decoration: underline;
 }
+
+.event {
+  position: inherit;
+  color: #e48b15;
+  font-size: 20pt;
+  padding-left: 10px;
+  margin-top: 40px;
+  font-size: 12pt;
+  width: 650px;
+}
+/*event div*/
+.eventicon1 {
+  font-size: 22pt;
+  padding-left: 20%;
+}
+/*event 아이콘1*/
+
+.eventtext {
+  font-size: 18pt;
+  padding-left: 10px;
+  font-weight: bold;
+}
+/*event 제목*/
+
+.eventicon2 {
+  font-size: 22pt;
+  padding-left: 12px;
+}
+/*event 아이콘2*/
+
+.eventexp {
+  font-size: 13pt;
+  font-weight: bold;
+}
+/*event 설명*/

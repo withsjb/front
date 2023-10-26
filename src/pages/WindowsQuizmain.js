@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setUserId } from "../redux/result_reducer";
-import Styles from "../styles/WindowsQuizmain.module.css";
+import Styles from "../styles/WindowQuizmain.module.css";
 import Navbar from "../component/Navbar";
 
 export default function Main() {

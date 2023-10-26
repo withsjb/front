@@ -75,8 +75,7 @@
   position: absolute;
   visibility: collapse;
   margin-left: -40px;
-
-  /*  box-shadow: 3px 10px 10px -2px rgb(100, 100, 100);*/
+  margin-top: 2px;
 }
 
 .dropmenu li {
@@ -122,7 +121,7 @@
 .navlinks li:hover .dropmenu {
   opacity: 1;
   visibility: visible;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 
 .mobilemenu {
@@ -142,6 +141,155 @@
   visibility: visible;
   transition: all 0.3s ease;
   text-decoration: underline;
+}
+
+/*#- 상단 드랍메뉴 li 위치조정 -#*/
+.roaddropmenu {
+  border: 1px solid #eee;
+  background-color: #fdfdfd;
+  color: black;
+  width: 180px;
+  line-height: 45px;
+  position: absolute;
+  visibility: collapse;
+  margin-left: -52px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.roaddropmenu li {
+  color: #303030;
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  height: auto;
+  border: none;
+  font-size: 10pt;
+}
+
+.roaddropmenu li:hover {
+  color: black;
+  cursor: pointer;
+  scale: 10px;
+  font-weight: bold;
+}
+/*마우스 hover시*/
+
+.navlinks li:hover .roaddropmenu {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+
+.studydropmenu {
+  border: 1px solid #eee;
+  background-color: #fdfdfd;
+  color: black;
+  width: 180px;
+  line-height: 45px;
+  position: absolute;
+  visibility: collapse;
+  margin-left: -55px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.studydropmenu li {
+  color: #303030;
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  height: auto;
+  border: none;
+  font-size: 10pt;
+}
+
+.studydropmenu li:hover {
+  color: black;
+  cursor: pointer;
+  scale: 10px;
+  font-weight: bold;
+}
+/*마우스 hover시*/
+
+.navlinks li:hover .studydropmenu {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+
+.quizdropmenu {
+  border: 1px solid #eee;
+  background-color: #fdfdfd;
+  color: black;
+  width: 180px;
+  line-height: 45px;
+  position: absolute;
+  visibility: collapse;
+  margin-left: -70px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.quizdropmenu li {
+  color: #303030;
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  height: auto;
+  border: none;
+  font-size: 10pt;
+}
+
+.quizdropmenu li:hover {
+  color: black;
+  cursor: pointer;
+  scale: 10px;
+  font-weight: bold;
+}
+/*마우스 hover시*/
+
+.navlinks li:hover .quizdropmenu {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
+}
+
+.admindropmenu {
+  border: 1px solid #eee;
+  background-color: #fdfdfd;
+  color: black;
+  width: 180px;
+  line-height: 45px;
+  position: absolute;
+  visibility: collapse;
+  margin-left: -60px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.admindropmenu li {
+  color: #303030;
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  height: auto;
+  border: none;
+  font-size: 10pt;
+}
+
+.admindropmenu li:hover {
+  color: black;
+  cursor: pointer;
+  scale: 10px;
+  font-weight: bold;
+}
+/*마우스 hover시*/
+
+.navlinks li:hover .admindropmenu {
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease;
 }
 
 @media (max-width: 768px) {
@@ -166,6 +314,7 @@
     background-color: #01073d;
     z-index: 1000000;
   }
+
   ul li {
     padding: 32px;
     width: 100%;
@@ -176,6 +325,5 @@
     position: absolute;
     display: block;
     right: 20px;
-    color: black;
   }
 }

@@ -229,7 +229,7 @@ const UserFileDetail = () => {
         <div className={Styles.logobook}>
           <h2 className={Styles.filetitle}>
             {" "}
-            Linux{" "}
+            Windows{" "}
             <i className={Styles.icon}>
               <FontAwesomeIcon icon={faChevronRight} />
             </i>
