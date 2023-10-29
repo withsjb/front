@@ -24,7 +24,7 @@ export function CheckUserExist({ children }) {
   return auth ? (
     children
   ) : (
-    <Navigate to={"/quizmain"} replace={true}></Navigate>
+    <Navigate to={"/LinuxQuizmain"} replace={true}></Navigate>
   );
 }
 
