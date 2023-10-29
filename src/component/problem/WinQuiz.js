@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Questions from "./Questions";
+import Questions from "./Winquestions.js";
 import Styles from "../../styles/WinQuiz.module.css";
 import { MoveNextQuestion, MovePrevQuestion } from "../../hooks/FetchQuestion";
 import { PushAnswer } from "../../hooks/setResult";
