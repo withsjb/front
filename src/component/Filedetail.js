@@ -185,7 +185,6 @@ const FileDetail = () => {
       if (response.status === 200) {
         setFile(response.data);
         setEditingIndex(-1);
-        fetchFile();
       }
     } catch (error) {
       console.error(error);
@@ -288,6 +287,50 @@ const FileDetail = () => {
     content: file.content[index],
     photo: photos[index] || "",
   }));
+
+  const TextWithLinks = ({ text }) => {
+    const linkRegex = /(http:\/\/|https:\/\/\S+)/g;
+
+    // 링크를 찾아서 분리합니다.
+    const parts = text.split(linkRegex);
+
+    const textWithLinks = parts.map((part, index) => {
+      if (part.match(linkRegex)) {
+        // 링크인 경우, <a> 태그로 감싸서 하이퍼링크로 만듭니다.
+        return (
+          <a key={index} href={part} target="_blank" rel="noopener noreferrer">
+            {part}
+          </a>
+        );
+      } else if (part.includes("{") && part.includes("}")) {
+        // {word} 형식의 부분을 찾습니다.
+        const word = part.replace("{", "").replace("}", "");
+        const matchingTerm = findMatchingTerm(word);
+
+        if (matchingTerm) {
+          // 매칭되는 용어가 있을 경우 하이퍼링크로 변환합니다.
+          return (
+            <a
+              key={index}
+              href={matchingTerm}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {word}
+            </a>
+          );
+        } else {
+          // 매칭되는 용어가 없을 경우 그대로 출력합니다.
+          return part;
+        }
+      } else {
+        // 일반 텍스트인 경우 그대로 출력합니다.
+        return part;
+      }
+    });
+
+    return <>{textWithLinks}</>;
+  };
 
   return (
     <>
@@ -433,6 +476,8 @@ const FileDetail = () => {
                   </button>
                   {editingIndex === index && (
                     <div className={Styles.editContainer}>
+                      <h2>Please Edit </h2>
+
                       {/* 수정 입력 필드 */}
                       <textarea
                         value={editedContents[index]}
@@ -442,21 +487,18 @@ const FileDetail = () => {
                           setEditedContents(updatedEditedContents);
                         }}
                       />
-
                       {/* Concept 수정 입력 필드 */}
                       <input
                         type="text"
                         value={editedConcept}
                         onChange={(e) => setEditedConcept(e.target.value)}
                       />
-
                       {/* Photo 수정 입력 필드 */}
                       <input
                         type="file"
                         accept="image/jpeg, image/jpg, image/png"
                         onChange={(e) => setEditedPhoto(e.target.files[0])}
                       />
-
                       <button
                         className={Styles.filesavebtn}
                         onClick={() => saveEditedContent(index)}
@@ -502,7 +544,11 @@ const FileDetail = () => {
                             </span>
                           );
                         } else {
-                          return <span key={wordIndex}>{word}</span>;
+                          return (
+                            <span key={wordIndex}>
+                              <TextWithLinks text={word} />
+                            </span>
+                          );
                         }
                       })}
                     </div>

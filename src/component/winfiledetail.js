@@ -289,6 +289,50 @@ const FileDetail = () => {
     photo: photos[index] || "",
   }));
 
+  const TextWithLinks = ({ text }) => {
+    const linkRegex = /(http:\/\/|https:\/\/\S+)/g;
+
+    // 링크를 찾아서 분리합니다.
+    const parts = text.split(linkRegex);
+
+    const textWithLinks = parts.map((part, index) => {
+      if (part.match(linkRegex)) {
+        // 링크인 경우, <a> 태그로 감싸서 하이퍼링크로 만듭니다.
+        return (
+          <a key={index} href={part} target="_blank" rel="noopener noreferrer">
+            {part}
+          </a>
+        );
+      } else if (part.includes("{") && part.includes("}")) {
+        // {word} 형식의 부분을 찾습니다.
+        const word = part.replace("{", "").replace("}", "");
+        const matchingTerm = findMatchingTerm(word);
+
+        if (matchingTerm) {
+          // 매칭되는 용어가 있을 경우 하이퍼링크로 변환합니다.
+          return (
+            <a
+              key={index}
+              href={matchingTerm}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {word}
+            </a>
+          );
+        } else {
+          // 매칭되는 용어가 없을 경우 그대로 출력합니다.
+          return part;
+        }
+      } else {
+        // 일반 텍스트인 경우 그대로 출력합니다.
+        return part;
+      }
+    });
+
+    return <>{textWithLinks}</>;
+  };
+
   return (
     <>
       <Navbar />
@@ -491,18 +535,39 @@ const FileDetail = () => {
                         /*line.split("") 를 line.split() 이렇게 바꾸니까 띄어쓰기 인식됨 따로 알아봐야할듯*/
                         const matchingTerm = findMatchingTerm(word);
                         if (matchingTerm) {
+                          if (
+                            word.startsWith("http://") ||
+                            word.startsWith("https://")
+                          ) {
+                            return (
+                              <a
+                                key={wordIndex}
+                                href={word}
+                                style={{ color: "blue" }}
+                                onMouseEnter={(e) => showDefinition(word, e)}
+                                onMouseLeave={hideDefinition}
+                              >
+                                {word}
+                              </a>
+                            );
+                          } else {
+                            return (
+                              <span
+                                key={wordIndex}
+                                style={{ color: "blue" }}
+                                onMouseEnter={(e) => showDefinition(word, e)}
+                                onMouseLeave={hideDefinition}
+                              >
+                                {word}
+                              </span>
+                            );
+                          }
+                        } else {
                           return (
-                            <span
-                              key={wordIndex}
-                              style={{ color: "blue" }}
-                              onMouseEnter={(e) => showDefinition(word, e)}
-                              onMouseLeave={hideDefinition}
-                            >
-                              {word}
+                            <span key={wordIndex}>
+                              <TextWithLinks text={word} />
                             </span>
                           );
-                        } else {
-                          return <span key={wordIndex}>{word}</span>;
                         }
                       })}
                     </div>

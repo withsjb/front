@@ -70,6 +70,7 @@ const UserFileDetail = () => {
       .get("/api/terms")
       .then((response) => {
         setTerms(response.data);
+        console.log(terms);
       })
       .catch((error) => {
         console.error(error);
@@ -94,137 +95,10 @@ const UserFileDetail = () => {
       });
   };
 
-  const handleAddContentAndPhoto = () => {
-    const formData = new FormData();
-    if (photo) {
-      formData.append("photo", photo);
-    }
-
-    if (concept.trim() === "") {
-      formData.append("concept", ""); // 새로운 컨셉 추가
-    } else {
-      formData.append("concept", concept);
-    }
-
-    if (content.trim() === "") {
-      formData.append("content", "");
-    } else {
-      formData.append("content", content);
-    }
-
-    addContentAndPhoto(formData);
-    if (concept.trim() === "" && content.trim() !== "") {
-      setConcept("null"); // 컨셉 값이 비어있을 때 "null"로 업데이트
-    }
-  };
-
-  const addContentAndPhoto = (formData) => {
-    axios
-      .post(`/api/linux/files/${fileId}/content`, formData)
-      .then((response) => {
-        console.log(response.data);
-        setFile(response.data);
-        setConcept("");
-        setContent("");
-        setPhoto("");
-        fetchPhotos();
-        if (updatedIndex !== -1) {
-          setConcepts((prevConcepts) => {
-            const updatedConcepts = [...prevConcepts];
-            if (concept.trim() === "") {
-              updatedConcepts.splice(updatedIndex, 0, "null");
-            } else {
-              updatedConcepts.splice(updatedIndex, 0, concept);
-            }
-            return updatedConcepts;
-          });
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
   //수정파트
   // 수정 버튼을 누를 때 실행되는 함수
-  const handleEdit = (index) => {
-    setEditingIndex(index);
-
-    // 수정한 내용을 복사해서 상태에 저장
-    setEditedConcepts([...file.concept]);
-    setEditedContents([...file.content]);
-    setEditedPhotos([...file.photo]);
-
-    // 현재 concept와 photo를 상태에 저장
-    setEditedConcept(editedConcepts[index]);
-    setEditedPhoto(editedPhotos[index]);
-  };
 
   // 수정 내용 저장 및 서버 업데이트 함수
-  const saveEditedContent = async (index) => {
-    try {
-      const updatedContent = editedContents[index]; // 수정한 컨텐츠 가져오기
-      const updatedConcept = editedConcepts[index]; // 수정한 컨셉 가져오기
-      const updatedPhoto = editedPhotos[index]; // 수정한 사진 가져오기
-
-      const formData = new FormData();
-      formData.append("content", updatedContent);
-      formData.append("concept", updatedConcept);
-      if (updatedPhoto) {
-        formData.append("photo", updatedPhoto);
-      }
-
-      const response = await axios.put(
-        `/api/linux/files/${fileId}/content/${index}`,
-        formData
-      );
-
-      if (response.status === 200) {
-        setFile(response.data);
-        setEditingIndex(-1);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  //삭제파트
-  const handleDelete = async (index) => {
-    try {
-      const response = await axios.delete(
-        `/api/linux/files/${fileId}/content/${index}`
-      );
-
-      if (response.status === 200) {
-        console.log({ index });
-        const updatedFile = response.data;
-        setFile(updatedFile);
-
-        // 해당 인덱스의 컨셉 가져오기
-        const concept = concepts[index];
-
-        if (concept !== null) {
-          // 이후 코드에서 concept 사용
-
-          // 해당 인덱스의 컨셉을 null로 설정
-          setConcepts((prevConcepts) => {
-            const updatedConcepts = [...prevConcepts];
-            updatedConcepts[index] = "";
-            return updatedConcepts;
-          });
-          fetchFile();
-        } else {
-          console.log("Concept is already null at index", index);
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0];
-    setPhoto(file);
-  };
 
   const findMatchingTerm = (word) => {
     const matchingTerm = terms.find(
@@ -285,6 +159,50 @@ const UserFileDetail = () => {
     photo: photos[index] || "",
   }));
 
+  const TextWithLinks = ({ text }) => {
+    const linkRegex = /(http:\/\/|https:\/\/\S+)/g;
+
+    // 링크를 찾아서 분리합니다.
+    const parts = text.split(linkRegex);
+
+    const textWithLinks = parts.map((part, index) => {
+      if (part.match(linkRegex)) {
+        // 링크인 경우, <a> 태그로 감싸서 하이퍼링크로 만듭니다.
+        return (
+          <a key={index} href={part} target="_blank" rel="noopener noreferrer">
+            {part}
+          </a>
+        );
+      } else if (part.includes("{") && part.includes("}")) {
+        // {word} 형식의 부분을 찾습니다.
+        const word = part.replace("{", "").replace("}", "");
+        const matchingTerm = findMatchingTerm(word);
+
+        if (matchingTerm) {
+          // 매칭되는 용어가 있을 경우 하이퍼링크로 변환합니다.
+          return (
+            <a
+              key={index}
+              href={matchingTerm}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {word}
+            </a>
+          );
+        } else {
+          // 매칭되는 용어가 없을 경우 그대로 출력합니다.
+          return part;
+        }
+      } else {
+        // 일반 텍스트인 경우 그대로 출력합니다.
+        return part;
+      }
+    });
+
+    return <>{textWithLinks}</>;
+  };
+
   return (
     <>
       <Navbar />
@@ -330,83 +248,6 @@ const UserFileDetail = () => {
                 </div>
               )}
 
-              {editingIndex === index ? (
-                <div className={Styles.editContainer}>
-                  {/* 수정 입력 필드 */}
-
-                  <input
-                    type="text"
-                    value={editedConcepts[index]}
-                    onChange={(e) => {
-                      const updatedEditedConcepts = [...editedConcepts];
-                      updatedEditedConcepts[index] = e.target.value;
-                      setEditedConcepts(updatedEditedConcepts);
-                    }}
-                  />
-
-                  <textarea
-                    value={editedContents[index]}
-                    onChange={(e) => {
-                      const updatedEditedContents = [...editedContents];
-                      updatedEditedContents[index] = e.target.value;
-                      setEditedContents(updatedEditedContents);
-                    }}
-                  />
-
-                  {/* Concept 수정 입력 필드 */}
-
-                  {/* Photo 수정 입력 필드 */}
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/jpg, image/png"
-                    onChange={(e) => {
-                      const newPhoto = e.target.files[0] || null;
-                      const updatedPhotos = [...editedPhotos];
-                      updatedPhotos[index] = newPhoto;
-                      setEditedPhotos(updatedPhotos);
-                    }}
-                  />
-
-                  <button onClick={() => saveEditedContent(index)}>Save</button>
-                </div>
-              ) : (
-                <div className={Styles.someOtherClass}>
-                  {/* 이 부분은 조건이 거짓일 때 보여줄 내용 */}
-
-                  {editingIndex === index && (
-                    <div className={Styles.editContainer}>
-                      {/* 수정 입력 필드 */}
-                      <textarea
-                        value={editedContents[index]}
-                        onChange={(e) => {
-                          const updatedEditedContents = [...editedContents];
-                          updatedEditedContents[index] = e.target.value;
-                          setEditedContents(updatedEditedContents);
-                        }}
-                      />
-
-                      {/* Concept 수정 입력 필드 */}
-                      <input
-                        type="text"
-                        value={editedConcept}
-                        onChange={(e) => setEditedConcept(e.target.value)}
-                      />
-
-                      {/* Photo 수정 입력 필드 */}
-                      <input
-                        type="file"
-                        accept="image/jpeg, image/jpg, image/png"
-                        onChange={(e) => setEditedPhoto(e.target.files[0])}
-                      />
-
-                      <button onClick={() => saveEditedContent(index)}>
-                        Save
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
-
               {entry.concept.trim() !== "" && index === updatedIndex && (
                 <div
                   className={Styles.fileconceptdiv}
@@ -438,7 +279,11 @@ const UserFileDetail = () => {
                             </span>
                           );
                         } else {
-                          return <span key={wordIndex}>{word}</span>;
+                          return (
+                            <span key={wordIndex}>
+                              <TextWithLinks text={word} />
+                            </span>
+                          );
                         }
                       })}
                     </div>
