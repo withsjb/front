@@ -195,6 +195,11 @@
   margin-left: 22px;
 }
 
+.article1:nth-child(5) .title {
+  font-size: 25px;
+  height: 40px;
+}
+
 .article1:nth-child(6) {
   margin-left: -5px;
   visibility: hidden;
@@ -303,7 +308,6 @@
 
 .article1:nth-child(11) {
   margin-left: 11px;
-  visibility: hidden;
 }
 
 .article1:nth-child(11) .icon {

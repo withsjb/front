@@ -80,14 +80,14 @@ const ArticleNavigator = () => {
     },
     {
       id: 11,
-      concept: "Testbed",
-      content: <Link to="/linux/user/64907713d224bc4b21cdd442">Go Page</Link>,
+      concept: "Window test bed",
+      content: <Link to="/window/user/653e0d6759d5faa07ee23b05">Go Page</Link>,
       isVisible: false,
     },
     {
       id: 12,
-      concept: "test bed",
-      content: <Link to="/linux/user/64907713d224bc4b21cdd442">Go Page</Link>,
+      concept: "Linux test bed",
+      content: <Link to="/linux/user/653e1c9b59d5faa07ee23ec9">Go Page</Link>,
       isVisible: false,
     },
     {
