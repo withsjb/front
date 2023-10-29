@@ -89,7 +89,7 @@ export default function Result() {
         <div className={Styles.restart}>
           <Link
             className={Styles.restartbtn}
-            to={"/WindowsQuizmain"}
+            to={"/LinuxQuizmain"}
             onClick={onRestart}
           >
             Restart
