@@ -83,7 +83,7 @@ const Navbar = () => {
                 <li>취약점 단어장</li>
               </Link>
               <Link to="/testbed">
-                <li>Testbed</li>
+                <li>자료실</li>
               </Link>
             </ul>{" "}
           </li>
